@@ -5,6 +5,14 @@ Project Idea
 
 
 
+
+Raw JSON data can be manipulated for a better user experience. Within the administraion panel to update items such as the Profile Application, a more user frendly approach can be used by setting the serializer class on a view, [Django Rest Framework](https://www.django-rest-framework.org/) sets it out in a form format automatically.<br>
+The Bad Request can be shown here as a method to catch and raise errors.<br>
+<img src="assets/images/readme-images/RawJSON.png" width=20% height=20%><br>
+Status is OK and the input fields look much better for user and clients to input data.<br>
+<img src="assets/images/readme-images/Jsonform.png" width=20% height=20%><br>
+
+
 <hr>
 
 [Back to the top](#walking-seasons)
@@ -20,7 +28,7 @@ Install [Django Rest Framework](https://www.django-rest-framework.org/).<br>
 
 This workspace holds the API developed, for use with connection to Project 5, for backend storage for user interface requests.<br>
 This is built to hold models and display content using React for the frontend of the project named, Project 5.<br>
-This project holds storage and responses for HTTP requests, JSON Web Tokens for authentication, permission and to tell user input apart from other user input.<br>
+This project contains storage and responses for HTTP requests, JSON Web Tokens for authentication, permission and to tell user input apart from other user input.<br>
 The Django Rest Framework replaces the use of many HTML pages and displays the information requests using the React Frontend project, Project 5.<br>
 
 
@@ -29,6 +37,8 @@ The Django Rest Framework replaces the use of many HTML pages and displays the i
 CRUD stand for Create, Read, Undo and Delete. This is four interactions the developer or the user can have with a website on either the frontend or the backend.<br>
 [Django Signal](https://code.djangoproject.com/wiki/Signals) can be used for creating, retrieving, viewing and deleting data.<br>
 Delete<br>
+
+<hr>
 
 
 ## Serializers.

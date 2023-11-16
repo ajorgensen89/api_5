@@ -10,6 +10,7 @@ class Profile(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     content = models.TextField(blank=True)
+    name = models.TextField(blank=True)
     # Image gathered from and storage in Cloudinary.
     image = models.ImageField(
         upload_to='images/', default='../avatar_beedw9'
