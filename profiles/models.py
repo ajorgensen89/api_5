@@ -10,7 +10,7 @@ class Profile(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     content = models.TextField(blank=True)
-
+    name = models.CharField(max_length=255, blank=True)
     # Image gathered from and storage in Cloudinary.
     image = models.ImageField(
         upload_to='images/', default='../avatar_beedw9'
@@ -23,7 +23,7 @@ class Profile(models.Model):
         return f"{self.owner}'s profile"
 
 
-def make_profile(sender, instance, created, **kwargs):
+def create_profile(sender, instance, created, **kwargs):
     if created:
         # If True, create user profile.
         Profile.objects.create(owner=instance)
@@ -31,4 +31,4 @@ def make_profile(sender, instance, created, **kwargs):
 
 # Run make_profile function each time and receive User model as signal.
 # Using Django Signals.
-post_save.connect(make_profile, sender=User)
+post_save.connect(create_profile, sender=User)

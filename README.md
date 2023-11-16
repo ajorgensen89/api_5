@@ -23,7 +23,13 @@ This is built to hold models and display content using React for the frontend of
 This project holds storage and responses for HTTP requests, JSON Web Tokens for authentication, permission and to tell user input apart from other user input.<br>
 The Django Rest Framework replaces the use of many HTML pages and displays the information requests using the React Frontend project, Project 5.<br>
 
-CRUD.<br>
+
+# CRUD.
+
+CRUD stand for Create, Read, Undo and Delete. This is four interactions the developer or the user can have with a website on either the frontend or the backend.<br>
+[Django Signal](https://code.djangoproject.com/wiki/Signals) can be used for creating, retrieving, viewing and deleting data.<br>
+Delete<br>
+
 
 ## Serializers.
 Data needs to be deserialized and serialized for the API to GET and POST details from the models in views using serializers from the Rest Framework.<br>
@@ -62,6 +68,8 @@ Steps to take for Starting a [Django Rest Framework](https://www.django-rest-fra
 ### Django.
 
 [Django](https://www.djangoproject.com/) is installed as the Python based web development framwork.<br>
+[Django Signal](https://code.djangoproject.com/wiki/Signals) is used for profile creation. This includes the retrieval (create) and update (edit) operations for CRUD (create, read, undo or edit and delete).
+
 
 
 ### Cloudinary.
