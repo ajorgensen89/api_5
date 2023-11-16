@@ -25,7 +25,13 @@ The Django Rest Framework replaces the use of many HTML pages and displays the i
 
 CRUD.<br>
 
-Serializers.<br>
+## Serializers.
+Data needs to be deserialized and serialized for the API to GET and POST details from the models in views using serializers from the Rest Framework.<br>
+<img src="assets/images/readme-images/JSON select.png" width=50% height=50%><br>
+As Applications are developed and models created. More serializers will be used to creat JSON files for data manipulation when sending and receiving from the backend to the frontend of the website.
+<img src="assets/images/readme-images/JSON view.png" width=50% height=50%><br>
+
+<br>
 
 
 <hr>
@@ -164,7 +170,7 @@ This does involve saving a snippet of it incase the coding environment is closed
 ### Requirements.txt file.
 
 A file was created within the project to hold all the necessary input for these installed libaries in the project - **requirements.txt**.<br>
-<img src="" width=50% height=50%><br>
+<img src="assets/images/readme-images/Reqtxt.png" width=50% height=50%><br>
 
 File required for Heroku use:
 
