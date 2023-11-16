@@ -30,6 +30,12 @@ This workspace holds the API developed, for use with connection to Project 5, fo
 This is built to hold models and display content using React for the frontend of the project named, Project 5.<br>
 This project contains storage and responses for HTTP requests, JSON Web Tokens for authentication, permission and to tell user input apart from other user input.<br>
 The Django Rest Framework replaces the use of many HTML pages and displays the information requests using the React Frontend project, Project 5.<br>
+<br>
+Authentication for each user can be checked and monitored, for example, only a user of a certain profile can edit their information fields.<br>
+In this example the owner of the profile is revealed as True and the user not logged in, is viewed as false.<br>
+This can be built up, to access user information and their pertaining objects for manipulation depending on authenication criteria.<br>
+<img src="assets/images/readme-images/AuthTF.png" width=40% height=40%><br>
+
 
 
 # CRUD.

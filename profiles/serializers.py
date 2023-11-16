@@ -11,10 +11,20 @@ class ProfileSerializer(serializers.ModelSerializer):
 
     owner = serializers.ReadOnlyField(source='owner.username')
 
+    # Included in field array.
+    is_owner = serializers.SerializerMethodField()
+
+    # Use GET on 'is_owner' as the field name.
+    def get_is_owner(self, obj):
+        # Check user owns an object.
+        request = self.context['request']
+        # Save and return user profile.
+        return request.user == obj.owner
+
     class Meta:
         model = Profile
         # 'id' field created when using 'model.Model' in Profile model.
         fields = [
             'id', 'owner', 'created_at', 'updated_at', 'name',
-            'content', 'image'
+            'content', 'image', 'is_owner'
         ]
