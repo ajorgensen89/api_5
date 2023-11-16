@@ -1,39 +1,32 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Django Rest Framwork for an application programming interface (API).
 
-Welcome,
+This workspace holds the API developed, for use with connection to Project 5, for backend storage for user interface requests.
+This is built to hold models and display content using React for the frontend of the project named, Project 5.
+This project holds storage and responses for HTTP requests, JSON Web Tokens for authentication, permission and to tell user input apart from other user input.
+The Django Rest Framework replaces the use of many HTML pages and displays the information requests using the React Frontend project, Project 5.
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+CRUD.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+# Technologies.
 
-## Codeanywhere Reminders
+Content includes a range of technologies to create the frontend and back end portions of this project to help function and to improve the development, aesthetics, functionality and compatability.<br>
+<br>
+Some installations are necessary and more can be added to improve the website service and usefulness.
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+## Github and Gitpod.
+A workspace for coding was created in [Github](https://github.com/) and opened into the coding enviroment, [Gitpod](https://www.gitpod.io/).
+[Github](https://github.com/) offers a platform and cloud-based service for software development and allows management and storage for code.
 
-`python3 -m http.server`
+## Starting Installations.
+Steps to take for Starting a [Django Rest Framework](https://www.django-rest-framework.org/) based [API](https://www.ibm.com/topics/api).
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
 
-`http_server`
+Intialise in current directory of workspace.
+-  django-admin startproject
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+-  
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+## Libraries.
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
 
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
----
-
-Happy coding!
