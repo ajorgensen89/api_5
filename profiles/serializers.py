@@ -16,5 +16,5 @@ class ProfileSerializer(serializers.ModelSerializer):
         # 'id' field created when using 'model.Model' in Profile model.
         fields = [
             'id', 'owner', 'created_at', 'updated_at',
-            'content', 'image', 'name'
+            'content', 'image'
         ]
