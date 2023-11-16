@@ -21,7 +21,7 @@ CLOUDINARY_STORAGE = {
     'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL')
 }
 
-#Standard media file to store images. Setting known where to store images.
+# Standard media file to store images. Setting known where to store images.
 MEDIA_URL = '/media/'
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
@@ -39,7 +39,7 @@ SECRET_KEY = 'django-insecure-gf9oun_7gt%i3@ej$m%snop3kjea@a+ed_hch$y+%!(ftsa5w(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['8000-debug-ajorgensen89-api5-a1okcagtqad.ws-eu106.gitpod.io']
 
 
 # Application definition
@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+    'profiles',
 ]
 
 MIDDLEWARE = [
