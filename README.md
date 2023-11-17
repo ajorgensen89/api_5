@@ -7,10 +7,17 @@ Project Idea
 
 
 Raw JSON data can be manipulated for a better user experience. Within the administraion panel to update items such as the Profile Application, a more user frendly approach can be used by setting the serializer class on a view, [Django Rest Framework](https://www.django-rest-framework.org/) sets it out in a form format automatically.<br>
+<br>
 The Bad Request can be shown here as a method to catch and raise errors.<br>
 <img src="assets/images/readme-images/RawJSON.png" width=20% height=20%><br>
 Status is OK and the input fields look much better for user and clients to input data.<br>
 <img src="assets/images/readme-images/Jsonform.png" width=20% height=20%><br>
+
+## Errors.
+Catching errors can be important to enhance a user experience and ease for navigating a website.<br>
+This error raised when invalid id was entered in to the URL.<br>
+<img src="assets/images/readme-images/error.png" width=20% height=20%><br>
+
 
 
 <hr>
@@ -19,7 +26,7 @@ Status is OK and the input fields look much better for user and clients to input
 
 <hr>
 
-# Django Rest Framwork for an application programming interface (API).
+# Django Rest Framework for an application programming interface (API).
 
 Install [Django Rest Framework](https://www.django-rest-framework.org/).<br>
 - CLI input - **pip install djangorestframework**<br>
@@ -55,54 +62,6 @@ As Applications are developed and models created. More serializers will be used 
 
 <br>
 
-
-<hr>
-
-[Back to the top](#walking-seasons)
-
-<hr>
-
-# Technologies.
-
-Content includes a range of technologies to create the frontend and back end portions of this project to help function and to improve the development, aesthetics, functionality and compatability.<br>
-<br>
-Some installations are necessary and more can be added to improve the website service and usefulness.
-
-
-## Github and Gitpod.
-
-A workspace for coding was created in [Github](https://github.com/) and opened into the coding enviroment, [Gitpod](https://www.gitpod.io/).
-[Github](https://github.com/) offers a platform and cloud-based service for software development and allows management and storage for code.
-[Gitpod](https://www.gitpod.io/) is open source developer platform ready for coding. Adding, commiting and pushing new work can be completed from the Command Line Interface [CLI](https://www.freecodecamp.org/news/how-to-use-the-cli-beginner-guide/), aswell as installing new packages, libraries, frameworks or programmes with pre-written code that can introduce into a new project to improve it.
-
-
-## Starting Installations.
-
-Steps to take for Starting a [Django Rest Framework](https://www.django-rest-framework.org/) based [API](https://www.ibm.com/topics/api).<br>
-
-
-### Django.
-
-[Django](https://www.djangoproject.com/) is installed as the Python based web development framwork.<br>
-[Django Signal](https://code.djangoproject.com/wiki/Signals) is used for profile creation. This includes the retrieval (create) and update (edit) operations for CRUD (create, read, undo or edit and delete).
-
-
-
-### Cloudinary.
-
-Connect Django to [Cloudinary](https://cloudinary.com/) for storage and delivery of media such as images.
-
-
-### Pillow.
-
-This [Pillow](https://python-pillow.org/) library adds capabilities to process images. **'P' in Pillow needs to be a capital when installing**.
-
-
-<hr>
-
-[Back to the top](#walking-seasons)
-
-<hr>
 
 ### Intialise project.
 
@@ -155,10 +114,61 @@ Imported into **profiles** app into **models.py**. <br>
 [Django](https://www.djangoproject.com/) is used to create url paths.<br>
 <img src="assets/images/readme-images/urls.png" width=30% height=30%><br>
 
+<hr>
+
+[Back to the top](#walking-seasons)
+
+<hr>
+
+
 ### Access Admin panel
 Create superuser, input for CLI:<br>
 **python manage.py createsuperuser**<br>
 Enter a Username and a Password. Skip email for easier option.<br>
+
+<hr>
+
+[Back to the top](#walking-seasons)
+
+<hr>
+
+
+# Technologies.
+
+Content includes a range of technologies to create the frontend and back end portions of this project to help function and to improve the development, aesthetics, functionality and compatability.<br>
+<br>
+Some installations are necessary and more can be added to improve the website service and usefulness.
+
+
+## Github and Gitpod.
+
+A workspace for coding was created in [Github](https://github.com/) and opened into the coding enviroment, [Gitpod](https://www.gitpod.io/).
+[Github](https://github.com/) offers a platform and cloud-based service for software development and allows management and storage for code.
+[Gitpod](https://www.gitpod.io/) is open source developer platform ready for coding. Adding, commiting and pushing new work can be completed from the Command Line Interface [CLI](https://www.freecodecamp.org/news/how-to-use-the-cli-beginner-guide/), aswell as installing new packages, libraries, frameworks or programmes with pre-written code that can introduce into a new project to improve it.
+
+
+## Starting Installations.
+
+Steps to take for Starting a [Django Rest Framework](https://www.django-rest-framework.org/) based [API](https://www.ibm.com/topics/api).<br>
+
+
+### Django.
+
+[Django](https://www.djangoproject.com/) is installed as the Python based web development framwork.<br>
+[Django Signal](https://code.djangoproject.com/wiki/Signals) is used for profile creation. This includes the retrieval (create) and update (edit) operations for CRUD (create, read, undo or edit and delete).
+
+
+
+### Cloudinary.
+
+Connect Django to [Cloudinary](https://cloudinary.com/) for storage and delivery of media such as images.
+
+
+### Pillow.
+
+This [Pillow](https://python-pillow.org/) library adds capabilities to process images. **'P' in Pillow needs to be a capital when installing**.
+
+
 <hr>
 
 [Back to the top](#walking-seasons)
@@ -288,6 +298,7 @@ Additionally needed files for Heroku use:
 <ul>
 
 <li>Profile. (Capital **P** needed.)</li>
+
 </ul>
 
 [Back to the top](#walking-seasons)
@@ -328,7 +339,7 @@ See [Testing](testing.md) file for full use of technologies used to test this we
 4. []() Testing tips and hints.
 <br>
 
-5. [Python Testing Documents]() for testing tips.
+5. [Django Rest Framwork](https://www.django-rest-framework.org/api-guide/status-codes/) for checking status codes. Other options used from within the Rest Framework also.
 
 
 [Back to the top](#walking-seasons)

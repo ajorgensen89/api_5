@@ -11,7 +11,7 @@ from api_5.permissions import OwnerOrReadOnly
 # Serializers created using Rest Framework.
 
 
-class ProfileRecord(APIView):
+class ProfileView(APIView):
 
     def get(self, request):
         profiles = Profile.objects.all()
