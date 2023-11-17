@@ -8,6 +8,8 @@ from django.contrib.auth.models import User
 class Profile(models.Model):
     # Cascade used to automatically organise objects and remove dead space.
     owner = models.OneToOneField(User, on_delete=models.CASCADE)
+
+    # Used to create order in Meta classes.
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     content = models.TextField(blank=True)

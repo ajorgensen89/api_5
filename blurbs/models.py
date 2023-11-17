@@ -1,22 +1,29 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+# Set used in category field for Blurbs model.
+CATEGORY = [
+        ('Spring', 'Spring'),
+        ('Summer', 'Summer'),
+        ('Autumn', 'Autumn'),
+        ('Winter', 'Winter'),
+    ]
+
 # Blurbs model for User to post Images and post content with it.
 
 
 class Blurbs(models.Model):
     # Cascade used to automatically organise objects and remove dead space.
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    # Used to create order in Meta classes.
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=100)
-    category = [
-        ('Spring', 'Spring'),
-        ('Summer', 'Summer'),
-        ('Autumn', 'Autumn'),
-        ('Winter', 'Winter'),
-    ]
+    category = models.CharField(
+        max_length=8, choices=CATEGORY, default='Spring')
     content = models.TextField(blank=True)
+
     # Image gathered from and storage in Cloudinary.
     image = models.ImageField(
         upload_to='images/', default='../search_logo_kxzfrh', blank=True
