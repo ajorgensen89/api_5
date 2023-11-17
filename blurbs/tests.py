@@ -8,6 +8,10 @@ from rest_framework.test import APITestCase
 # Django Rest Framework Coursework Project.
 # Adapted for use in this API Project.
 
+
+# Set up make-shift User login to use in test.
+
+
 class BlurbsViewTests(APITestCase):
     def setUp(self):
 
@@ -39,6 +43,9 @@ class BlurbsViewTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
 
 
+# Set up a make-shift input for test.abs
+
+
 class BlurbsInfoViewTests(APITestCase):
     def setUp(self):
         ava = User.objects.create_user(username='ava', password='pass')
@@ -51,12 +58,14 @@ class BlurbsInfoViewTests(APITestCase):
             owner=david, title='another title', content='davids content',
             category='Spring'
         )
-
+    
+    # Test to check getting a blurb with the right id.
     def test_can_retrieve_blurbs_using_valid_id(self):
         response = self.client.get('/blurbs/1/')
         self.assertEqual(response.data['title'], 'a title')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
+    # Test for id not found.
     def test_cant_retrieve_blurbs_using_invalid_id(self):
         response = self.client.get('/blurbs/999/')
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
@@ -76,4 +85,3 @@ class BlurbsInfoViewTests(APITestCase):
         self.client.login(username='ava', password='pass')
         response = self.client.put('/blurbs/2/', {'title': 'a new title'})
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
-
