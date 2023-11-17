@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'profiles',
     'blurbs',
     'comments',
+    'votes',
     'rest_framework',
 ]
 

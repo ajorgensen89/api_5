@@ -43,7 +43,7 @@ class BlurbsViewTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
 
 
-# Set up a make-shift input for test.abs
+# Set up a make-shift input for test.
 
 
 class BlurbsInfoViewTests(APITestCase):
