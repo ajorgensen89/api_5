@@ -17,6 +17,7 @@ class ProfileSerializer(serializers.ModelSerializer):
     # Use GET on 'is_owner' as the field name.
     def get_is_owner(self, obj):
         # Check user owns an object.
+        # Reuse 'context={'request': request}' for  accessing input.
         request = self.context['request']
         # Save and return user profile.
         return request.user == obj.owner

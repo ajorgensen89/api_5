@@ -17,6 +17,9 @@ Status is OK and the input fields look much better for user and clients to input
 Catching errors can be important to enhance a user experience and ease for navigating a website.<br>
 This error raised when invalid id was entered in to the URL.<br>
 <img src="assets/images/readme-images/error.png" width=20% height=20%><br>
+<br>
+Image validation error message ensure large images do not get uploaded. Improves experience and decreases loading times.<br>
+<img src="assets/images/readme-images/imageresizeerror.png" width=20% height=20%><br>
 
 
 

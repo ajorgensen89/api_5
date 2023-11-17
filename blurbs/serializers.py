@@ -9,8 +9,8 @@ class BlurbsSerializer(serializers.ModelSerializer):
     # For editing ability.
     is_owner = serializers.SerializerMethodField()
 
-    profile_id = serializers.ReadOnlyField('owner.blurbs.id')
-    profile_image = serializers.ReadOnlyField('owner.blurbs.image.url')
+    profile_id = serializers.ReadOnlyField(source='owner.profile.id')
+    profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
     
     # Image validation from Rest Framework. validate_fieldname (image).
     def validate_image(self, value):
