@@ -1,25 +1,34 @@
 from rest_framework import generics, permissions
-from drf_api.permissions import IsOwnerOrReadOnly
-from likes.models import Like
-from likes.serializers import LikeSerializer
+from api_5.permissions import OwnerOrReadOnly
+from votes.models import Votes
+from votes.serializers import VotesSerializer
+
+
+# Votes has been created using generics uplike the other Applications.
+# Instead of get, post, put and delete.
+# Rest Framework generics use
+# LIST, CREATE, RETRIEVE, UPDATE and DESTROY.
 
 
 class VotesList(generics.ListCreateAPIView):
     """
-    List likes or create a like if logged in.
+    Can Vote for favourite blurb posted. List and Create.
     """
+    # Permissions used from Rest Framework.
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    serializer_class = LikeSerializer
-    queryset = Like.objects.all()
+    serializer_class = VotesSerializer
+    queryset = Votes.objects.all()
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
+        print("here 2")
 
 
 class VotesInformation(generics.RetrieveDestroyAPIView):
     """
-    Retrieve a like or delete it by id if you own it.
+    Access vote and delete it. Retrieve and Destroy.
     """
-    permission_classes = [IsOwnerOrReadOnly]
-    serializer_class = LikeSerializer
-    queryset = Like.objects.all()
+    # Use of custom permissions. Only user can unvote for their vote.
+    permission_classes = [OwnerOrReadOnly]
+    serializer_class = VotesSerializer
+    queryset = Votes.objects.all()

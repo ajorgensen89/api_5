@@ -8,7 +8,7 @@ from .models import Profile
 
 
 class ProfileSerializer(serializers.ModelSerializer):
-    # For viewing only
+    # For viewing only. From Rest Framework
     owner = serializers.ReadOnlyField(source='owner.username')
 
     # Included in field array. For editing.

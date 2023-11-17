@@ -32,6 +32,6 @@ def make_profile(sender, instance, created, **kwargs):
         Profile.objects.create(owner=instance)
 
 
-# Run make_profile function each time and receive User model as signal.
+# Run make_profile method, each time and receive User model as signal.
 # Using Django Signals.
 post_save.connect(make_profile, sender=User)

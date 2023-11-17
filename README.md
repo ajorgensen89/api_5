@@ -3,6 +3,25 @@ Project Idea
 
 ## Agile
 
+# Features.
+User can create a profile add images, edit content and view other user's profiles. The ability to edit profiles is targeted at each individual user. You will not be able to ammend other profiles.<br>
+<br>
+Blurbs can be created to hold titles, images and content about the picture. Or just an interesting piece of content by itself can be posted.<br>
+Adding a visual image is always more appealing to the eye.<br>
+Blurbs are talking point that users may want to share with others. A category for the photo or content can be selected to filter blurbs into 4 categories.<br>
+The 4 categories are Spring, Summer, Autumn and Winter.<br>
+The website will have the ability for the user to filter by Season to look at a particular one they have an interest in.<br>
+<br>
+Everybopdy likes a discussion board, so a comment section has been created for users to make a comment or delete a comment about a particular blurb.<br>
+<br>
+User can vote for their favourite pictures. the most popular images and content with by filtered out and revealed for the user to access more easily.<br>
+Voting can occur when a user is logged in and they can not vote on thier own blurbs they have posted on the wesbite. This helps to keep the voting, fair.<br>
+<br>
+Authenication is important so a user will have the ability to view, create, edit and delete their own blurbs and comments.<br>
+Using authenication of a user, only the logged in user can remove their vote that they have created.<br>
+<br>
+Followers/following/unfollow
+
 
 
 
@@ -105,7 +124,7 @@ The application example in this API, can be repeated to create 'profiles', 'vote
 
 - At the top of **models.py** inside **profiles app** import Django User Model to reference it in our custom models.<br>
   Using '**from django.contrib.auth.models import User**'  <br>
- - [Django Signal](https://code.djangoproject.com/wiki/Signals) is used to listen for events occuring in the models, that trigger a piece of code or function to run.<br>
+ - [Django Signal](https://code.djangoproject.com/wiki/Signals) is used to listen for events occuring in the models, that trigger a piece of code, method or function to run.<br>
 This can encourage saving and deleting of new informtaion passed.
 Imported into **profiles** app into **models.py**. <br>
 - **from django.db.models.signals import post_save.**

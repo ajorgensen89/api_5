@@ -39,7 +39,7 @@ Tests can be set to fail depending on the HTTP status code. This image depicts a
 <img src="assets/images/testing-images/tests1.png" width="50%" height="50%">
 <br>
 <br>
-They need to be set up to run a test against. Each class contains (APITestCase) in the class and each function starts with 'test'<br>
+They need to be set up to run a test against. Each class contains (APITestCase) in the class and each method starts with 'test'<br>
 <img src="assets/images/testing-images/test2.png" width="50%" height="50%">
 <br>
 
