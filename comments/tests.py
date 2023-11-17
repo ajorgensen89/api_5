@@ -4,12 +4,6 @@ from blurbs.models import Blurbs
 from rest_framework import status
 from rest_framework.test import APITestCase
 
-
-# Tests run with Credit to Code Institute Run down of building tests in
-# Django Rest Framework Coursework Project.
-# Adapted for use in this API Project.
-
-
 # Set up make-shift User login to use in test.
 
 

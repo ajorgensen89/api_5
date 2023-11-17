@@ -35,5 +35,5 @@ urlpatterns = [
     path('', include('blurbs.urls')),
     path('', include('comments.urls')),
     path('', include('votes.urls')),
-    # path('', include('followers.urls')),
+    path('', include('followers.urls')),
 ]
