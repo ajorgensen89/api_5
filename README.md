@@ -14,8 +14,9 @@ The website will have the ability for the user to filter by Season to look at a 
 <br>
 Everybopdy likes a discussion board, so a comment section has been created for users to make a comment or delete a comment about a particular blurb.<br>
 <br>
-User can vote for their favourite pictures. the most popular images and content with by filtered out and revealed for the user to access more easily.<br>
-Voting can occur when a user is logged in and they can not vote on thier own blurbs they have posted on the wesbite. This helps to keep the voting, fair.<br>
+User can vote for their favourite pictures. The most popular images and content with by filtered out and revealed for the user to access more easily.<br>
+Voting can occur when a user is logged in and they can not vote on their own blurbs they have posted on the wesbite. This helps to keep the voting, fair.<br>
+Votes can be created, viewed and deleted.<br>
 <br>
 Authenication is important so a user will have the ability to view, create, edit and delete their own blurbs and comments.<br>
 Using authenication of a user, only the logged in user can remove their vote that they have created.<br>
