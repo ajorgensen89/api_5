@@ -37,11 +37,17 @@ REST_FRAMEWORK = {
         if 'DEV' in os.environ
         else 'dj_rest_auth.jwt_auth.JWTCookieAuthentication'
     )],
+
+    # Set pagination for 10 to a page. Can be changed.
     'DEFAULT_PAGINATION_CLASS':
         'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
+    
+    # Makes time and date look better. From DRF strftime format.
     'DATETIME_FORMAT': '%d %b %Y',
 }
+
+# Set defualt render for production environment.
 if 'DEV' not in os.environ:
     REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'] = [
         'rest_framework.renderers.JSONRenderer',
