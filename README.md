@@ -198,15 +198,6 @@ This [Pillow](https://python-pillow.org/) library adds capabilities to process i
 
 <hr>
 
-## Libraries.
-
-
-<hr>
-
-[Back to the top](#walking-seasons)
-
-<hr>
-
 
 ### RUN SERVER 
 
@@ -294,6 +285,24 @@ CLI input - **python3 manage.py migrate** <br>
 
 <hr>
 
+# Refactoring code
+To refactor code, helps lessen the volume of lines of code. Using [Django Generic Views](https://www.django-rest-framework.org/api-guide/generic-views/) is one option that can be imported into the project to improve amount of code needs to GET, POST, PUT and DELELTE objects.<br>
+[Django Generic Views](https://www.django-rest-framework.org/api-guide/generic-views/) use LIST, CREATE, RETRIEVE, UPDATE and DESTORY passed into function using options such as 'ListCreateAPIView' and 'RetrieveDestroyAPIView'.<br>
+Table of notes for Refactoring.<br>
+<img src="assets/images/readme-images" width=30% height=30%><br>
+Before Refactoring code for the comment section.<br>
+<img src="assets/images/readme-images" width=30% height=30%><br>
+<br>
+After Refactoring the code for the comments section using [Django Generic Views](https://www.django-rest-framework.org/api-guide/generic-views/)<br>
+<img src="assets/images/readme-images" width=30% height=30%><br>
+
+
+<hr>
+
+[Back to the top](#walking-seasons)
+
+<hr>
+
 
 # Deployment
 
@@ -357,9 +366,9 @@ See [Testing](testing.md) file for full use of technologies used to test this we
 
 2. [Stack Overflow](). for help with authenticating user using [Django](/) methods.<br>
 
-3. [Django Documents]() for testing using TestCase.
+3. [Django Testing Documents](https://www.django-rest-framework.org/api-guide/testing/) for testing using TestCase.
 
-4. []() Testing tips and hints.
+4. [Generic views](https://www.django-rest-framework.org/api-guide/generic-views/) for Refactoring pointers and assitance.
 <br>
 
 5. [Django Rest Framwork](https://www.django-rest-framework.org/api-guide/status-codes/) for checking status codes. Other options used from within the Rest Framework also.
