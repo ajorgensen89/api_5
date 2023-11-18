@@ -1,6 +1,6 @@
 from rest_framework import generics, filters
 
-# Imported to count the posts, followers, votes.
+# Imported to count the blurbs, followers, votes.
 from django.db.models import Count
 
 from api_5.permissions import OwnerOrReadOnly
@@ -11,6 +11,9 @@ from .serializers import ProfileSerializer
 # Create views.
 # ProfileList lists all profiles, handled by Django Signals.
 # Serializers created using Rest Framework.
+
+# Added filters from Rest Framework and credited assistance
+# from Code Institute API Coursework.
 
 
 class ProfileView(generics.ListAPIView):

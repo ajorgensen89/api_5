@@ -17,8 +17,9 @@ class BlurbsSerializer(serializers.ModelSerializer):
     # To track votes.
     # Gets value by calling a method on serializer class as a read only field.
     votes_id = serializers.SerializerMethodField()
-    votes_count = serializers.ReadOnlyField()
 
+    # Count to be included in response and field array in meta class.
+    votes_count = serializers.ReadOnlyField()
     comments_count = serializers.ReadOnlyField()
 
     # Image validation from Rest Framework. validate_fieldname (image).
