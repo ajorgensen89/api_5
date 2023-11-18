@@ -368,6 +368,9 @@ Additionally needed files for Heroku use:
 <li>Profile. (Capital **P** needed.)</li>
 
 </ul>
+<br>
+In preparation for Heroku deployment a view extra steps took place including adding root route, pagination to ListViews, providing a defualt JSON renderer and formtatting for date and time.<br>
+<br>
 
 [Back to the top](#walking-seasons)
 
