@@ -1,4 +1,7 @@
-from rest_framework import generics
+from rest_framework import generics, filters
+
+# Imported to count the posts, followers, votes.
+from django.db.models import Count
 
 from api_5.permissions import OwnerOrReadOnly
 
@@ -17,7 +20,29 @@ class ProfileView(generics.ListAPIView):
 
     # Create queryset to hold all Follwer model ojbects for generics
     # manipulation.
-    queryset = Profile.objects.all()
+
+    queryset = Profile.objects.annotate(
+        # Access use '__'. Distinct set to true ensures no duplicates.
+        blurbs_count=Count('owner__blurbs', distinct=True),
+        followers_count=Count('owner__followed', distinct=True),
+        following_count=Count('owner__following', distinct=True),
+    ).order_by('-created_at')
+    # filter_backends = [
+    #     filters.OrderingFilter,
+    #     DjangoFilterBackend,
+    # ]
+    # filterset_fields = [
+    #     'owner__following__followed__profile',
+    #     'owner__followed__owner__profile',
+    # ]
+    # ordering_fields = [
+    #     'blurbs_count',
+    #     'followers_count',
+    #     'following_count',
+    #     # Attatch date and time.
+    #     'owner__following__created_at',
+    #     'owner__followed__created_at',
+    # ]
 
     # Nice form rendered.
     serializer_class = ProfileSerializer
@@ -38,4 +63,9 @@ class ProfileInfo(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [OwnerOrReadOnly]
 
     # Create queryset to access Profile objects.
-    queryset = Profile.objects.all()
+    # Access use '__'. Distinct set to true ensures no duplicates.
+    queryset = Profile.objects.annotate(  
+        blurbs_count=Count('owner__blurbs', distinct=True),
+        followers_count=Count('owner__followed', distinct=True),
+        following_count=Count('owner__following', distinct=True)
+    ).order_by('-created_at')

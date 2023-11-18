@@ -295,7 +295,15 @@ Before Refactoring code for the comment section.<br>
 <br>
 After Refactoring the code for the comments section using [Django Generic Views](https://www.django-rest-framework.org/api-guide/generic-views/)<br>
 <img src="assets/images/readme-images/Afterrefactor.png" width=10% height=10%><br>
+<br>
 
+[Django Generic Filtering](https://www.django-rest-framework.org/api-guide/filtering/) is used and offers better organisation of data for the users viewing pleasure.<br>
+Filtering gets applied into the [queryset](https://docs.djangoproject.com/en/4.2/ref/models/querysets/).<br>
+Use of queryset before filters are applied.<br>
+<img src="assets/images/readme-images" width=10% height=10%><br>
+<br>
+After filters are applied. This improves user experience and increases the accuracy of counting votes and followers to use this data on the website.<br>
+<img src="assets/images/readme-images" width=10% height=10%><br>
 
 <hr>
 

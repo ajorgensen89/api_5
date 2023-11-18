@@ -18,6 +18,10 @@ class ProfileSerializer(serializers.ModelSerializer):
     # Gets value by calling a method on serializer class as a read only field.
     following_id = serializers.SerializerMethodField()
 
+    blurbs_count = serializers.ReadOnlyField()
+    followers_count = serializers.ReadOnlyField()
+    following_count = serializers.ReadOnlyField()
+
     # Use GET on 'is_owner' as the field name.
 
     def get_is_owner(self, obj):
@@ -46,8 +50,9 @@ class ProfileSerializer(serializers.ModelSerializer):
         model = Profile
 
         # 'id' field created when using 'model.Model' in Profile model.
-        # Additional fields from ProfileSerializer.
+        # Additional fields from ProfileSerializer and ProfileView.
         fields = [
             'id', 'owner', 'created_at', 'updated_at', 'name',
-            'content', 'image', 'is_owner', 'following_id'
+            'content', 'image', 'is_owner', 'following_id',
+            'blurbs_count', 'following_count', 'followers_count'
         ]

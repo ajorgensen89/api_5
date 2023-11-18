@@ -44,6 +44,9 @@ Each class contains (APITestCase) in the class and each method starts with 'test
 <img src="assets/images/testing-images/test2.png" width="50%" height="50%">
 <br>
 
+Testing hints pop up when coming in contact with a piece of code that may not be working properly.<br>
+<img src="assets/images/testing-images/Exampleerror.png" width=20% height=20%><br>
+
 <br>
 
 [Back to the top](#testing)
