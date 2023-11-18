@@ -18,6 +18,7 @@ class ProfileSerializer(serializers.ModelSerializer):
     # Gets value by calling a method on serializer class as a read only field.
     following_id = serializers.SerializerMethodField()
 
+    # Counts as included in Response. Added to fields array too.
     blurbs_count = serializers.ReadOnlyField()
     followers_count = serializers.ReadOnlyField()
     following_count = serializers.ReadOnlyField()
