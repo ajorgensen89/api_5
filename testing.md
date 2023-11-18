@@ -47,6 +47,8 @@ Each class contains (APITestCase) in the class and each method starts with 'test
 Testing hints pop up when coming in contact with a piece of code that may not be working properly.<br>
 <img src="assets/images/testing-images/Exampleerror.png" width=20% height=20%><br>
 
+Terminal in the workspace shows errors and success messages when running code.<br>
+<img src="assets/images/testing-images/codeworks.png" width=20% height=20%><br>
 <br>
 
 [Back to the top](#testing)

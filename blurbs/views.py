@@ -31,21 +31,25 @@ class BlurbsView(generics.ListCreateAPIView):
     ).order_by('-created_at')
     filter_backends = [
         filters.OrderingFilter,
-        # filters.SearchFilter,
+        filters.SearchFilter,
         # DjangoFilterBackend,
     ]
+
     # filterset_fields = [
     #     # user feed
     #     'owner__followed__owner__profile',
     #     # user liked posts
-    #     'votes__owner__profile',
+    #     'likes__owner__profile',
     #     # user posts
     #     'owner__profile',
     # ]
-    # search_fields = [
-    #     'owner__username',
-    #     'title',
-    # ]
+
+    # Search fields include Username and Title of blurb.
+    search_fields = [
+        'owner__username',
+        'title',
+    ]
+
     ordering_fields = [
         'votes_count',
         'comments_count',
