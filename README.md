@@ -287,14 +287,14 @@ CLI input - **python3 manage.py migrate** <br>
 
 # Refactoring code
 To refactor code, helps lessen the volume of lines of code. Using [Django Generic Views](https://www.django-rest-framework.org/api-guide/generic-views/) is one option that can be imported into the project to improve amount of code needs to GET, POST, PUT and DELELTE objects.<br>
-[Django Generic Views](https://www.django-rest-framework.org/api-guide/generic-views/) use LIST, CREATE, RETRIEVE, UPDATE and DESTORY passed into function using options such as 'ListCreateAPIView' and 'RetrieveDestroyAPIView'.<br>
+[Django Generic Views](https://www.django-rest-framework.org/api-guide/generic-views/) use LIST, CREATE, RETRIEVE, UPDATE and DESTORY passed into function using options such as 'generics.ListCreateAPIView', 'generics.RetrieveUpdateDestroyAPIView' and 'generics.RetrieveDestroyAPIView'.<br>
 Table of notes for Refactoring.<br>
-<img src="assets/images/readme-images" width=30% height=30%><br>
+<img src="assets/images/readme-images/notesRf.jpg" width=10% height=10%><br>
 Before Refactoring code for the comment section.<br>
-<img src="assets/images/readme-images" width=30% height=30%><br>
+<img src="assets/images/readme-images/B4refactor.png" width=10% height=10%><br>
 <br>
 After Refactoring the code for the comments section using [Django Generic Views](https://www.django-rest-framework.org/api-guide/generic-views/)<br>
-<img src="assets/images/readme-images" width=30% height=30%><br>
+<img src="assets/images/readme-images/Afterrefactor.png" width=10% height=10%><br>
 
 
 <hr>

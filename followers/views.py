@@ -3,29 +3,41 @@ from api_5.permissions import OwnerOrReadOnly
 from .models import Follower
 from .serializers import FollowerSerializer
 
+# """ """ comments have been removed due to them presenting themselves
+# onto the webpages.
+
 
 class FollowerList(generics.ListCreateAPIView):
-    """
-    List all followers, i.e. all instances of a user
-    following another user'.
-    Create a follower, i.e. follow a user if logged in.
-    Perform_create: associate the current logged in user with a follower.
-    """
+
+    # Import permissions from Rest Framework.
+    # Can not follow user unless logged in.
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+    # Create queryset to hold all Follwer model ojbects for generics
+    # manipulation.
     queryset = Follower.objects.all()
+
+    # Nice form rendered.
     serializer_class = FollowerSerializer
 
+    # Create new object using Rest Framework Generics 'perform_create'.
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
 
+# Retrieve and Destory from generics is used for
+# follow (create/retrieve)
+# and unfollow (delete/destroy) users.
+
+
 class FollowerDetail(generics.RetrieveDestroyAPIView):
-    """
-    Retrieve a follower
-    No Update view, as we either follow or unfollow users
-    Destroy a follower, i.e. unfollow someone if owner
-    """
+
     # Custom permissions apply as they can not follow themselves.
     permission_classes = [OwnerOrReadOnly]
+
+    # Create queryset to hold all ojbects for class stated
+    # generics manipulation.
     queryset = Follower.objects.all()
+
+    # Creates a form for better user experience.
     serializer_class = FollowerSerializer
