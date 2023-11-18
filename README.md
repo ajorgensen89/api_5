@@ -305,6 +305,11 @@ Use of queryset before filters are applied.<br>
 After filters are applied. This improves user experience and increases the accuracy of counting votes and followers to use this data on the website.<br>
 <img src="assets/images/readme-images/querychange.png" width=10% height=10%><br>
 Their fields would need updating in their linked serializer and added the the meta class fields also.<br>
+Extras such as ordering and search fields need including.<br>
+<br>
+Library that applies further filters for specific conditions.<br>
+CLI input: **pip install django-filter**<br>
+<br>
 
 <hr>
 

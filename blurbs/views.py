@@ -1,4 +1,5 @@
 from rest_framework import permissions, generics, filters
+from django_filters.rest_framework import DjangoFilterBackend
 from api_5.permissions import OwnerOrReadOnly
 
 # Imported to count the blurbs, followers, votes.
@@ -29,20 +30,25 @@ class BlurbsView(generics.ListCreateAPIView):
         votes_count=Count('votes', distinct=True),
         comments_count=Count('comments', distinct=True),
     ).order_by('-created_at')
+    print(Blurbs.category)
     filter_backends = [
         filters.OrderingFilter,
         filters.SearchFilter,
-        # DjangoFilterBackend,
+        DjangoFilterBackend,
     ]
 
-    # filterset_fields = [
-    #     # user feed
-    #     'owner__followed__owner__profile',
-    #     # user liked posts
-    #     'likes__owner__profile',
-    #     # user posts
-    #     'owner__profile',
-    # ]
+    # Set these when using DjangoFilterBackend to filter against.
+    # Show in order they are declared in.
+    filterset_fields = [
+        # Get the blurbs from a user they are following.
+        'owner__followed__owner__profile',
+        # Get the blurb a user has liked.
+        'votes__owner__profile',
+        # Get blurbs owned by a specific user.
+        'owner__profile',
+        # Filter blurbs by selected category.
+        'category',
+    ]
 
     # Search fields include Username and Title of blurb.
     search_fields = [
@@ -81,4 +87,5 @@ class BlurbsInfo(generics.RetrieveUpdateDestroyAPIView):
     queryset = Blurbs.objects.annotate(
         votes_count=Count('owner__votes', distinct=True),
         comments_count=Count('owner__comments', distinct=True),
+        category_selected=Count('category', distinct=True),
     ).order_by('-created_at')

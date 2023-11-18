@@ -1,4 +1,5 @@
 from rest_framework import generics, filters
+from django_filters.rest_framework import DjangoFilterBackend
 
 # Imported to count the blurbs, followers, votes.
 from django.db.models import Count
@@ -32,12 +33,17 @@ class ProfileView(generics.ListAPIView):
     ).order_by('-created_at')
     filter_backends = [
         filters.OrderingFilter,
-        # DjangoFilterBackend,
+        DjangoFilterBackend,
     ]
-    # filterset_fields = [
-    #     'owner__following__followed__profile',
-    #     'owner__followed__owner__profile',
-    # ]
+
+    # Set these when using DjangoFilterBackend to filter against.
+    # Show in order they are declared in.
+    filterset_fields = [
+        # Get a user who is following another user.
+        'owner__following__followed__profile',
+        # Get profiles followed by a particulare user.
+        'owner__followed__owner__profile',
+    ]
     ordering_fields = [
         'blurbs_count',
         'followers_count',

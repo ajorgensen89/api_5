@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'votes',
     'followers',
     'rest_framework',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
