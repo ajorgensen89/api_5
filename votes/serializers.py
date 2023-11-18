@@ -13,9 +13,10 @@ class VotesSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Votes
-        # Id automatically created when using models.Models in models.py.
+
+        # Id automatically created when using models.Models in Votes model.
+        # Additional fields from VotesSerializer.
         fields = ['id', 'created_at', 'owner', 'blurb']
-        print("here")
 
     # Handles duplicates.
     # Make create method to return a complete object dependant on the

@@ -15,11 +15,15 @@ class FollowerSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     followed_name = serializers.ReadOnlyField(source='followed.username')
 
+    # Users will be able to track who they are following and if they
+    # are being followed.
+    # Example, they could follow 2 other users profiles. There could
+    # be 5 user follwing them.
+
     class Meta:
-        # Users will be able to track who they are following and if they
-        # are being followed.
-        # Example, they could follow 2 other users profiles. There could
-        # be 5 user follwing them.
+
+        # 'id' field created when using 'model.Model' in Follower model.
+        # Additional fields from FollowerSerializer.
         model = Follower
         fields = [
             'id', 'owner', 'created_at', 'followed', 'followed_name'
