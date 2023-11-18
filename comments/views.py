@@ -1,8 +1,7 @@
-# from rest_framework.views import APIView
+
 from rest_framework import permissions, generics
 from api_5.permissions import OwnerOrReadOnly
-# from rest_framework.response import Response
-# from django.http import Http404
+from django_filters.rest_framework import DjangoFilterBackend
 
 from .models import Comments
 from .serializers import CommentSerializer
@@ -23,6 +22,17 @@ class CommentsView(generics.ListCreateAPIView):
 
     # Create queryset to hold all ojbects for generics manipulation.
     queryset = Comments.objects.all()
+
+    # Filter out all comments relateing to a given blurb.
+    # Set these when using DjangoFilterBackend.
+    filter_backends = [
+        DjangoFilterBackend
+    ]
+
+    # From blurb in Comment model.
+    filterset_fields = [
+        'blurb',
+    ]
 
     # Create new object using Rest Framework Generics 'perform_create'.
     def perform_create(self, serializer):
