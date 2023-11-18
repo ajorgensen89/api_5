@@ -12,19 +12,30 @@ Blurbs are talking point that users may want to share with others. A category fo
 The 4 categories are Spring, Summer, Autumn and Winter.<br>
 The website will have the ability for the user to filter by Season to look at a particular one they have an interest in.<br>
 <br>
-Everybopdy likes a discussion board, so a comment section has been created for users to make a comment or delete a comment about a particular blurb.<br>
+Everybody likes a discussion board, so a comment section has been created for users to make a comment or delete a comment about a particular blurb.<br>
 <br>
 User can vote for their favourite pictures. The most popular images and content with by filtered out and revealed for the user to access more easily.<br>
 Voting can occur when a user is logged in and they can not vote on their own blurbs they have posted on the wesbite. This helps to keep the voting, fair.<br>
 Votes can be created, viewed and deleted.<br>
 <br>
+
+Followers/following/unfollow
+
+<br>
+
+## Authenication.
 Authenication is important so a user will have the ability to view, create, edit and delete their own blurbs and comments.<br>
 Using authenication of a user, only the logged in user can remove their vote that they have created.<br>
 <br>
-Followers/following/unfollow
+To further user experience, ease for authenication situations, [Django Rest Auth](https://pypi.org/project/dj-rest-auth/) can installed.<br>
+CLI Input - **pip3 install dj-rest-auth==2.1.9** <br> (2.1.9 not necessary in input if different version preferred.) <br>
+Followed by adding it to INSTALLED_APP in settings.py.<br>
 
 
-
+[JSON web tokens](https://jwt.io/) (JWT) securely transmit data between and server as JSON objects. JWT are stored on the client side and they can be refered to as 'stateless'.<br>
+Using Django's built in authenication module relies on Sessions for data storage. User experience can be improved with use of these sercuity measure which can deal with access and refresh tokens.<br>
+<br>
+JWT tokens will be used in production and for development, sessions is used.<br>
 
 Raw JSON data can be manipulated for a better user experience. Within the administraion panel to update items such as the Profile Application, a more user frendly approach can be used by setting the serializer class on a view, [Django Rest Framework](https://www.django-rest-framework.org/) sets it out in a form format automatically.<br>
 <br>
@@ -33,6 +44,19 @@ The Bad Request can be shown here as a method to catch and raise errors.<br>
 Status is OK and the input fields look much better for user and clients to input data.<br>
 <img src="assets/images/readme-images/Jsonform.png" width=20% height=20%><br>
 
+### Register
+If a user would like to register [Django REST Auth](https://www.django-rest-framework.org/api-guide/authentication/) offers a standard registration process to install. <br>
+CLI input - **pip install 'dj-rest-auth[with_social]'**<br>
+Full information for the process can be accessed here: https://pypi.org/project/dj-rest-auth/ <br>
+<br>
+Use of the [Django Rest Authentication](https://pypi.org/project/dj-rest-auth/) library enable handling of registraion, login, logout, user and token refresh.<br>
+Credited from Code Institute is a map of dj-rest-auth endpoints for an API.<br>
+<img src="assets/images/readme-images/djrestauth.jpg" width=20% height=20%>
+
+<hr>
+
+<br>
+
 ## Errors.
 Catching errors can be important to enhance a user experience and ease for navigating a website.<br>
 This error raised when invalid id was entered in to the URL.<br>
@@ -40,8 +64,6 @@ This error raised when invalid id was entered in to the URL.<br>
 <br>
 Image validation error message ensure large images do not get uploaded. Improves experience and decreases loading times.<br>
 <img src="assets/images/readme-images/imageresizeerror.png" width=20% height=20%><br>
-
-
 
 <hr>
 
@@ -376,16 +398,18 @@ See [Testing](testing.md) file for full use of technologies used to test this we
 
 # Credits.
 
-1. [Code Institute](https://codeinstitute.net/) for providing examples of [Django](https://www.djangoproject.com/) projects through [Code Institute](https://codeinstitute.net/) coursework to build a frontend and backend parts tp this project using databases, libaries, API Frameworks, Bootstrap, Django and Django Built-in benefits such as testing, and React . This helped when creating my 'Profiles', 'Votes', 'Followers' and 'Blurbs' App's within this API. <br>
+1. [Code Institute](https://codeinstitute.net/) for providing examples of [Django Rest Framework](https://www.djangoproject.com/) API building through [Code Institute](https://codeinstitute.net/) coursework to build backend parts to this project using databases, libaries, API Frameworks, Bootstrap, Django and Django Built-in benefits such as testing, and React for the frontend. This helped when creating my 'Profiles', 'Votes', 'Followers' and 'Blurbs' App's within this API. <br>
 
-2. [Stack Overflow](). for help with authenticating user using [Django](/) methods.<br>
+2. [Code Institute](https://codeinstitute.net/) for providing a React front end project to build called 'Moments'.
 
-3. [Django Testing Documents](https://www.django-rest-framework.org/api-guide/testing/) for testing using TestCase.
+3. [Django Sessions](https://docs.djangoproject.com/en/4.2/topics/http/sessions/) for help with authenticating.<br>
 
-4. [Generic views](https://www.django-rest-framework.org/api-guide/generic-views/) for Refactoring pointers and assitance.
+4. [Django Testing Documents](https://www.django-rest-framework.org/api-guide/testing/) for testing using TestCase.
+
+5. [Generic views](https://www.django-rest-framework.org/api-guide/generic-views/) for Refactoring pointers and assitance.
 <br>
 
-5. [Django Rest Framwork](https://www.django-rest-framework.org/api-guide/status-codes/) for checking status codes. Other options used from within the Rest Framework also.
+6. [Django Rest Framwork](https://www.django-rest-framework.org/api-guide/status-codes/) for checking status codes. Other options used from within the Rest Framework also.
 
 
 [Back to the top](#walking-seasons)

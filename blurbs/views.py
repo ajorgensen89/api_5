@@ -30,7 +30,6 @@ class BlurbsView(generics.ListCreateAPIView):
         votes_count=Count('votes', distinct=True),
         comments_count=Count('comments', distinct=True),
     ).order_by('-created_at')
-    print(Blurbs.category)
     filter_backends = [
         filters.OrderingFilter,
         filters.SearchFilter,
@@ -87,5 +86,4 @@ class BlurbsInfo(generics.RetrieveUpdateDestroyAPIView):
     queryset = Blurbs.objects.annotate(
         votes_count=Count('owner__votes', distinct=True),
         comments_count=Count('owner__comments', distinct=True),
-        category_selected=Count('category', distinct=True),
     ).order_by('-created_at')
