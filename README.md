@@ -256,12 +256,6 @@ File required for Heroku use:
 
 <br>
 
-### SERVER GUNICORN
-
-To run [Django](https://www.djangoproject.com/) on, for [Heroku](https://dashboard.heroku.com/) devlopment.
-
-CLI input - **pip3 install 'django<4' gunicorn**.<br>
-<br>
 
 ### POSTGRESQL LIBARY - ELEPHANTSQL.
 
@@ -394,6 +388,15 @@ Additionally needed files for Heroku use:
 <br>
 In preparation for Heroku deployment a view extra steps took place including adding root route, pagination to ListViews, providing a defualt JSON renderer and formtatting for date and time.<br>
 <br>
+
+### SERVER GUNICORN
+
+To run [Django](https://www.djangoproject.com/) on, for [Heroku](https://dashboard.heroku.com/) devlopment.
+
+CLI input - **pip3 install 'django<4' gunicorn**.<br>
+CLI input **pip3 install gunicorn django-cors-headers**<br>
+<br>
+Add to requiremnts.txt file and add to INSTALLED_APPS and MIDDLEWARE in settings.py. <br>
 
 [Back to the top](#walking-seasons)
 
