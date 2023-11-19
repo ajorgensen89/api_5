@@ -268,6 +268,10 @@ CLI input - **pip3 install 'django<4' gunicorn**.<br>
 [ElephantSql](https://www.elephantsql.com/) hosted the Database for storing data to be used within a cloud.
 
 CLI input - **pip3 install dj_database_url==0.5.0 psycopg2**.<br>
+Import dj_database_url into settings.py file.
+See Deployment for further deployment details relating to this.<br>
+<br>
+Create a new instance in the appropriate region and then copy the URL to use in config vars for Heroku deployment.<br>
 <br>
 
 <hr>
@@ -351,8 +355,27 @@ Follow the steps for deployment method:<br>
 <img src="assets/images/readme-images/Heroku2.jpeg" width=30% height=30%><br>
 3. Next stage will be a few changes on this page below. First, click into **Settings**.<br>
 <img src="assets/images/readme-images/Heroku3.3.png.jpeg" width=30% height=30%><br>
-4. Once in **Settings**, Config Vars need altering. Remove <em>DISABLE_COLLECTSTAIC</em> on deployment.<br>
+4. Once in **Settings**, Config Vars need altering. Remove <em>DISABLE_COLLECTSTAIC</em> on deployment if neceassary.<br>
+DATABASE_URL needs adding config vars as key and value as the URL from [ElephantSql](https://www.elephantsql.com/).<br>
+DATABASE in settings.py need updating for deployment also too:<br>
+
+**if 'DEV' in os.environ:<br>
+    DATABASES = {<br>
+        'default': {<br>
+            'ENGINE': 'django.db.backends.sqlite3',<br>
+            'NAME': BASE_DIR / 'db.sqlite3',<br>
+        }<br>
+    }<br>
+else:<br>
+    DATABASES = {<br>
+        'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))<br>
+    }<br>
+    print('connected')**<br>
+(CORRECT INDENTATION NEEDED FOR ABOVE CODE)<br>
+<br>
+Config Vars example on project deployment.<br>
 <img src="" width=30% height=30%><br>
+<br>
 **ALSO**<br>
 <em>DEBUG</em> in settings.py need to be set to <em>FALSE</em> for deployment.<br>
 

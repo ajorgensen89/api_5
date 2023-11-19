@@ -21,7 +21,7 @@ class Blurbs(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=100)
     category = models.CharField(
-        max_length=8, choices=CATEGORY, default='Spring')
+        max_length=100, choices=CATEGORY, default='Spring')
     content = models.TextField(blank=True)
 
     # Image gathered from and storage in Cloudinary.
