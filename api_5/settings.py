@@ -86,7 +86,7 @@ DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
     'localhost', 'api-5-5ba41198804f.herokuapp.com/',
-    os.environ.get('ALLOWED_HOST'),
+    os.environ.get('ALLOWED_HOSTS'),
     '8000-ajorgensen89-api5-4mxnlxxfqs2.ws-eu106.gitpod.io',
     ]
 
