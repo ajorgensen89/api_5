@@ -9,9 +9,11 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-import dj_database_url
+
 from pathlib import Path
 import os
+import dj_database_url
+import re
 
 if os.path.exists('env.py'):
     import env
@@ -111,7 +113,7 @@ INSTALLED_APPS = [
     'followers',
 ]
 
-# Instructed by dj-rest-auth to add this 
+# Instructed by dj-rest-auth to add this.
 SITE_ID = 1
 
 MIDDLEWARE = [
