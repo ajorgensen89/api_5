@@ -54,15 +54,17 @@ const SignUpForm = () => {
             setErrors({ ...errors, username: ["Username cannot be empty"] });
             return;
         }
+        // Check if password is empty
         if (!password1.trim()) {
             setErrors({ ...errors, password1: ["password field empty"] });
             return;
         }
+        // Check if password confirmed is empty
         if (!password2.trim()) {
             setErrors({ ...errors, password2: ["confirm password field empty"] });
             return;
         }
-    
+        // Otherwise POST data to API and signin.
         try {
             await axios.post("/dj-rest-auth/registration/", signUpData);
             history.push("/signin");
