@@ -27,14 +27,14 @@ const NavBar = () => {
               <NavLink
                 exact
                 className={styles.NavLink}
-                activeClassName={styles.Active}
+                // activeClassName={styles.Active}
                 to="/"
               >
                 <i className="fa-regular fa-face-laugh-beam"></i>Home
               </NavLink>
               <NavLink
                 className={styles.NavLink}
-                activeClassName={styles.Active}
+                // activeClassName={styles.Active}
                 to="/signin"
               >
                 <i className="fa-regular fa-face-smile"></i>Sign in
@@ -42,14 +42,15 @@ const NavBar = () => {
               <NavLink
                 to="/signup"
                 className={styles.NavLink}
-                activeClassName={styles.Active}
+                // activeClassName={styles.Active}
               >
                 <i className="fa-regular fa-face-smile-wink"></i>Sign up
               </NavLink>
               
               <i className="fa-regular fa-face-grin-tongue"></i>
               <NavDropdown title="More Info" id="basic-nav-dropdown" className={styles.NavLink}
-                activeClassName={styles.Active}>
+                // activeClassName={styles.Active}
+              >
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
