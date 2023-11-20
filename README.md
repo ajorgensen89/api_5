@@ -3,6 +3,33 @@ Project Idea
 
 ## Agile
 
+# Design
+
+## Colour Scheme
+
+The scheme for the website uses an array of colours to portait the vibrancy of these colours in all the different seasons avaliable to us. The grey scale background gives the website a more 'modern feel' with bursts of colour highlighting different areas.<br>
+When moving from page to page, pops of colour help to show the user an icon or link they maybe hovering over, aswell as helping to highlight the current page the user is browsing.<br>
+![Colours]()<br>
+For [CCS](https://www.w3schools.com/Css/) in thie product Bootstrap styles are integrating in [React](https://react.dev/) functionality to help with design.<br>
+
+
+## Typography
+
+The text styles used are from [Google Fonts](https://fonts.google.com/), they are installed by a link in the <em>'Head'</em> of the <em>'index.html'</em> page.<br>
+Donegal One - This font held the colour grey very well. It looked agreeable in different grey scale tones and remained professional against the more elaborate Google Font of Delicious Handrawn.<br>
+Sans Serif - Used for clear business standard text and is very readable. Placed incase a user finds the [Google Fonts](https://fonts.google.com/) chosen, not to work on their platform.<br>
+Delicious Handrawn - The name of the font sounded appealing to use to help emphaise text describing the seasons. It is also used at different points on the website to just add contrast to the Donegal One font.<br>
+<br>
+
+## Icons
+
+[Font Awesome](https://fontawesome.com/) was used for icons throughout this project. They help portait different style faces including big grins for the Home page, encouraging winks for the sign up page and well known icons, for the well known social platform links. 
+<br>
+
+[Back to the top](#)
+
+<hr>
+
 # Features.
 User can create a profile add images, edit content and view other user's profiles. The ability to edit profiles is targeted at each individual user. You will not be able to ammend other profiles.<br>
 <br>
@@ -22,6 +49,99 @@ Votes can be created, viewed and deleted.<br>
 Followers/following/unfollow
 
 <br>
+
+
+### Intialise REACT project.
+
+No student template has been added to this project due to conflicting information with the [React](https://react.dev/) Application. A workspace for coding was created in [Github](https://github.com/) and opened into the coding enviroment, [Gitpod](https://www.gitpod.io/).<br>
+App.js page holds all the routes.<br>
+
+To initilise  [React](https://react.dev/) Application the command in th terminal is : **npm install**<br> This installs all the files neeeded for a [React](https://react.dev/) Application start point.<br>
+To start To project, CLI input: **npm start**<br>
+Depending on version that works a version may have ot be used. In this case extra code needed entering to ensure the project would run.<br>
+CLI input enter enter time the workspace was run in a browser:<br>
+- **nvm install 16.18.0**
+- **nvm use 16.18.0**
+- THEN **npm start** could be entered.<br>
+<br>
+Install [Django](https://www.djangoproject.com/) and intialise project in current directory of workspace using dot notation, **'.'** .<br>
+Each application within the project is added further down.<br>
+-  Enter into CLI: <br>
+    -  **pip install django** ( pip3 install 'django<4>' - used here as prefered for Long Term Support (LTS)').
+    -  **django-admin startproject name_here .** 'name_here' = 'api_5' for this project.<br>
+    <img src="assets/images/readme-images/startproject.png" width=50% height=50%>
+    -  **pip install django-cloudinary-storage**
+    -  **pip install Pillow**
+    <br>
+
+-  Set up Cloudinary installations in 'api_5' **settings.py** under INSTALLED_APPS. See image.<br>
+<img src="assets/images/readme-images/Cloudinary.png" width=50% height=50%>
+
+- Create **env.py** file for production state to save variables to not be pushed to [Github](https://github.com/).<br>
+**Final Image for all secret files connected into workspace.**<br>
+    - Entry for Cloudinary in **settings.py**.<br>
+    <img src="assets/images/readme-images/setcloud.png" width=50% height=50%><br>
+
+
+<hr>
+
+[Back to the top](#walking-seasons)
+
+<hr>
+
+
+# React
+Using [React Bootstrap](https://react-bootstrap.github.io/) removes the dependancy on bootstrap.js and jQuery.<br> 
+<br>
+Due to the development stage of [React Bootstrap](https://react-bootstrap.github.io/), early versions maybe used.<br>
+CLI input for installation is:<br>
+- **npm install react-bootstrap@1.6.3 bootstrap@4.6.0**<br>
+<br>
+CSS link can be found in the documentation. Labeled 'Bootstrap Link' in index.html file.<br>
+Each component from [React Bootstrap](https://react-bootstrap.github.io/) needs importing on each page it is used, for example: **'import Button from react-bootstrap/Button';**<br>
+<br>
+Best practise for each CSS file is to have a module.css file for each component. Example: NavBar.module.css for the NavBar component. They are applied by using the {styles.className} syntax.<br>
+<br>
+
+## React Router Library.
+
+[React Router](https://reactrouter.com/en/main)Handle routing for URL's to render different pages within the webpage.<br>
+CLI input for installation - **npm install react-router-dom@5.3.0**
+The library controls what the user sees depending on what is render in the HTML for React App's.<br>
+<br>
+Routes to switch need to be added to the Index.js file including App.js.<br>
+<img src="src/assets/images/readme-images/routechaning.png" width=30% height=30%><br>
+Paths for switching betweeen pages are added to the App.j file.<br>
+<img src="src/assets/images/readme-images/routeappjs.png" width=20% height=20%><br>
+<br>
+
+
+## React components.
+
+## Axios Library.
+
+Used to tell this React App to send request to the API.<br>
+CLI input - **npm install axios**
+
+### INFINTE SCROLL LIBARY<br>
+
+npm install react-infinite-scroll-component<br>
+<br>
+
+### React Bootstrap Form
+<br>
+[React Bootstrap Form](https://react-bootstrap-v4.netlify.app/components/forms/)
+Other Bootstrap items have been use throughout the project. Within the Form section alone, React Bootstrap classes called Images, Column, Row and Button have been used.<br>
+React provides a boilerplate for individual coding to be added. This exmaple includes boilerplate and some starting code to transform it.<br>
+<img src="src/assets/images/readme-images/ReactExample.png" width=30% height=30%>
+<br>
+
+### React Navigation.
+<br>
+[React NavBar](https://react-bootstrap.github.io/docs/components/navbar)
+<br>
+Wrap 'App' conponent inside <Router> on App.js page.
+
 
 ## Authenication.
 Authenication is important so a user will have the ability to view, create, edit and delete their own blurbs and comments.<br>
@@ -108,7 +228,7 @@ As Applications are developed and models created. More serializers will be used 
 <br>
 
 
-### Intialise project.
+### Intialise API project.
 
 Install [Django](https://www.djangoproject.com/) and intialise project in current directory of workspace using dot notation, **'.'** .<br>
 Each application within the project is added further down.<br>
@@ -135,7 +255,8 @@ Each application within the project is added further down.<br>
 
 <hr>
 
-### Create Application.
+
+### Create Applications in API.
 
 These steps can be repeated for more than one application. For example, new models, views and serializers can be added. Aswell as models can be registered to be used for administraion purposes.<br>
 The application example in this API, can be repeated to create 'profiles', 'votes', 'followers' and 'blurbs'.<br>
@@ -309,6 +430,7 @@ CLI input - **python3 manage.py migrate** <br>
 <hr>
 
 # Refactoring code
+
 To refactor code, helps lessen the volume of lines of code. Using [Django Generic Views](https://www.django-rest-framework.org/api-guide/generic-views/) is one option that can be imported into the project to improve amount of code needs to GET, POST, PUT and DELELTE objects.<br>
 [Django Generic Views](https://www.django-rest-framework.org/api-guide/generic-views/) use LIST, CREATE, RETRIEVE, UPDATE and DESTORY passed into function using options such as 'generics.ListCreateAPIView', 'generics.RetrieveUpdateDestroyAPIView' and 'generics.RetrieveDestroyAPIView'.<br>
 Table of notes for Refactoring.<br>
@@ -432,16 +554,11 @@ See [Testing](testing.md) file for full use of technologies used to test this we
 
 1. [Code Institute](https://codeinstitute.net/) for providing examples of [Django Rest Framework](https://www.djangoproject.com/) API building through [Code Institute](https://codeinstitute.net/) coursework to build backend parts to this project using databases, libaries, API Frameworks, Bootstrap, Django and Django Built-in benefits such as testing, and React for the frontend. This helped when creating my 'Profiles', 'Votes', 'Followers' and 'Blurbs' App's within this API. <br>
 
-2. [Code Institute](https://codeinstitute.net/) for providing a React front end project to build called 'Moments'.
+2. [Code Institute](https://codeinstitute.net/) for providing a React front end project to build called 'Moments' Alwell as a Django Rest Framework API.<br>
 
-3. [Django Sessions](https://docs.djangoproject.com/en/4.2/topics/http/sessions/) for help with authenticating.<br>
+3. [Stack OverFlow](https://stackoverflow.com/questions/61694370/why-is-alert-not-showing-on-my-react-app) for React Alert not showing.<br>
 
-4. [Django Testing Documents](https://www.django-rest-framework.org/api-guide/testing/) for testing using TestCase.
-
-5. [Generic views](https://www.django-rest-framework.org/api-guide/generic-views/) for Refactoring pointers and assitance.
-<br>
-
-6. [Django Rest Framwork](https://www.django-rest-framework.org/api-guide/status-codes/) for checking status codes. Other options used from within the Rest Framework also.
+4. [CORS](https://stackoverflow.com/questions/28046422/django-cors-headers-not-work) error tips.<br>
 
 
 [Back to the top](#walking-seasons)
