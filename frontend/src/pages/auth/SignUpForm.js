@@ -1,14 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import React, { useState } from "react";
 
 import appStyles from "../../styles/App.module.css";
 import btnStyles from "../../styles/Button.module.css"
 import styles from "../../styles/SigningForm.module.css"
 
-import Form from "react-bootstrap/Form";
-import { Button, Image, Col, Row, Container, Alert } from "react-bootstrap";
+// import Form from "react-bootstrap/Form";
+import { Form, Button, Image, Col, Row, Container, Alert } from "react-bootstrap";
 import axios from "axios";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+// import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 /**Store values in useState Hook imported from React. */
 
@@ -25,6 +25,15 @@ const SignUpForm = () => {
 
     const { username, password1, password2 } = signUpData;
 
+    /**useState to store errors used. Imported.*/
+
+    const [errors, setErrors] = useState({});
+
+    /** useHistory Hook from React Router. Imported.*/
+    /** Handle redirect from React Router. */
+
+    const history = useHistory();
+
 
     /**Universal onChange handler for input fields.*/
     /**JavaScript KEY: VALUE =  input field name: user's input.*/
@@ -39,25 +48,30 @@ const SignUpForm = () => {
 
     /**Import Axios */
     const handleSubmit = async (event) => {
-        /**Prevent page refresh */
         event.preventDefault();
+        // Check if username is empty
+        if (!username.trim()) {
+            setErrors({ ...errors, username: ["Username cannot be empty"] });
+            return;
+        }
+        if (!password1.trim()) {
+            setErrors({ ...errors, password1: ["password field empty"] });
+            return;
+        }
+        if (!password2.trim()) {
+            setErrors({ ...errors, password2: ["confirm password field empty"] });
+            return;
+        }
+    
         try {
-            /** Post Sign Up data to endpoint in API App for registration. */
             await axios.post("/dj-rest-auth/registration/", signUpData);
-            /** Redirect here. */
             history.push("/signin");
         } catch (err) {
-            /** Optional chaining (?). Wont throw error if response isnt defined.*/
             setErrors(err.response?.data);
         }
     };
+    
 
-    /** useHistory Hook from React Router. Imported.*/
-    /** Handle redirect from React Router. */
-    const history = useHistory();
-
-    /**useState to store errors used. Imported.*/
-    const [errors, setErrors] = useState({});
 
     return (
         <Row>
@@ -84,9 +98,9 @@ const SignUpForm = () => {
                                 <Form.Label className="d-none">Username</Form.Label>
                                 <Form.Control
                                     type="text"
+                                    className={styles.Input}
                                     placeholder="Username"
                                     name="username"
-                                    className={styles.Input}
                                     value={username}
                                     onChange={handleChange}
                                 />
@@ -94,9 +108,7 @@ const SignUpForm = () => {
 
                             {/* Optional chaining (?). Map over all errors in state. If error in object, produce alert. Alert imported. */}
                             {errors.username?.map((message, idx) => (
-                                <Alert key={idx} variant="warning">
-                                    {message}
-                                </Alert>
+                                <Alert variant="warning" key={idx}>{message}</Alert>
                             ))}
 
                             <Form.Group controlId="password1">
@@ -108,6 +120,7 @@ const SignUpForm = () => {
                                     name="password1"
                                     value={password1}
                                     onChange={handleChange}
+
                                 />
                             </Form.Group>
 
@@ -143,7 +156,7 @@ const SignUpForm = () => {
                             >
                                 Sign in
                             </Button>
-                            {/** When 2 passwords dont make */}
+                            {/** When 2 passwords dont match */}
                             {errors.non_field_errors?.map((message, idx) => (
                                 <Alert key={idx} variant="warning" className="mt-3">
                                     {message}

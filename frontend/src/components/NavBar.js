@@ -49,7 +49,7 @@ const NavBar = () => {
               
               <i className="fa-regular fa-face-grin-tongue"></i>
               <NavDropdown title="More Info" id="basic-nav-dropdown" className={styles.NavLink}
-                // activeClassName={styles.Active}
+                // exact activeClassName={styles.Active}
               >
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
