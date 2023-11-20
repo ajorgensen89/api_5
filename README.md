@@ -207,11 +207,14 @@ Steps to take for Starting a [Django Rest Framework](https://www.django-rest-fra
 ### Cloudinary.
 
 Connect Django to [Cloudinary](https://cloudinary.com/) for storage and delivery of media such as images.
+ - **pip install django-cloudinary-storage**
 
 
 ### Pillow.
 
 This [Pillow](https://python-pillow.org/) library adds capabilities to process images. **'P' in Pillow needs to be a capital when installing**.
+
+-  **pip install Pillow**
 
 
 <hr>

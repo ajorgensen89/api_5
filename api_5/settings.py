@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
-import re
+# import re
 
 if os.path.exists('env.py'):
     import env
@@ -79,17 +79,20 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECRET_KEY = 'django-insecure-gf9oun_7gt%i3@ej$m%snop3kjea@a+ed_hch$y+%!(ftsa5w('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEV' in os.environ
+DEBUG = 'DEBUG' in os.environ
 # True or False.
 
 # ALLOWED_HOSTS = ['localhost', '8000-ajorgensen89-api5-4mxnlxxfqs2.ws-eu106.gitpod.io']
+# 'localhost', 'api-5-5ba41198804f.herokuapp.com/',
 
 ALLOWED_HOSTS = [
     'localhost', 'api-5-5ba41198804f.herokuapp.com/',
     os.environ.get('ALLOWED_HOSTS'),
-    '8000-ajorgensen89-api5-4mxnlxxfqs2.ws-eu106.gitpod.io',
+    '8000-ajorgensen89-api5-87quc0azmjk.ws-eu106.gitpod.io',
+    '3000-ajorgensen89-project5-artui0saqz4.ws-eu106.gitpod.io',
     ]
 
+# '8000-ajorgensen89-api5-87quc0azmjk.ws-eu106.gitpod.io'
 # Application definition
 
 INSTALLED_APPS = [
@@ -143,15 +146,19 @@ MIDDLEWARE = [
 #     ]
 
 # So API works with React frontend project.
-if 'CLIENT_ORIGIN_DEV' in os.environ:
-    extracted_url = re.match(
-        r'^.+-', os.environ.get(
-            'CLIENT_ORIGIN_DEV', ''), re.IGNORECASE).group(0)
-    CORS_ALLOWED_ORIGIN_REGEXES = [
-        rf"{extracted_url}(eu|us)\d+\w\.gitpod\.io$",
-    ]
+# if 'CLIENT_ORIGIN_DEV' in os.environ:
+#     extracted_url = re.match(
+#         r'^.+-', os.environ.get(
+#             'CLIENT_ORIGIN_DEV', ''), re.IGNORECASE).group(0)
+#     CORS_ALLOWED_ORIGIN_REGEXES = [
+#         rf"{extracted_url}(eu|us)\d+\w\.gitpod\.io$",
+#     ]
 
 CORS_ALLOW_CREDENTIALS = True
+
+CORS_ALLOWED_ORIGINS = [
+    os.environ.get("CLIENT_ORIGIN")
+]
 
 ROOT_URLCONF = 'api_5.urls'
 
