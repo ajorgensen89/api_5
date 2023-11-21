@@ -110,9 +110,9 @@ CLI input for installation - **npm install react-router-dom@5.3.0**
 The library controls what the user sees depending on what is render in the HTML for React App's.<br>
 <br>
 Routes to switch need to be added to the Index.js file including App.js.<br>
-<img src="src/assets/images/readme-images/routechaning.png" width=30% height=30%><br>
+<img src="frontend/src/assets/images/readme-images-frontend/routechaning.png" width=30% height=30%><br>
 Paths for switching betweeen pages are added to the App.j file.<br>
-<img src="src/assets/images/readme-images/routeappjs.png" width=20% height=20%><br>
+<img src="frontend/src/assets/images/readme-images-frontend/routeappjs.png" width=20% height=20%><br>
 <br>
 
 
@@ -177,31 +177,7 @@ Credited from Code Institute is a map of dj-rest-auth endpoints for an API.<br>
 
 <br>
 
-## Errors.
-Documentation used when facing some [Errors](https://nodejs.org/api/errors.html#errors_common_system_errors).<br>
-Catching errors can be important to enhance a user experience and ease for navigating a website.<br>
-This error raised when invalid id was entered in to the URL.<br>
 
-<img src="assets/images/readme-images/error.png" width=20% height=20%><br>
-<br>
-Image validation error message ensure large images do not get uploaded. Improves experience and decreases loading times.<br>
-<img src="assets/images/readme-images/imageresizeerror.png" width=20% height=20%><br>
-
-- Errors faced. CORS error. CLIENT_ORIGIN_DEV had not been removed from Heroku Config Vars.<br>
-<img src="assets/images/readme-images/webcature1.png" width=30% height=30%>
-<br>
-- Errors faced. Proxy error.<br>
-<img src="assets/images/readme-images/proxyerror.png" width=30% height=30%>
-<br>
-- Errors faced. POST error.<br>
-<img src="assets/images/readme-images/POSTerror.png" width=30% height=30%>
-<br>
-<br>
-
-### User input Errors.
-
-To lessen user error when entering information onto the website such as username, password and confirm password a 'try' 'catch' error block if created.<br>
-[React Alerts](https://react-bootstrap.github.io/docs/components/alerts/) is used to hold messages to show to the user. Javascripts [Optional chaining (?)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) and  Pythons [Django 'non_fields_error'](https://docs.djangoproject.com/en/4.2/ref/forms/api/) used also.<br>
 
 <hr>
 
