@@ -90,8 +90,8 @@ const SignUpForm = () => {
             </Row>
             <Row>
                 <Col className={appStyles.ColText}>
-                    <Container >
-                        <h1 className={`${appStyles.Border} ${appStyles.CenterText} ${styles.Header}`}>
+                    <Container className={`${appStyles.Border} ${appStyles.CenterText} ${styles.Header}`}>
+                        <h1>
                             Sign Up Here!
                         </h1>
 
