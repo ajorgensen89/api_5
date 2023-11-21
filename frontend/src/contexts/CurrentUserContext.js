@@ -1,13 +1,21 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
 
 /** Folder separate contains context states to lessen verbose code in the same files. */
 
-/** Two Context objects Providers allow both valus to be updated in App function.
+/** Create Two Context objects Providers allow both valus to be updated in App function.
  * Avaliable in all childs components in App.
  */
+
+/** Create context to use in SignInForm.js page. */
 export const CurrentUserContext = createContext()
+
+/** Create context to use in NavBar.js component. */
 export const SetCurrentUserContext = createContext()
+
+/** Access Hooks for NavBar and SignInForm in above created contexts. */
+export const useCurrentUserContext = () => useContext(CurrentUserContext)
+export const useSetCurrentUserContext = () => useContext(SetCurrentUserContext)
 
 export const CurrentUserProvider = ({ children }) => {
     /** Values set into CurrentUserContentext and SetCurrentUserContext */

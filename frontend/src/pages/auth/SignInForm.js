@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 import Form from "react-bootstrap/Form";
@@ -17,11 +17,15 @@ import appStyles from "../../styles/App.module.css";
 // import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 // import { useRedirect } from "../../hooks/useRedirect";
 // import { setTokenTimestamp } from "../../utils/utils";
-import { SetCurrentUserContext } from "../../App";
+import { useSetCurrentUserContext } from "../../contexts/CurrentUserContext";
 
 function SignInForm() {
-    const setCurrentUser = useContext(SetCurrentUserContext);
-    // const setCurrentUser = useSetCurrentUser();
+    /**Refactor and use Hooks instead of useContext. */
+    /**Hooks in CurrentUserContext.js. */
+    /** Set useSetCurrentUser variable. */
+
+    const setCurrentUser = useSetCurrentUserContext();
+
     // useRedirect("loggedIn");
 
     const [signInData, setSignInData] = useState({

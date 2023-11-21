@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 // import { NavDropdown } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
@@ -6,7 +6,8 @@ import Nav from "react-bootstrap/Nav";
 import logo from "../assets/logo5.jpg";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
-import { CurrentUserContext } from "../App";
+
+import { useCurrentUserContext } from "../contexts/CurrentUserContext";
 
 /**Icons from Font Awesome. */
 /**Navlink takes 'to' prop to link to App.js Routes. */
@@ -14,7 +15,7 @@ import { CurrentUserContext } from "../App";
 
 const NavBar = () => {
   /** Access data in a child component. */
-  const currentUser = useContext(CurrentUserContext);
+  const currentUser = useCurrentUserContext();
 
   /** Options for either logged in or logged out user. */
   const loggedInIcons = <>{currentUser?.username}</>
@@ -61,7 +62,7 @@ const NavBar = () => {
               exact
               className={styles.NavLink}
               // activeClassName={styles.Active}
-              
+
               // Link navigation back to home page.
               to="/"
             >
