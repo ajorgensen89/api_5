@@ -14,7 +14,7 @@ import { useCurrentUserContext } from "../contexts/CurrentUserContext";
 
 
 const NavBar = () => {
-  /** Access data in a child component. */
+  /** Access data in a child component to display Ternary condition. */
   const currentUser = useCurrentUserContext();
 
   /** Options for either logged in or logged out user. */

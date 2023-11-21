@@ -11,36 +11,10 @@ import './api/axiosDefaults';
 import SignUpForm from "./pages/auth/SignUpForm";
 import SignInForm from "./pages/auth/SignInForm";
 
-/** Two Context objects Providers allow both valus to be updated in App function.
- * Avaliable in all childs components in App.
- */
-// export const CurrentUserContext = createContext()
-// export const SetCurrentUserContext = createContext()
-
-
 /** Switch holds route. Exact path is rendered when matching. */
 /** Link to NavBar.js */
 
 function App() {
-
-  // /** Values set into CurrentUserContentext and SetCurrentUserContext */
-  // const [currentUser, setCurrentUser] = useState(null);
-
-  // const handleMount = async () => {
-  //   try {
-  //     const { data } = await axios.get("dj-rest-auth/user/");
-  //     setCurrentUser(data)
-
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
-
-  // /** React Hook imported to synchronize components with an external source */
-  // useEffect(() => {
-  //   handleMount()
-  // }, []);
-
   return (
     <div className={styles.App}>
       <div>

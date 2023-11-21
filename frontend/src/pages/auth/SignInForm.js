@@ -22,7 +22,7 @@ import { useSetCurrentUserContext } from "../../contexts/CurrentUserContext";
 function SignInForm() {
     /**Refactor and use Hooks instead of useContext. */
     /**Hooks in CurrentUserContext.js. */
-    /** Set useSetCurrentUser variable. */
+    /** Set useSetCurrentUserContext variable to update user on successful log in. */
 
     const setCurrentUser = useSetCurrentUserContext();
 
@@ -42,7 +42,7 @@ function SignInForm() {
 
         try {
             const { data } = await axios.post("/dj-rest-auth/login/", signInData);
-            /** Save user data in variable. */
+            /** Save user data in variable on successful log in. */
             setCurrentUser(data.user);
             // setTokenTimestamp(data);
             history.push("/");

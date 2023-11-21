@@ -10,7 +10,7 @@ import { CurrentUserProvider } from './contexts/CurrentUserContext';
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      {/* Remove Providers from App.js and enter new context created. */}
+      {/* Remove Providers from App.js and enter new Provider. */}
       <CurrentUserProvider>
         <App />
       </CurrentUserProvider>
@@ -20,7 +20,4 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

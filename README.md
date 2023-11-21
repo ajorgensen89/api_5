@@ -433,6 +433,29 @@ After Refactoring the code for the comments section using [Django Generic Views]
 <img src="assets/images/readme-images/Afterrefactor.png" width=10% height=10%><br>
 <br>
 
+### Context Hooks Refactoring
+
+In React Frontend, context hooks were created to lessen coding in certain files sush as App.js. This help refactor and organise code when developing.
+A new folder was created to separate out code.<br>
+<img src="frontend/src/assets/images/readme-images-frontend/CreateContextFolder.png" width=10% height=10%><br>
+<br>
+Code for each context are placed in a separte .js file. Now returned in context file.<br>
+<img src="frontend/src/assets/images/readme-images-frontend/ContextHook1.png" width=10% height=10%><br>
+<br>
+Decreases code in App.js <br>
+<img src="frontend/src/assets/images/readme-images-frontend/ContextHooktidyApp.png" width=10% height=10%><br>
+<br>
+Provider wraps App function for App.js in Provider.<br>
+<img src="frontend/src/assets/images/readme-images-frontend/ContextHookprovideset.png" width=10% height=10%><br>
+<br>
+Context hooks set to fulfil their duties stated in the comments.<br>
+<img src="frontend/src/assets/images/readme-images-frontend/contexthookNavBadSignInForm.png" width=10% height=10%><br>
+<br>
+
+
+
+
+
 [Django Generic Filtering](https://www.django-rest-framework.org/api-guide/filtering/) is used and offers better organisation of data for the users viewing pleasure.<br>
 Filtering gets applied into the [queryset](https://docs.djangoproject.com/en/4.2/ref/models/querysets/).<br>
 Use of queryset before filters are applied.<br>
