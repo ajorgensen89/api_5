@@ -62,26 +62,19 @@ Depending on version that works a version may have ot be used. In this case extr
 CLI input enter enter time the workspace was run in a browser:<br>
 - **nvm install 16.18.0**
 - **nvm use 16.18.0**
-- THEN **npm start** could be entered.<br>
+- THEN **npm start** can be entered.<br>
+  REPEAT EACH TIME WHEN RUNNING SERVER.<br>
 <br>
-Install [Django](https://www.djangoproject.com/) and intialise project in current directory of workspace using dot notation, **'.'** .<br>
-Each application within the project is added further down.<br>
+Set up installations in 'project_5'.<br>
 -  Enter into CLI: <br>
     -  **pip install django** ( pip3 install 'django<4>' - used here as prefered for Long Term Support (LTS)').
-    -  **django-admin startproject name_here .** 'name_here' = 'api_5' for this project.<br>
-    <img src="assets/images/readme-images/startproject.png" width=50% height=50%>
     -  **pip install django-cloudinary-storage**
     -  **pip install Pillow**
     <br>
 
--  Set up Cloudinary installations in 'api_5' **settings.py** under INSTALLED_APPS. See image.<br>
-<img src="assets/images/readme-images/Cloudinary.png" width=50% height=50%>
 
 - Create **env.py** file for production state to save variables to not be pushed to [Github](https://github.com/).<br>
 **Final Image for all secret files connected into workspace.**<br>
-    - Entry for Cloudinary in **settings.py**.<br>
-    <img src="assets/images/readme-images/setcloud.png" width=50% height=50%><br>
-
 
 <hr>
 
@@ -115,17 +108,23 @@ Paths for switching betweeen pages are added to the App.j file.<br>
 <img src="frontend/src/assets/images/readme-images-frontend/routeappjs.png" width=20% height=20%><br>
 <br>
 
+### React Navigation.
+[React NavBar](https://react-bootstrap.github.io/docs/components/navbar)
+<br>
+Wrap 'App' conponent inside <Router> on App.js page.
+<br>
 
 ## React components.
 
 ## Axios Library.
 
-Used to tell this React App to send request to the API.<br>
+Used to tell this React App to send request to the API. Enables they to communicate for better data transfer and changes.<br>
+Using [Axios](https://axios-http.com/) also enabled combining workspaces between React and API.<br>
 CLI input - **npm install axios**
 
 ### INFINTE SCROLL LIBARY<br>
 
-npm install react-infinite-scroll-component<br>
+**npm install react-infinite-scroll-component** <br>
 <br>
 
 ### React Bootstrap Form
@@ -133,14 +132,8 @@ npm install react-infinite-scroll-component<br>
 [React Bootstrap Form](https://react-bootstrap-v4.netlify.app/components/forms/)
 Other Bootstrap items have been use throughout the project. Within the Form section alone, React Bootstrap classes called Images, Column, Row and Button have been used.<br>
 React provides a boilerplate for individual coding to be added. This exmaple includes boilerplate and some starting code to transform it.<br>
-<img src="src/assets/images/readme-images/ReactExample.png" width=30% height=30%>
+<img src="frontend/src/assets/images/readme-images-frontend/ReactExample.png" width=30% height=30%>
 <br>
-
-### React Navigation.
-<br>
-[React NavBar](https://react-bootstrap.github.io/docs/components/navbar)
-<br>
-Wrap 'App' conponent inside <Router> on App.js page.
 
 
 ## Authenication.
@@ -155,7 +148,6 @@ Followed by adding it to INSTALLED_APP in settings.py.<br>
 [JSON web tokens](https://jwt.io/) (JWT) securely transmit data between and server as JSON objects. JWT are stored on the client side and they can be refered to as 'stateless'.<br>
 Using Django's built in authenication module relies on Sessions for data storage. User experience can be improved with use of these sercuity measure which can deal with access and refresh tokens.<br>
 <br>
-JWT tokens will be used in production and for development, sessions is used.<br>
 
 Raw JSON data can be manipulated for a better user experience. Within the administraion panel to update items such as the Profile Application, a more user frendly approach can be used by setting the serializer class on a view, [Django Rest Framework](https://www.django-rest-framework.org/) sets it out in a form format automatically.<br>
 <br>
@@ -164,7 +156,12 @@ The Bad Request can be shown here as a method to catch and raise errors.<br>
 Status is OK and the input fields look much better for user and clients to input data.<br>
 <img src="assets/images/readme-images/Jsonform.png" width=20% height=20%><br>
 
-### Register
+[Simple JWT](https://pypi.org/project/djangorestframework-simplejwt/) tokens will be used in production and for development, sessions is used.<br>
+INSTALL CLI COMMAND<br>
+**pip install djangorestframework-simplejwt**<br>
+<br>
+
+## Register
 If a user would like to register [Django REST Auth](https://www.django-rest-framework.org/api-guide/authentication/) offers a standard registration process to install. <br>
 CLI input - **pip install 'dj-rest-auth[with_social]'**<br>
 Full information for the process can be accessed here: https://pypi.org/project/dj-rest-auth/ <br>

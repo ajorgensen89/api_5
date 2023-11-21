@@ -25,7 +25,7 @@ Example showing whitespace that needs to be removed and unused imports.<br>
 
 <hr>
 
-## Django Rest Framework Testing
+# Django Rest Framework API Testing
 
 [Django Rest Framework](https://www.django-rest-framework.org/) offers testing libraries in built to test code. <br>
 APITestCase needs to be imported from rset framework tests.<br>
@@ -58,26 +58,54 @@ Documentation used when facing some [Errors](https://nodejs.org/api/errors.html#
 Catching errors can be important to enhance a user experience and ease for navigating a website.<br>
 This error raised when invalid id was entered in to the URL.<br>
 
-<img src="frontend/src/assets/images/testing-images-frontend/error.png" width=20% height=20%><br>
+<img src="assets/images/testing-images-backend/error.png" width=20% height=20%><br>
 <br>
 Image validation error message ensure large images do not get uploaded. Improves experience and decreases loading times.<br>
-<img src="frontend/src/assets/images/testing-images-frontend/imageresizeerror.png" width=20% height=20%><br>
+<img src="assets/images/testing-images-backend/imageresizeerror.png" width=20% height=20%><br>
 
-- Errors faced. CORS error. CLIENT_ORIGIN_DEV had not been removed from Heroku Config Vars.<br>
+
+
+
+- Errors faced. POST error.<br>
+<img src="frontend/src/assets/images/testing-images-frontend" width=30% height=30%>
+<br>
+
+
+<br>
+
+[Back to the top](#testing)
+
+<hr>
+
+# User input Errors.
+Demonstrates errors faced when building the frontend React portion to this project.<br>
+
+To lessen user error when entering information onto the website such as username, password and confirm password a 'try' 'catch' error block if created.<br>
+[React Alerts](https://react-bootstrap.github.io/docs/components/alerts/) is used to hold messages to show to the user. Javascripts [Optional chaining (?)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) and  Pythons [Django 'non_fields_error'](https://docs.djangoproject.com/en/4.2/ref/forms/api/) used also.<br>
+<br>
+Alerts have been used to display message for errors that may occur due to incorrect use input. This example shows errors being captured and shown to the user for empty username and password fields.<br>
+<img src="frontend/src/assets/images/testing-images-frontend/UserPawwemptyerror.png" width=30% height=30%><br>
+<br>
+Alert message shown for incorrect password errors.<br>
+<img src="frontend/src/assets/images/testing-images-frontend/passnotmatcherror.png" width=30% height=30%><br>
+<br>
+POST errors can be seen in the console as developing. In this example, the error is because the Username already exsists so a POST response was not created and the user is alerted with a warning message.<br>
+<img src="frontend/src/assets/images/testing-images-frontend/POSTerror.png" width=30% height=30%><br>
+<br>
+POST error, aswell as other errors, are always generated in the workspace terminal.<br>
+<img src="frontend/src/assets/images/testing-images-frontend/POsterror2.2.png" width=30% height=30%><br>
+<br>
+
+Correctly signals, POST and GET, are also seen in the terminal for confimation that the frontend is communicating with the API backend.<br>
+<img src="frontend/src/assets/images/testing-images-frontend/POSTGET.png" width=30% height=30%><br>
+<br>
+
+- Error faced when combining the API and React projects. CORS error. CLIENT_ORIGIN_DEV had not been removed from Heroku Config Vars.<br>
 <img src="frontend/src/assets/images/testing-images-frontend/webcature1.png" width=30% height=30%>
 <br>
 - Errors faced. Proxy error.<br>
 <img src="frontend/src/assets/images/testing-images-frontend/proxyerror.png" width=30% height=30%>
 <br>
-- Errors faced. POST error.<br>
-<img src="frontend/src/assets/images/testing-images-frontend/POSTerror.png" width=30% height=30%>
-<br>
-<br>
-
-### User input Errors.
-
-To lessen user error when entering information onto the website such as username, password and confirm password a 'try' 'catch' error block if created.<br>
-[React Alerts](https://react-bootstrap.github.io/docs/components/alerts/) is used to hold messages to show to the user. Javascripts [Optional chaining (?)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) and  Pythons [Django 'non_fields_error'](https://docs.djangoproject.com/en/4.2/ref/forms/api/) used also.<br>
 
 
 [Back to the top](#testing)
