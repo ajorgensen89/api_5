@@ -10,56 +10,52 @@ import Container from "react-bootstrap/Container";
 import './api/axiosDefaults';
 import SignUpForm from "./pages/auth/SignUpForm";
 import SignInForm from "./pages/auth/SignInForm";
-import { createContext, useEffect, useState } from "react";
-import axios from "axios";
 
 /** Two Context objects Providers allow both valus to be updated in App function.
  * Avaliable in all childs components in App.
  */
-export const CurrentUserContext = createContext()
-export const SetCurrentUserContext = createContext()
+// export const CurrentUserContext = createContext()
+// export const SetCurrentUserContext = createContext()
 
 
 /** Switch holds route. Exact path is rendered when matching. */
 /** Link to NavBar.js */
 
 function App() {
-  /** Values set into CurrentUserContentext and SetCurrentUserContext */
-  const [currentUser, setCurrentUser] = useState(null);
 
-  const handleMount = async () => {
-    try {
-      const { data } = await axios.get("dj-rest-auth/user/");
-      setCurrentUser(data)
+  // /** Values set into CurrentUserContentext and SetCurrentUserContext */
+  // const [currentUser, setCurrentUser] = useState(null);
 
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  // const handleMount = async () => {
+  //   try {
+  //     const { data } = await axios.get("dj-rest-auth/user/");
+  //     setCurrentUser(data)
 
-  useEffect(() => {
-    handleMount()
-  }, []);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
+
+  // /** React Hook imported to synchronize components with an external source */
+  // useEffect(() => {
+  //   handleMount()
+  // }, []);
 
   return (
-    <CurrentUserContext.Provider value={currentUser}>
-      <SetCurrentUserContext.Provider value={setCurrentUser}>
-        <div className={styles.App}>
-          <div>
-            <NavBar />
-            <Container className={styles.Main}>
-              <Switch>
-                <Route exact path="/" render={() => <h1>Home page</h1>} />
-                <Route exact path="/signin" render={() => <SignInForm />} />
-                <Route exact path="/signup" render={() => <SignUpForm />} />
-                <Route render={() => <h1>Page not found!</h1>} />
-              </Switch>
-            </Container>
-          </div>
+    <div className={styles.App}>
+      <div>
+        <NavBar />
+        <Container className={styles.Main}>
+          <Switch>
+            <Route exact path="/" render={() => <h1>Home page</h1>} />
+            <Route exact path="/signin" render={() => <SignInForm />} />
+            <Route exact path="/signup" render={() => <SignUpForm />} />
+            <Route render={() => <h1>Page not found!</h1>} />
+          </Switch>
+        </Container>
+      </div>
+    </div>
 
-        </div>
-      </SetCurrentUserContext.Provider>
-    </CurrentUserContext.Provider>
   );
 }
 
