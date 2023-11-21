@@ -19,7 +19,7 @@ import appStyles from "../../styles/App.module.css";
 // import { setTokenTimestamp } from "../../utils/utils";
 import { useSetCurrentUserContext } from "../../contexts/CurrentUserContext";
 
-function SignInForm() {
+function LogInForm() {
     /**Refactor and use Hooks instead of useContext. */
     /**Hooks in CurrentUserContext.js. */
     /** Set useSetCurrentUserContext variable to update user on successful log in. */
@@ -138,4 +138,4 @@ function SignInForm() {
     );
 }
 
-export default SignInForm;
+export default LogInForm;

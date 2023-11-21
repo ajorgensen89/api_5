@@ -11,3 +11,8 @@
   .Active i {
     color: #f5c66e;
   }
+
+  .NavLink:active {
+    color: #f5c66e;
+  }
+

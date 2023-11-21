@@ -449,7 +449,7 @@ Provider wraps App function for App.js in Provider.<br>
 <img src="frontend/src/assets/images/readme-images-frontend/ContextHookprovideset.png" width=10% height=10%><br>
 <br>
 Context hooks set to fulfil their duties stated in the comments.<br>
-<img src="frontend/src/assets/images/readme-images-frontend/contexthookNavBadSignInForm.png" width=10% height=10%><br>
+<img src="frontend/src/assets/images/readme-images-frontend/contexthookNavBadLogInForm.png" width=10% height=10%><br>
 <br>
 
 
@@ -488,6 +488,7 @@ Steps to take from Code Institute CourseWork. This enabled the React and API pro
 <br>
 <img src="assets/images/readme-images/combine5.png" width=30% height=30%><br>
 <br>
+CLIENT_ORIGIN_DEV needed removing from Config Vars in Heroku.<br>
 <img src="assets/images/readme-images/combine6.png" width=30% height=30%><br>
 <br>
 <img src="assets/images/readme-images/combine7.png" width=30% height=30%><br>

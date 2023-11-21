@@ -7,7 +7,9 @@ import logo from "../assets/logo5.jpg";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
 
-import { useCurrentUserContext } from "../contexts/CurrentUserContext";
+import { useCurrentUserContext, useSetCurrentUserContext } from "../contexts/CurrentUserContext";
+import Avatar from "./Avatar";
+import axios from "axios";
 
 /**Icons from Font Awesome. */
 /**Navlink takes 'to' prop to link to App.js Routes. */
@@ -17,18 +19,75 @@ const NavBar = () => {
   /** Access data in a child component to display Ternary condition. */
   const currentUser = useCurrentUserContext();
 
+  const setCurrentUser = useSetCurrentUserContext();
+
+  const handleLogout = async () => {
+    try {
+      await axios.post("dj-rest-auth/logout/");
+      setCurrentUser(null);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   /** Options for either logged in or logged out user. */
-  const loggedInIcons = <>{currentUser?.username}</>
-  const loggedOutIcons = (
+  /** {currentUser?.username} */
+  const loggedInNavView = (
+    <>
+      <NavLink
+        className={styles.NavLink}
+        // activeClassName={styles.Active}
+
+        // Link to all blurbs created on website.
+        to="/newsfeed"
+      >
+        <i className="fa-regular fa-newspaper"></i>News Feed
+      </NavLink>
+      <NavLink
+        className={styles.NavLink}
+        // activeClassName={styles.Active}
+
+        // Link to blurbs or users they have voted for.
+        to="/upVoted"
+      >
+        <i className="fa-solid fa-thumbs-up"></i>My Votes!
+      </NavLink>
+      <NavLink
+
+        // Link to home when logging out.
+        to="/"
+        className={styles.NavLink}
+        onClick={handleLogout}
+      // activeClassName={styles.Active}
+      >
+        <i className="fa-regular fa-face-smile-wink"></i>Log Out
+      </NavLink>
+      <NavLink
+
+        // Link to current logged user via profile id.
+        to={`/profiles/${currentUser?.profile_id}`}
+        className={styles.NavLink}
+
+      // activeClassName={styles.Active}
+      >
+        {/* <i className="fa-regular fa-face-smile-wink"></i>Sign Out */}
+        {/* <img src={currentUser?.profile_image} alt="Profile avatar for user" ></img> */}
+        <Avatar src={currentUser?.profile_image} text="Profile" height={35} />
+
+      </NavLink>
+    </>
+  );
+
+  const loggedOutNavView = (
     <>
       <NavLink
         className={styles.NavLink}
         // activeClassName={styles.Active}
 
         // Link to url.
-        to="/signin"
+        to="/login"
       >
-        <i className="fa-regular fa-face-smile"></i>Sign in
+        <i className="fa-regular fa-face-smile"></i>Log in
       </NavLink>
       <NavLink
 
@@ -39,8 +98,24 @@ const NavBar = () => {
       >
         <i className="fa-regular fa-face-smile-wink"></i>Sign up
       </NavLink>
+
     </>
   );
+
+  /** Creates link*/
+  const createBlurbsNavView = (
+    <NavLink
+      exact
+      className={styles.NavLink}
+      // activeClassName={styles.Active}
+
+      // Link navigation to create a blurb.
+      to="/blurbs/create"
+    >
+      <i className="fa-solid fa-circle-plus"></i>New Blurb
+    </NavLink>
+
+  )
 
   return (
     // styles = folder, NavBar = module.css file inside folder.
@@ -53,6 +128,9 @@ const NavBar = () => {
             <img src={logo} alt="logo" height="45" />
           </Navbar.Brand>
         </NavLink>
+
+        {/* Shows 'New Blurb' if user exsits. */}
+        {currentUser && createBlurbsNavView}
 
         {/* Toggle and Collapse NavBar used when screen size changes on devices. */}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -71,7 +149,7 @@ const NavBar = () => {
 
             {/* Ternary conditions ro render depending on code conditions above in 
             'const' loggedInIcons and loggedOutIcons depending on context set up for currentUser. */}
-            {currentUser ? loggedInIcons : loggedOutIcons}
+            {currentUser ? loggedInNavView : loggedOutNavView}
 
             {/* <i className="fa-regular fa-face-grin-tongue"></i>
             <NavDropdown title="More Info" id="basic-nav-dropdown" className={styles.NavLink}

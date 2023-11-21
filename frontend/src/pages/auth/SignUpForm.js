@@ -64,10 +64,10 @@ const SignUpForm = () => {
             setErrors({ ...errors, password2: ["confirm password field empty"] });
             return;
         }
-        // Otherwise POST data to API and signin.
+        // Otherwise POST data to API and log in.
         try {
             await axios.post("/dj-rest-auth/registration/", signUpData);
-            history.push("/signin");
+            history.push("/login");
         } catch (err) {
             setErrors(err.response?.data);
         }
@@ -173,8 +173,8 @@ const SignUpForm = () => {
                 <Col className={appStyles.ColText}>
                     <Container className={`${appStyles.Border} ${appStyles.CenterText}`}>
                         Already Signed up..
-                        <Link className={styles.Link} to="/signin">
-                            <span>Sign in</span>
+                        <Link className={styles.Link} to="/login">
+                            <span>Log in</span>
                         </Link>
                     </Container>
                 </Col>

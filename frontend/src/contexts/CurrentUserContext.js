@@ -9,13 +9,13 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
  * Avaliable in all childs components in App.
  */
 
-/** Create context hook to use in SignInForm.js page. */
+/** Create context hook to use in LogInForm.js page. */
 export const CurrentUserContext = createContext()
 
 /** Create context hook to use in NavBar.js component. */
 export const SetCurrentUserContext = createContext()
 
-/** Access Hooks for NavBar and SignInForm in above created contexts.
+/** Access Hooks for NavBar and LogInForm in above created contexts.
  * Stores useState() and Mounts for API.
 */
 
@@ -62,7 +62,7 @@ export const CurrentUserProvider = ({ children }) => {
                         * Redirect to Sign In page. 
                         */
                         if (prevCurrentUser) {
-                            history.push("/signin");
+                            history.push("/login");
                         }
                         /** CurrentUser set to null */
                         return null;
@@ -94,7 +94,7 @@ export const CurrentUserProvider = ({ children }) => {
                         setCurrentUser((prevCurrentUser) => {
                             if (prevCurrentUser) {
                                 /** Redirect user to signing page using history variable using useHistory() React Hook.*/
-                                history.push("/signin");
+                                history.push("/login");
                             }
                             return null;
                         });
