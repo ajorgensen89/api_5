@@ -34,12 +34,13 @@ function CreateBlurbForm() {
         category: "",
         image: "",
     });
+
     const { title, content, category, image } = blurbData;
 
     /** Create ref prop for Form.File. */
     const imageInput = useRef(null);
 
-    /** useHistory Hook from React Router. Imported.*/
+    /** useHistory Hook from React Router. Imported. */
     /** Handle redirect from React Router. */
     const history = useHistory();
 
@@ -69,18 +70,17 @@ function CreateBlurbForm() {
     const handleSubmit = async (event) => {
         /**Prevent page refresh. */
         event.preventDefault();
-
         /**Create variable to append for each state. */
-        const blurbFormData = new FormData();
+        const formData = new FormData();
 
-        blurbFormData.append("title", title);
-        blurbFormData.append("content", content);
-        blurbFormData.append("category", category);
-        blurbFormData.append("image", imageInput.current.files[0]);
+        formData.append("title", title);
+        formData.append("content", content);
+        formData.append("category", category);
+        formData.append("image", imageInput.current.files[0]);
 
         try {
             /** axios updated to request interceptor and post on url link.*/
-            const { data } = await axiosReq.post("/blurbs/", blurbFormData);
+            const { data } = await axiosReq.post("/blurbs/", formData);
             /**Create further blurbs with appropriate id. */
             history.push(`/blurbs/${data.id}`);
         } catch (err) {

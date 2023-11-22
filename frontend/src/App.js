@@ -11,6 +11,7 @@ import './api/axiosDefaults';
 import SignUpForm from "./pages/auth/SignUpForm";
 import LogInForm from "./pages/auth/LogInForm";
 import CreateBlurbForm from "./pages/Blurbs/CreateBlurbForm";
+// import ShowBlurbPage from "./pages/Blurbs/ShowBlurbPage";
 
 /** Switch holds route. Exact path is rendered when matching. */
 /** Link to NavBar.js */
@@ -25,6 +26,7 @@ function App() {
             <Route exact path="/login" render={() => <LogInForm />} />
             <Route exact path="/signup" render={() => <SignUpForm />} />
             <Route exact path="/blurbs/create" render={() => <CreateBlurbForm />} />
+            {/* <Route exact path="/blurbs/:id" render={() => <ShowBlurbPage />} /> */}
             <Route render={() => <h1>Page not found!</h1>} />
           </Switch>
         </Container>
