@@ -35,6 +35,7 @@ export const CurrentUserProvider = ({ children }) => {
             /** axios updated to response interceptor */
             const { data } = await axiosRes.get("dj-rest-auth/user/");
             setCurrentUser(data)
+            console.log("accessed dj-rest-auth/user")
 
         } catch (err) {
             console.log(err);
@@ -63,6 +64,7 @@ export const CurrentUserProvider = ({ children }) => {
                         */
                         if (prevCurrentUser) {
                             history.push("/login");
+                            console.log("accessed dj-rest-auth/tokene/refresh")
                         }
                         /** CurrentUser set to null */
                         return null;

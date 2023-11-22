@@ -10,12 +10,16 @@ import { NavLink } from "react-router-dom";
 import { useCurrentUserContext, useSetCurrentUserContext } from "../contexts/CurrentUserContext";
 import Avatar from "./Avatar";
 import axios from "axios";
+import useToggle from "../hooks/useToggle";
 
 /**Icons from Font Awesome. */
 /**Navlink takes 'to' prop to link to App.js Routes. */
 
 
 const NavBar = () => {
+  /** Use Hook to collaspe and expand burger dropdown menu on click. */
+  const { collapseExpand, setCollapseExpand, burgerRef } = useToggle();  
+
   /** Access data in a child component to display Ternary condition. */
   const currentUser = useCurrentUserContext();
 
@@ -25,6 +29,7 @@ const NavBar = () => {
     try {
       await axios.post("dj-rest-auth/logout/");
       setCurrentUser(null);
+      console.log("logged out /logout/")
     } catch (err) {
       console.log(err);
     }
@@ -119,7 +124,7 @@ const NavBar = () => {
 
   return (
     // styles = folder, NavBar = module.css file inside folder.
-    <Navbar className={styles.NavBar} expand="md" fixed="top">
+    <Navbar expanded={collapseExpand} className={styles.NavBar} expand="md" fixed="top">
       <Container>
         <NavLink to="/">
           <Navbar.Brand>
@@ -132,8 +137,9 @@ const NavBar = () => {
         {/* Shows 'New Blurb' if user exsits. */}
         {currentUser && createBlurbsNavView}
 
-        {/* Toggle and Collapse NavBar used when screen size changes on devices. */}
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        {/* Toggle and Collapse NavBar used when screen size changes on devices. 
+         */}
+        <Navbar.Toggle ref={burgerRef} onClick={() => setCollapseExpand(!collapseExpand)} aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto text-left">
             <NavLink

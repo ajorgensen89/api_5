@@ -28,22 +28,25 @@ function LogInForm() {
 
     // useRedirect("loggedIn");
 
-    const [signInData, setSignInData] = useState({
+    const [logInData, setLogInData] = useState({
         username: "",
         password: "",
     });
-    const { username, password } = signInData;
+    const { username, password } = logInData;
 
     const [errors, setErrors] = useState({});
 
     const history = useHistory();
+
+    /** Handle event to Log in with user data. */
     const handleSubmit = async (event) => {
         event.preventDefault();
 
         try {
-            const { data } = await axios.post("/dj-rest-auth/login/", signInData);
+            const { data } = await axios.post("/dj-rest-auth/login/", logInData);
             /** Save user data in variable on successful log in. */
             setCurrentUser(data.user);
+            console.log("login /login/")
             // setTokenTimestamp(data);
             history.push("/");
             // history.goBack();
@@ -53,8 +56,9 @@ function LogInForm() {
     };
 
     const handleChange = (event) => {
-        setSignInData({
-            ...signInData,
+        setLogInData({
+            /** Spread objects to get all values. */
+            ...logInData,
             [event.target.name]: event.target.value,
         });
     };

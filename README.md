@@ -31,24 +31,49 @@ Delicious Handrawn - The name of the font sounded appealing to use to help empha
 <hr>
 
 # Features.
+
+### Profile.
 User can create a profile add images, edit content and view other user's profiles. The ability to edit profiles is targeted at each individual user. You will not be able to ammend other profiles.<br>
 <br>
+
+### Blurbs.
+
 Blurbs can be created to hold titles, images and content about the picture. Or just an interesting piece of content by itself can be posted.<br>
 Adding a visual image is always more appealing to the eye.<br>
 Blurbs are talking point that users may want to share with others. A category for the photo or content can be selected to filter blurbs into 4 categories.<br>
 The 4 categories are Spring, Summer, Autumn and Winter.<br>
 The website will have the ability for the user to filter by Season to look at a particular one they have an interest in.<br>
 <br>
+
+### Comments.
+
 Everybody likes a discussion board, so a comment section has been created for users to make a comment or delete a comment about a particular blurb.<br>
 <br>
+
+### Voting.
+
 User can vote for their favourite pictures. The most popular images and content with by filtered out and revealed for the user to access more easily.<br>
 Voting can occur when a user is logged in and they can not vote on their own blurbs they have posted on the wesbite. This helps to keep the voting, fair.<br>
 Votes can be created, viewed and deleted.<br>
 <br>
 
+### Followers.
+
 Followers/following/unfollow
 
 <br>
+
+### Popular section.
+
+### News Feed.
+
+### Navigation Bar.
+
+A [React](https://react.dev/) Navigation bar has been used which make access to each element of the site simpler and more obvious. Using React, a toggle menu function is created for smaller screens to have a drop down menu which collapses and expands open on use mouse click, such as clicking on a link in the menu.<br>
+Adjusted so the menu collapses by itself for better user experience, otherwise they would have to reclick the toggle menu button to close the expanded menu.<br>
+A mouse click event Hook has been used to improve this function.<br>
+Previously the menu would stay expanded and cover some of the content underneathe, before user clicks again.<br>
+<img src="frontend/src/assets/images/readme-images-frontend/Expandedmenu1.png" height=20% width=20%>
 
 
 ### Intialise REACT project.

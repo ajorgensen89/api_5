@@ -16,7 +16,7 @@ import axios from "axios";
 const SignUpForm = () => {
     // useRedirect("loggedIn");
 
-    /**Set for controlID in Form.Group fields. */
+    /**Set for controlID in Form.Group fields. Creat and set new user on sign up page. With password. */
     const [signUpData, setSignUpData] = useState({
         username: "",
         password1: "",
@@ -35,14 +35,15 @@ const SignUpForm = () => {
     const history = useHistory();
 
 
-    /**Universal onChange handler for input fields.*/
-    /**JavaScript KEY: VALUE =  input field name: user's input.*/
-    /** Add handler to each component to allow changes.*/
+    /**Universal onChange handler for input fields for new user and password.*/
+    /**JavaScript for Username 'KEY: VALUE =  input field name: user's input'.*/
+    /** Add handler to each component to allow changes for all fields in signUpdata in useState.*/
 
     const handleChange = (event) => {
         setSignUpData({
             ...signUpData,
             [event.target.name]: event.target.value,
+            
         });
     };
 
@@ -68,6 +69,7 @@ const SignUpForm = () => {
         try {
             await axios.post("/dj-rest-auth/registration/", signUpData);
             history.push("/login");
+            console.log("new user created in API 2 /registration/")
         } catch (err) {
             setErrors(err.response?.data);
         }
