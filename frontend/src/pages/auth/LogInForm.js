@@ -20,6 +20,10 @@ import appStyles from "../../styles/App.module.css";
 import { useSetCurrentUserContext } from "../../contexts/CurrentUserContext";
 
 function LogInForm() {
+
+    /**useState to store errors used. Imported.*/
+    const [errors, setErrors] = useState({});
+    
     /**Refactor and use Hooks instead of useContext. */
     /**Hooks in CurrentUserContext.js. */
     /** Set useSetCurrentUserContext variable to update user on successful log in. */
@@ -34,7 +38,7 @@ function LogInForm() {
     });
     const { username, password } = logInData;
 
-    const [errors, setErrors] = useState({});
+    
 
     const history = useHistory();
 

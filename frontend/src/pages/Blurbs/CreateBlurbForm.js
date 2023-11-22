@@ -24,6 +24,8 @@ import { axiosReq } from "../../api/axiosDefaults";
 
 function CreateBlurbForm() {
     //   useRedirect("loggedOut");
+
+    /**useState to store errors used. Imported.*/
     const [errors, setErrors] = useState({});
 
     const [blurbData, setBlurbData] = useState({
@@ -34,7 +36,11 @@ function CreateBlurbForm() {
     });
     const { title, content, category, image } = blurbData;
 
+    /** Create ref prop for Form.File. */
     const imageInput = useRef(null);
+
+    /** useHistory Hook from React Router. Imported.*/
+    /** Handle redirect from React Router. */
     const history = useHistory();
 
     const handleChange = (event) => {
@@ -47,37 +53,49 @@ function CreateBlurbForm() {
 
     const handleChangeImage = (event) => {
         if (event.target.files.length) {
+            // Image URL removed.
             URL.revokeObjectURL(image);
             setBlurbData({
+
                 // Access all data without deleting previous item.
                 ...blurbData,
+
+                // Set image to URL set.
                 image: URL.createObjectURL(event.target.files[0]),
             });
         }
     };
 
     const handleSubmit = async (event) => {
+        /**Prevent page refresh. */
         event.preventDefault();
+
+        /**Create variable to append for each state. */
         const blurbFormData = new FormData();
 
         blurbFormData.append("title", title);
         blurbFormData.append("content", content);
-        blurbFormData.append("category", content);
+        blurbFormData.append("category", category);
         blurbFormData.append("image", imageInput.current.files[0]);
 
         try {
+            /** axios updated to request interceptor and post on url link.*/
             const { data } = await axiosReq.post("/blurbs/", blurbFormData);
+            /**Create further blurbs with appropriate id. */
             history.push(`/blurbs/${data.id}`);
         } catch (err) {
             console.log(err);
+            /** catch errors and set. */
             if (err.response?.status !== 401) {
                 setErrors(err.response?.data);
             }
         }
     };
 
+    /** Set Fields for user input */
     const textFields = (
         <div className="text-center">
+
             {/* Fields for Blurb form. */}
             <Form.Group>
                 <Form.Label>Title</Form.Label>
@@ -88,6 +106,8 @@ function CreateBlurbForm() {
                     onChange={handleChange}
                 />
             </Form.Group>
+
+            {/* Error for title field and error key changed.*/}
             {errors?.title?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                     {message}
@@ -104,6 +124,8 @@ function CreateBlurbForm() {
                     onChange={handleChange}
                 />
             </Form.Group>
+
+            {/* Error for content field and error key changed.*/}
             {errors?.content?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                     {message}
@@ -126,13 +148,14 @@ function CreateBlurbForm() {
                 </Alert>
             ))}
 
-
+            {/* Button will redirect back page with no changes if cancelled. */}
             <Button
                 className={btnStyles.Button}
                 onClick={() => history.goBack()}
             >
                 Cancel
             </Button>
+            {/** Button creates new blurb no submit. */}
             <Button className={btnStyles.Button} type="submit">
                 Save new article.
             </Button>
@@ -147,15 +170,19 @@ function CreateBlurbForm() {
                         className={styles.Container}
                     >
                         <Form.Group className="text-center">
+                            {/* Set first option in terinary condition if image present, 
+                            otherwise set second option after :*/}
                             {image ? (
                                 <>
                                     <figure>
+
                                         {/* Bootstrap Image component. */}
                                         <Image className={appStyles.Image} src={image} rounded />
                                     </figure>
                                     <div>
                                         <Form.Label
                                             className={btnStyles.Button}
+
                                             /** Link to id in Form.File for uploading image */
                                             htmlFor="image-upload"
                                         >
@@ -166,6 +193,7 @@ function CreateBlurbForm() {
                             ) : (
                                 <Form.Label
                                     className="d-flex justify-content-center"
+
                                     /** Link to id in Form.File for uploading image */
                                     htmlFor="image-upload"
                                 >
@@ -177,6 +205,7 @@ function CreateBlurbForm() {
                             )}
 
                             <Form.File
+
                                 /** Link to htmlFor in Form.Label for uploading image */
                                 id="image-upload"
                                 accept="image/*"
@@ -184,16 +213,21 @@ function CreateBlurbForm() {
                                 ref={imageInput}
                             />
                         </Form.Group>
+
+                        {/**Error caught, Alert messge shown to user. */}
                         {errors?.image?.map((message, idx) => (
                             <Alert variant="warning" key={idx}>
                                 {message}
                             </Alert>
                         ))}
 
+                        {/* Returned value of const textField. */}
                         <div className="d-md-none">{textFields}</div>
                     </Container>
                 </Col>
                 <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
+
+                    {/* Returned value of const textField. */}
                     <Container>{textFields}</Container>
                 </Col>
             </Row>

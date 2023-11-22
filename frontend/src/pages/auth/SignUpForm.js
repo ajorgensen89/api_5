@@ -16,7 +16,8 @@ import axios from "axios";
 const SignUpForm = () => {
     // useRedirect("loggedIn");
 
-    /**Set for controlID in Form.Group fields. Creat and set new user on sign up page. With password. */
+    /**Set for controlID in Form.Group fields. Create and set new user on sign up page. With password. 
+     * Value set to each state in Form.Control prop */
     const [signUpData, setSignUpData] = useState({
         username: "",
         password1: "",
@@ -25,7 +26,7 @@ const SignUpForm = () => {
 
     const { username, password1, password2 } = signUpData;
 
-    /**useState to store errors used. Imported.*/
+    /**useState to store errors used. Imported useState.*/
 
     const [errors, setErrors] = useState({});
 
@@ -41,6 +42,7 @@ const SignUpForm = () => {
 
     const handleChange = (event) => {
         setSignUpData({
+            // Access all data without deleting previous item with Spread(...).
             ...signUpData,
             [event.target.name]: event.target.value,
             
@@ -65,7 +67,7 @@ const SignUpForm = () => {
             setErrors({ ...errors, password2: ["confirm password field empty"] });
             return;
         }
-        // Otherwise POST data to API and log in.
+        // Otherwise POST data to API and register.
         try {
             await axios.post("/dj-rest-auth/registration/", signUpData);
             history.push("/login");
