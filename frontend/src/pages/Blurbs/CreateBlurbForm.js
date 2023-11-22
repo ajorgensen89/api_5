@@ -150,6 +150,7 @@ function CreateBlurbForm() {
                             {image ? (
                                 <>
                                     <figure>
+                                        {/* Bootstrap Image component. */}
                                         <Image className={appStyles.Image} src={image} rounded />
                                     </figure>
                                     <div>
