@@ -10,10 +10,10 @@ import Container from "react-bootstrap/Container";
 import './api/axiosDefaults';
 import SignUpForm from "./pages/auth/SignUpForm";
 import LogInForm from "./pages/auth/LogInForm";
+import CreateBlurbForm from "./pages/Blurbs/CreateBlurbForm";
 
 /** Switch holds route. Exact path is rendered when matching. */
 /** Link to NavBar.js */
-
 function App() {
   return (
     <div className={styles.App}>
@@ -24,6 +24,7 @@ function App() {
             <Route exact path="/" render={() => <h1>Home page</h1>} />
             <Route exact path="/login" render={() => <LogInForm />} />
             <Route exact path="/signup" render={() => <SignUpForm />} />
+            <Route exact path="/blurbs/create" render={() => <CreateBlurbForm />} />
             <Route render={() => <h1>Page not found!</h1>} />
           </Switch>
         </Container>
