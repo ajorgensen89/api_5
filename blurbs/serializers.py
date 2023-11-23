@@ -51,7 +51,7 @@ class BlurbsSerializer(serializers.ModelSerializer):
             # Instance returned, if user has not voted for a blurb already.
             vote = Votes.objects.filter(
 
-                # blurb object fro Votes model
+                # blurb object from Votes model
                 owner=user, blurb=obj
             ).first()
 
