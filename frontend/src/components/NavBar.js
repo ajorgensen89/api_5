@@ -31,7 +31,7 @@ const NavBar = () => {
       setCurrentUser(null);
       console.log("logged out /logout/")
     } catch (err) {
-      console.log(err);
+      console.log(err,"errlogout");
     }
   };
 

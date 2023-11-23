@@ -73,6 +73,7 @@ const SignUpForm = () => {
             history.push("/login");
             console.log("new user created in API 2 /registration/")
         } catch (err) {
+            console.log("new user created in API 2 /registration/ setErrors")
             setErrors(err.response?.data);
         }
     };

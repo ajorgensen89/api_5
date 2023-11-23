@@ -8,6 +8,7 @@ import Container from "react-bootstrap/Container";
 import styles from "../../styles/BlurbsForm.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import Blurb from "./Blurb";
 
 function ShowBlurbPage() {
     /** Set id to get each blurb */
@@ -24,11 +25,11 @@ function ShowBlurbPage() {
                     // axiosReq.get(`/comments/?blurb=${id}`),
                 ]);
                 setBlurb({ results: [blurb] });
-                console.log(blurb)
+                console.log(blurb, "errsettingBlurb")
                 // setComments(comments)
 
             } catch (err) {
-                console.log(err)
+                console.log(err, "errsettingBlurbCatch")
 
             }
         }
@@ -65,7 +66,7 @@ function ShowBlurbPage() {
         <Row>
             <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
                 <p>Most Voted for blurbs for mobile.</p>
-                <p>Blurb</p>
+                <Blurb {...blurb.results[0]} setBlurb={setBlurb} blurbPage />
                 <Container className={styles.ContainerContent}>Comments
                 </Container>
             </Col>

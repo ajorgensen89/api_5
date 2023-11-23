@@ -10,3 +10,11 @@
     text-align: center;
     width: 50%;
 }
+
+.ThumbsUpVote {
+    background-color: #555555;
+}
+
+.ThumbsUp {
+    background-color: #50ee50;
+}

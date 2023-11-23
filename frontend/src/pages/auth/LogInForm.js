@@ -55,6 +55,7 @@ function LogInForm() {
             history.push("/");
             // history.goBack();
         } catch (err) {
+            console.log(err, "errsetErrorslogin")
             setErrors(err.response?.data);
         }
     };

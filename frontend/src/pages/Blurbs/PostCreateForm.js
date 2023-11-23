@@ -61,7 +61,7 @@ function PostCreateForm() {
             history.push(`/blurbs/${data.id}`)
 
         } catch (err) {
-            console.log(err)
+            console.log(err, "errformData")
             if (err.response?.status !== 401) {
                 setErrors(err.response?.data)
             }
