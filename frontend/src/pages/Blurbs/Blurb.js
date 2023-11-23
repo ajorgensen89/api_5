@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../../styles/Blurb.module.css";
-import { useCurrentUserContext } from "../../contexts/CurrentUserContext";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import Avatar from "../../components/Avatar";
@@ -10,7 +10,7 @@ const Blurb = (props) => {
     const {
         id,
         owner,
-        created_at,
+        // created_at,
         updated_at,
         title,
         content,
@@ -24,7 +24,7 @@ const Blurb = (props) => {
         setBlurb,
     } = props;
 
-    const currentUser = useCurrentUserContext();
+    const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner
 
     /** Handle Up voting for each blurb. */

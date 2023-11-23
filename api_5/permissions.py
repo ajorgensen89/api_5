@@ -8,5 +8,5 @@ class OwnerOrReadOnly(permissions.BasePermission):
         # Read only.
         if request.method in permissions.SAFE_METHODS:
             return True
-        # Allow editing if user owns profile. 
-        return obj.owner == request.user
+        # Allow editing if user owns profile.
+        return request.user == obj.owner

@@ -17,7 +17,7 @@ import appStyles from "../../styles/App.module.css";
 // import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 // import { useRedirect } from "../../hooks/useRedirect";
 // import { setTokenTimestamp } from "../../utils/utils";
-import { useSetCurrentUserContext } from "../../contexts/CurrentUserContext";
+import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 
 function LogInForm() {
 
@@ -26,9 +26,9 @@ function LogInForm() {
     
     /**Refactor and use Hooks instead of useContext. */
     /**Hooks in CurrentUserContext.js. */
-    /** Set useSetCurrentUserContext variable to update user on successful log in. */
+    /** Set useSetCurrentUser variable to update user on successful log in. */
 
-    const setCurrentUser = useSetCurrentUserContext();
+    const setCurrentUser = useSetCurrentUser();
 
     // useRedirect("loggedIn");
 

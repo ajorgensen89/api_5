@@ -7,7 +7,7 @@ import logo from "../assets/logo5.jpg";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
 
-import { useCurrentUserContext, useSetCurrentUserContext } from "../contexts/CurrentUserContext";
+import { useCurrentUser, useSetCurrentUser } from "../contexts/CurrentUserContext";
 import Avatar from "./Avatar";
 import axios from "axios";
 import useToggle from "../hooks/useToggle";
@@ -21,9 +21,9 @@ const NavBar = () => {
   const { collapseExpand, setCollapseExpand, burgerRef } = useToggle();  
 
   /** Access data in a child component to display Ternary condition. */
-  const currentUser = useCurrentUserContext();
+  const currentUser = useCurrentUser();
 
-  const setCurrentUser = useSetCurrentUserContext();
+  const setCurrentUser = useSetCurrentUser();
 
   const handleLogout = async () => {
     try {
@@ -43,8 +43,8 @@ const NavBar = () => {
         className={styles.NavLink}
         // activeClassName={styles.Active}
 
-        // Link to all blurbs created on website.
-        to="/newsfeed"
+        // Link to all blurbs created on website. NEWSFEED
+        to="/blurbs"
       >
         <i className="fa-regular fa-newspaper"></i>News Feed
       </NavLink>
