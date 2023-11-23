@@ -18,6 +18,8 @@ from .serializers import ProfileSerializer
 
 
 class ProfileView(generics.ListAPIView):
+    # Nice form rendered.
+    serializer_class = ProfileSerializer
 
     # ListAPIView used here as creation of profiles is
     # handled by Django Signals within the Profile model.
@@ -52,9 +54,6 @@ class ProfileView(generics.ListAPIView):
         'owner__following__created_at',
         'owner__followed__created_at',
     ]
-
-    # Nice form rendered.
-    serializer_class = ProfileSerializer
 
 
 # """ """ comments have not been created due to them presenting themselves

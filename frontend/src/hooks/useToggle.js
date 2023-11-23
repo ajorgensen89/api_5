@@ -17,7 +17,7 @@ const useToggle = () => {
         /**Set listener here. Set removal in return.*/
         document.addEventListener('mouseup', handleCollapseExpand)
         return () => {
-            document.removeEventListener('mouseup', handleCollapseExpand)
+            document.removeEventListener('mouseup', handleCollapseExpand);
         }
         /** Place 'ref' prob in useEffesct dependancy array */
     }, [burgerRef]);

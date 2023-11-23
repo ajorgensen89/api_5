@@ -41,7 +41,7 @@ class BlurbsSerializer(serializers.ModelSerializer):
     def get_is_owner(self, obj):
         # Check user owns an object.
         request = self.context['request']
-        # Save and return user profile.
+        # Save and return user blurb if matching login user.
         return request.user == obj.owner
 
     def get_votes_id(self, obj):

@@ -26,7 +26,7 @@ class Profile(models.Model):
         return f"{self.owner}'s profile"
 
 
-def make_profile(sender, instance, created, **kwargs):
+def create_profile(sender, instance, created, **kwargs):
     if created:
         # If True, create user profile.
         Profile.objects.create(owner=instance)
@@ -34,4 +34,4 @@ def make_profile(sender, instance, created, **kwargs):
 
 # Run make_profile method, each time and receive User model as signal.
 # Using Django Signals.
-post_save.connect(make_profile, sender=User)
+post_save.connect(create_profile, sender=User)

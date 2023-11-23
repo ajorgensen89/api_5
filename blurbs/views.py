@@ -46,7 +46,7 @@ class BlurbsView(generics.ListCreateAPIView):
         # Get blurbs owned by a specific user.
         'owner__profile',
         # Filter blurbs by selected category.
-        'category',
+        # 'category',
     ]
 
     # Search fields include Username and Title of blurb.
