@@ -6,6 +6,7 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 
+
 const Blurb = (props) => {
     const {
         id,
@@ -24,7 +25,10 @@ const Blurb = (props) => {
         setBlurb,
     } = props;
 
+    /**Set current user by using useCurrentuser Hook */
     const currentUser = useCurrentUser();
+
+    /**set is_owner if current username matches owner for currentUser.*/
     const is_owner = currentUser?.username === owner
 
     /** Handle Up voting for each blurb. */
@@ -96,6 +100,7 @@ const Blurb = (props) => {
                     </OverlayTrigger>
                 ) : votes_id ? (
                     <span onClick={handleRemoveVote}>
+
                         <i className={`fa-solid fa-thumbs-up ${styles.ThumbsUpVote}`}></i>
                     </span>
                 ) : currentUser ? (

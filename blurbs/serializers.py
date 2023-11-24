@@ -22,6 +22,13 @@ class BlurbsSerializer(serializers.ModelSerializer):
     votes_count = serializers.ReadOnlyField()
     comments_count = serializers.ReadOnlyField()
 
+    # Use GET on 'is_owner' as the field name.
+    def get_is_owner(self, obj):
+        # Check user owns an object.
+        request = self.context['request']
+        # Save and return user blurb if matching login user.
+        return request.user == obj.owner
+
     # Image validation from Rest Framework. validate_fieldname (image).
     def validate_image(self, value):
         if value.size > 2 * 1024 * 1024:
@@ -36,13 +43,6 @@ class BlurbsSerializer(serializers.ModelSerializer):
             )
         # Return orignal value passed into function.
         return value
-
-    # Use GET on 'is_owner' as the field name.
-    def get_is_owner(self, obj):
-        # Check user owns an object.
-        request = self.context['request']
-        # Save and return user blurb if matching login user.
-        return request.user == obj.owner
 
     def get_votes_id(self, obj):
         user = self.context['request'].user

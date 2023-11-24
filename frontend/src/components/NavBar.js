@@ -44,7 +44,7 @@ const NavBar = () => {
         // activeClassName={styles.Active}
 
         // Link to all blurbs created on website. NEWSFEED
-        to="/blurbs"
+        to="/newsfeed"
       >
         <i className="fa-regular fa-newspaper"></i>News Feed
       </NavLink>
@@ -69,7 +69,7 @@ const NavBar = () => {
       </NavLink>
       <NavLink
 
-        // Link to current logged user via profile id.
+        // (?) check if currentUser and link to current logged user via profile id.
         to={`/profiles/${currentUser?.profile_id}`}
         className={styles.NavLink}
 

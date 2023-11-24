@@ -13,17 +13,33 @@ import LogInForm from "./pages/auth/LogInForm";
 // import CreateBlurbForm from "./pages/Blurbs/CreateBlurbForm";
 import ShowBlurbPage from "./pages/Blurbs/ShowBlurbPage";
 import PostCreateForm from "./pages/Blurbs/PostCreateForm";
+import AllBlurbs from "./pages/Blurbs/AllBlurbs";
+import { useCurrentUser } from "./contexts/CurrentUserContext";
 
 /** Switch holds route. Exact path is rendered when matching. */
 /** Link to NavBar.js */
 function App() {
+  /**Set current user by using useCurrentuser Hook */
+  const currentUser = useCurrentUser();
+  /**Get profile_id if current username matches owner for currentUser. Empty string as default.*/
+  const profile_id = currentUser?.profile_id || "";
   return (
     <div className={styles.App}>
       <div>
         <NavBar />
         <Container className={styles.Main}>
           <Switch>
-            <Route exact path="/" render={() => <h1>Home page</h1>} />
+            <Route exact path="/" render={() => <AllBlurbs message="No results... Try another search?" />} />
+            <Route exact path="/newsfeed" render={() => (
+              <AllBlurbs
+                message="No results... Try another search? Or follower a user."
+                filter={`owner__followed__owner__profiles=${profile_id}&`}
+              />)} />
+            <Route exact path="/upVoted" render={() => (
+              <AllBlurbs
+                message="No results... Try another search? Or vote for the best blurbs."
+                filter={`likes__owner__profiles=${profile_id}&orderings=-votes__created_at&`}
+              />)} />
             <Route exact path="/login" render={() => <LogInForm />} />
             <Route exact path="/signup" render={() => <SignUpForm />} />
             <Route exact path="/blurbs/create" render={() => <PostCreateForm />} />
