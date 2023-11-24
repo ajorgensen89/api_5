@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router";
 import axios from "axios";
 import { axiosReq } from "../../api/axiosDefaults";
+import Blurb from "./Blurb";
 
 function AllBlurbs(props) {
     /** Sets props. Set default empty string */
@@ -30,7 +31,7 @@ function AllBlurbs(props) {
                 setHasloaded(true);
                 console.log("data set:", data)
             } catch (err) {
-                console.log(err);
+                console.log(err, "fetchBlurbs err");
 
             }
         };
@@ -49,7 +50,9 @@ function AllBlurbs(props) {
                 {hasLoaded ? (
                     <>
                         {blurb.results.length ? (
-                            console.log("mapping over blurb")
+                            blurb.results.map(blurb => (
+                                <Blurb key={blurb.id} {...blurb} setBlurb={setBlurb} />
+                            ))
                         ) : (
                             console.log("nothing to show.")
                         )}

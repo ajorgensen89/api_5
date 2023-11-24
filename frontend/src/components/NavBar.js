@@ -20,7 +20,7 @@ const NavBar = () => {
   /** Use Hook to collaspe and expand burger dropdown menu on click. */
   const { collapseExpand, setCollapseExpand, burgerRef } = useToggle();  
 
-  /** Access data in a child component to display Ternary condition. */
+  /** Access data in a child component to display Ternary condition in navigation View. */
   const currentUser = useCurrentUser();
 
   const setCurrentUser = useSetCurrentUser();

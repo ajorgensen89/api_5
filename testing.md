@@ -104,7 +104,19 @@ If the backend API 'python manage.py runserver', had not been entered to get the
 This ran together with the above Proxy Error.<br>
 <img src="frontend/src/assets/images/testing-images-frontend/POSTerror.png" width=30% height=30%>
 <br>
+- Coding error for mapping the full array of blurbs. The data arrray would return and was printed in console log.<br>
+<img src="frontend/src/assets/images/testing-images-frontend/NoMap.png" width=20% height=20%><br>
+This error was spotted and fix as the full array have not been mapped through using map() function to get all blurbs in the API.<br>
+<img src="frontend/src/assets/images/testing-images-frontend/YesMap.png" width=10% height=10%><br>
+<br>
 
+- When creating commentary within my files, I had commented out a vital piece of code that caused issues when running the website. This took a good couple of days to find and solve as it was causing a few different errors.<br>
+With the help of a Slack Community Individual, the problem was found and resolved.<br>
+<img src="frontend/src/assets/images/testing-images-frontend/owner_id.png" width=20% height=20%><br>
+<br>
+
+
+<hr>
 
 [Back to the top](#testing)
 

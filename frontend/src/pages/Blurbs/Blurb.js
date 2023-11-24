@@ -80,7 +80,7 @@ const Blurb = (props) => {
                 </Link>
                 <div>
                     <span>Updated:{updated_at}</span>
-                    {is_owner && blurbPage && "..."}
+                    {is_owner && blurbPage && "."}
                 </div>
 
             </Media>
@@ -100,12 +100,11 @@ const Blurb = (props) => {
                     </OverlayTrigger>
                 ) : votes_id ? (
                     <span onClick={handleRemoveVote}>
-
                         <i className={`fa-solid fa-thumbs-up ${styles.ThumbsUpVote}`}></i>
                     </span>
                 ) : currentUser ? (
                     <span onClick={handleVote}>
-                        <i className={`fa-solid fa-thumbs-up ${styles.ThumbsUp}`}></i>
+                        <i className="fa-solid fa-thumbs-up"></i>
                     </span>
                 ) : (
                     <OverlayTrigger placement="top" overlay={<Tooltip>Log in!</Tooltip>}>
