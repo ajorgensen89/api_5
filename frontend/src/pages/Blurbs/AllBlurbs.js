@@ -2,7 +2,7 @@ import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-
+import NoResults from "../../assets/images/Nothing.jpg"
 import styles from "../../styles/AllBlurbs.module.css"
 import appStyles from "../../styles/App.module.css";
 import { useEffect, useState } from "react";
@@ -10,6 +10,7 @@ import { useLocation } from "react-router";
 import axios from "axios";
 import { axiosReq } from "../../api/axiosDefaults";
 import Blurb from "./Blurb";
+import Display from "../../components/Display";
 
 function AllBlurbs(props) {
     /** Sets props. Set default empty string */
@@ -55,12 +56,12 @@ function AllBlurbs(props) {
                                 <Blurb key={blurb.id} {...blurb} setBlurb={setBlurb} />
                             ))
                         ) : (
-                            console.log("nothing to show.")
+                            <Display src={NoResults} message={message} />
                         )}
                     </>
 
                 ) : (
-                    console.log("not loaded ... spinner")
+                    <Display spinner />
                 )}
 
                 <Container className={styles.ContainerContent}>
