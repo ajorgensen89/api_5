@@ -1,18 +1,20 @@
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
+// import Container from "react-bootstrap/Container";
 import NoResults from "../../assets/images/Nothing.jpg"
 import styles from "../../styles/AllBlurbs.module.css"
-import appStyles from "../../styles/App.module.css";
+// import appStyles from "../../styles/App.module.css";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router";
-import axios from "axios";
+
 import { axiosReq } from "../../api/axiosDefaults";
 import Blurb from "./Blurb";
 import Display from "../../components/Display";
 
 function AllBlurbs(props) {
+    /**Search Bar state. add search to axiosReq and set*/
+    const [query, setQuery] = useState("");
     /** Sets props. Set default empty string */
     const { message, filter = "" } = props;
     /** Store objects in results array.*/
@@ -27,7 +29,7 @@ function AllBlurbs(props) {
         const fetchBlurbs = async () => {
             try {
                 /**Filter prop is used to filter what the user will see. Followed/voted for blurbs. */
-                const { data } = await axiosReq(`/blurbs/?${filter}`);
+                const { data } = await axiosReq(`/blurbs/?${filter}search=${query}`);
                 setBlurb(data);
                 setHasloaded(true);
                 console.log("data set:", data)
@@ -38,17 +40,28 @@ function AllBlurbs(props) {
         };
         /**reset loading sppin to show to user each time. */
         setHasloaded(false);
-        /**Run useEffect each time the filter or path changes. */
+        /**Run useEffect each time the filter, search query or path changes. */
         fetchBlurbs();
-    }, [filter, pathname]);
-
+    }, [filter, pathname, query]);
 
     return (
         <Row>
             {/* className="py-2 p-0 p-md-2" */}
             <Col md={7} lg={8}>
                 <p>Most Voted for blurbs for mobile.</p>
-                <p>Blurbs List</p>
+                {/* <i class="fa-brands fa-searchengin"></i> */}
+                <Form className={styles.SearchBar}
+                    onSubmit={(event) => event.preventDefault()}>
+                    <Form.Control
+                        type="text"
+                        placeholder="Start searching..."
+                        /**Run search */
+                        value={query}
+                        onChange={(event) => setQuery(event.target.value)}
+                    />
+
+                </Form>
+                <p></p>
                 {hasLoaded ? (
                     <>
                         {blurb.results.length ? (
@@ -64,8 +77,8 @@ function AllBlurbs(props) {
                     <Display spinner />
                 )}
 
-                <Container className={styles.ContainerContent}>
-                </Container>
+                {/* <Container className={styles.ContainerContent}>
+                </Container> */}
             </Col>
             {/* className="d-none d-md-block p-0 p-md-2" */}
             <Col md={5} lg={4}>
