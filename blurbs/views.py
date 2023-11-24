@@ -66,9 +66,8 @@ class BlurbsView(generics.ListCreateAPIView):
     # queryset = Blurbs.objects.all()
     
     # Create new object using Rest Framework Generics 'perform_create'.
-    # def perform_create(self, serializer):
-    #     serializer.save(owner=self.request.user)
-
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
 
 # Assists with the retrieving, updating and deleting data
 # from the Blurbs model.

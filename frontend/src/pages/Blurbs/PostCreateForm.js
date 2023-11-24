@@ -54,15 +54,10 @@ function PostCreateForm() {
 
         formData.append('title', title)
         formData.append('content', content)
-        // formData.append('image', imageInput.current.files[0])
-        formData.append('image', postData['image'])
+        // Checks to see if user has selected an image, if so, then add image file to formData otherwise set to null.
+        formData.append('image', postData['image']  ? imageInput.current.files[0] : null)
         
         try {
-            // Checking we have the data we need.
-            console.log("postData['image']", postData['image'])
-            console.log("imageInput.current.files[0]", imageInput.current.files[0])
-            console.log('title', title, 'content', content, 'image', formData['image']);
-
             const { data } = await axiosReq.post('/blurbs/', formData);
             history.push(`/blurbs/${data.id}`)
 
@@ -154,6 +149,7 @@ function PostCreateForm() {
                             )}
 
                             <Form.File
+                                type="file"
                                 id="image-upload"
                                 /**update_to set in model imageFields */
                                 accept="image/*"
