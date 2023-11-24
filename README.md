@@ -44,6 +44,10 @@ Blurbs are talking point that users may want to share with others. A category fo
 The 4 categories are Spring, Summer, Autumn and Winter.<br>
 The website will have the ability for the user to filter by Season to look at a particular one they have an interest in.<br>
 <br>
+A user can add a new blurb and add a title and content to an image.<br>
+<img src="/frontend/src/assets/images/readme-images-frontend/NewBlurb.png" width=20% height=20%>
+Each blurb shows the user who posted the blurb, date it was posted, image, title, content, whether it has been voted for and if any comments have been created about it. Clicking on the image itself takes you too the blurb own page which lists the comments underneathe.<br>
+<img src="/frontend/src/assets/images/readme-images-frontend/Newsfeedview.png" width=20% height=20%>
 
 ### Comments.
 
