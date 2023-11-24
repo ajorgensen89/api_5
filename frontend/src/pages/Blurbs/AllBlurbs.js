@@ -44,7 +44,8 @@ function AllBlurbs(props) {
 
     return (
         <Row>
-            <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
+            {/* className="py-2 p-0 p-md-2" */}
+            <Col md={7} lg={8}>
                 <p>Most Voted for blurbs for mobile.</p>
                 <p>Blurbs List</p>
                 {hasLoaded ? (
@@ -65,7 +66,8 @@ function AllBlurbs(props) {
                 <Container className={styles.ContainerContent}>
                 </Container>
             </Col>
-            <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
+            {/* className="d-none d-md-block p-0 p-md-2" */}
+            <Col md={5} lg={4}>
                 <p>Most Voted for blurbs for desktop.</p>
             </Col>
         </Row>

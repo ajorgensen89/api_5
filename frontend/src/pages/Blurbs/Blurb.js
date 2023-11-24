@@ -38,7 +38,7 @@ const Blurb = (props) => {
             setBlurb((prevBlurb) => ({
                 ...prevBlurb,
                 results: prevBlurb.results.map((blurb) => {
-                    return blurb.id
+                    return blurb.id === id
                         /**use data to set id to vote matching the correct blurb. */
                         ? { ...blurb, votes_count: blurb.votes_count + 1, votes_id: data.id }
                         : blurb;
@@ -58,7 +58,7 @@ const Blurb = (props) => {
             setBlurb((prevBlurb) => ({
                 ...prevBlurb,
                 results: prevBlurb.results.map((blurb) => {
-                    return blurb.id
+                    return blurb.id === id
                         /** votes_id = null as no id needed. */
                         ? { ...blurb, votes_count: blurb.votes_count - 1, votes_id: null }
                         : blurb;

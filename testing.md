@@ -100,8 +100,8 @@ Correctly signals, POST and GET, are also seen in the terminal for confimation t
 <br>
 - Errors faced. POST error.<br>
 This error kept appearing once the backend and frontend projects had been combined.<br>
-If the backend API 'python manage.py runserver', had not been entered to get the server running in conjuction with the React frontend server which ran on 'npm start', these errors would appear.<br>
-This ran together with the above Proxy Error.<br>
+If the backend API 'python manage.py runserver', had not been entered to get the server running in conjuction with the React frontend server which ran on 'nvm install 16.18.0', 'nvm use 16.18.0', then 'npm start', these errors would appear.<br>
+This error showed together with the above Proxy Error.<br>
 <img src="frontend/src/assets/images/testing-images-frontend/POSTerror.png" width=30% height=30%>
 <br>
 - Coding error for mapping the full array of blurbs. The data arrray would return and was printed in console log.<br>

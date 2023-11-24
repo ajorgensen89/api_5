@@ -3,5 +3,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100px;
+    min-height: 200px;
+    text-decoration: none;
 }

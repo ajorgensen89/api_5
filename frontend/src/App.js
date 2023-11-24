@@ -10,9 +10,9 @@ import Container from "react-bootstrap/Container";
 import './api/axiosDefaults';
 import SignUpForm from "./pages/auth/SignUpForm";
 import LogInForm from "./pages/auth/LogInForm";
-// import CreateBlurbForm from "./pages/Blurbs/CreateBlurbForm";
+import CreateBlurbForm from "./pages/Blurbs/CreateBlurbForm";
 import ShowBlurbPage from "./pages/Blurbs/ShowBlurbPage";
-import PostCreateForm from "./pages/Blurbs/PostCreateForm";
+// import PostCreateForm from "./pages/Blurbs/PostCreateForm";
 import AllBlurbs from "./pages/Blurbs/AllBlurbs";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
 
@@ -42,7 +42,7 @@ function App() {
               />)} />
             <Route exact path="/login" render={() => <LogInForm />} />
             <Route exact path="/signup" render={() => <SignUpForm />} />
-            <Route exact path="/blurbs/create" render={() => <PostCreateForm />} />
+            <Route exact path="/blurbs/create" render={() => <CreateBlurbForm />} />
             <Route exact path="/blurbs/:id" render={() => <ShowBlurbPage />} />
             <Route render={() => <h1>Page not found!</h1>} />
           </Switch>
