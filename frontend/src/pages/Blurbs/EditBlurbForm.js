@@ -9,10 +9,6 @@ import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
 import Image from "react-bootstrap/Image";
 
-import Display from "../../components/Display.js"
-
-import Upload from "../../assets/images/upload.jpg";
-
 import styles from "../../styles/BlurbsForm.module.css";
 import appStyles from "../../styles/App.module.css";
 import btnStyles from "../../styles/Button.module.css";
@@ -207,38 +203,20 @@ function EditBlurbForm() {
                         className={styles.Container}
                     >
                         <Form.Group className="text-center">
-                            {/* Set first option in terinary condition if image present, 
-                            otherwise set second option after :*/}
-                            {image ? (
-                                <>
-                                    <figure>
-                                        {/* Bootstrap Image component. */}
-                                        <Image className={appStyles.Image} src={image} rounded />
-                                    </figure>
-                                    <div>
-                                        <Form.Label
-                                            className={btnStyles.Button}
-
-                                            /** Link to id in Form.File for uploading image */
-                                            htmlFor="image-upload"
-                                        >
-                                            Change the image
-                                        </Form.Label>
-                                    </div>
-                                </>
-                            ) : (
+                            <figure>
+                                {/* Bootstrap Image component. */}
+                                <Image className={appStyles.Image} src={image} rounded />
+                            </figure>
+                            <div>
                                 <Form.Label
+                                    className={btnStyles.Button}
 
                                     /** Link to id in Form.File for uploading image */
                                     htmlFor="image-upload"
                                 >
-                                    <Display
-                                        src={Upload}
-                                        message="Click Image to Upload a new one."
-                                        className={`${styles.Display} ${appStyles.ContainerContent}`}
-                                    />
+                                    Change the image
                                 </Form.Label>
-                            )}
+                            </div>
 
                             <Form.File
                                 /**Set type prop */

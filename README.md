@@ -80,6 +80,7 @@ A user can add a new blurb and add a title and content to an image.<br>
 Each blurb shows the user who posted the blurb, date it was posted, image, title, content, whether it has been voted for and if any comments have been created about it. Clicking on the image itself takes you too the blurb own page which lists the comments underneathe.<br>
 <img src="frontend/src/assets/images/readme-images-frontend/Newsfeedview.png" width=20% height=20%>
 
+
 ### Comments.
 
 Everybody likes a discussion board, so a comment section has been created for users to make a comment or delete a comment about a particular blurb.<br>
@@ -90,6 +91,8 @@ Everybody likes a discussion board, so a comment section has been created for us
 User can vote for their favourite pictures. The most popular images and content with by filtered out and revealed for the user to access more easily.<br>
 Voting can occur when a user is logged in and they can not vote on their own blurbs they have posted on the wesbite. This helps to keep the voting, fair.<br>
 Votes can be created, viewed and deleted.<br>
+
+<img src="frontend/src/assets/images/readme-images-frontend/VoteCommentCount.png" width=20% height=20%><br>
 <br>
 
 ### Voting Error.
@@ -114,7 +117,6 @@ Other messages that are displayed to the user for direction, include a message a
 This is also the case for leaving comments. Both votes and comments are specified to each indiviual blurb and a count for each blurb for votes and comments are counted and shown to the user.<br>
 the green thumb in this image shows the 'upvote' as positive, for that blurb.<br>
 When removing a vote or comment you may have to go away from the page and come back to see the No results message if, no more votes or comments are avaliable.<br>
-<img src="frontend/src/assets/images/readme-images-frontend/VoteCommentCount.png" width=20% height=20%><br>
 
 <br>
 
@@ -298,7 +300,9 @@ Context hooks set to fulfil their duties stated in the comments.<br>
 CRUD stand for Create, Read, Undo and Delete. This is four interactions the developer or the user can have with a website on either the frontend or the backend.<br>
 [Django Signal](https://code.djangoproject.com/wiki/Signals) can be used for creating, retrieving, viewing and deleting data within the backend API.<br>
 <br>
-For React Frontend CRUD is also implemented for users to safely create blurbs without others being able to delete their content. If the owner wishes to update, edit or delete they can do so on their own content.<br>
+For React Frontend CRUD is also implemented for users to safely create blurbs without others being able to delete their content. If the owner wishes to update, edit or delete they can do so on their own content via the EDIT and DELETE links.<br>
+<img src="frontend/src/assets/images/readme-images-frontend/EditDelete.png" width=10% height=10%><br>
+<br>
 
 Deleting and creating a vote can be done by the owner, if they dont own the blurb. Users will also be able to create a 'follow' and delete the 'follow' request to 'follow and unfollow' particular users. Again, this will be controled by the user being logged in as a particular user.<br>
 <br>
