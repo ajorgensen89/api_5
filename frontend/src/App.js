@@ -33,12 +33,12 @@ function App() {
             <Route exact path="/newsfeed" render={() => (
               <AllBlurbs
                 message="No results... Try another search? Or follower a user."
-                filter={`owner__followed__owner__profiles=${profile_id}&`}
+                filter={`owner__followed__owner__profile=${profile_id}&`}
               />)} />
             <Route exact path="/upVoted" render={() => (
               <AllBlurbs
                 message="No results... Try another search? Or vote for the best blurbs."
-                filter={`likes__owner__profiles=${profile_id}&orderings=-votes__created_at&`}
+                filter={`votes__owner__profile=${profile_id}&ordering=-votes__created_at&`}
               />)} />
             <Route exact path="/login" render={() => <LogInForm />} />
             <Route exact path="/signup" render={() => <SignUpForm />} />

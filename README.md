@@ -54,7 +54,7 @@ Delicious Handrawn - The name of the font sounded appealing to use to help empha
 ## Coding Diagrams.
 
 Diagrams can help to find routes within the code to link models and access different parts of one model while making connections to and from different objects.<br>
-<img src="/frontend/src/assets/images/readme-images-frontend/diagrams.jpg" width=20% height=20%><br>
+<img src="frontend/src/assets/images/readme-images-frontend/diagrams.jpg" width=20% height=20%><br>
 <br>
 
 <hr>
@@ -76,9 +76,9 @@ The 4 categories are Spring, Summer, Autumn and Winter.<br>
 The website will have the ability for the user to filter by Season to look at a particular one they have an interest in.<br>
 <br>
 A user can add a new blurb and add a title and content to an image.<br>
-<img src="/frontend/src/assets/images/readme-images-frontend/NewBlurb.png" width=20% height=20%>
+<img src="frontend/src/assets/images/readme-images-frontend/NewBlurb.png" width=20% height=20%><br>
 Each blurb shows the user who posted the blurb, date it was posted, image, title, content, whether it has been voted for and if any comments have been created about it. Clicking on the image itself takes you too the blurb own page which lists the comments underneathe.<br>
-<img src="/frontend/src/assets/images/readme-images-frontend/Newsfeedview.png" width=20% height=20%>
+<img src="frontend/src/assets/images/readme-images-frontend/Newsfeedview.png" width=20% height=20%>
 
 ### Comments.
 
@@ -98,6 +98,31 @@ Followers/following/unfollow
 
 <br>
 
+### No results.
+
+When there are no results in a search, a picture or a message will be displayed to the user.<br>
+The user can use the search bar to try and find particular blurb pieces and this feature includes a no results page a particular phrase is not found.<br>
+<br>
+<img src="frontend/src/assets/images/readme-images-frontend/Noresultspage.png" width=20% height=20%><br>
+<br>
+
+Other messages that are displayed to the user for direction, include a message about whether they can vote or follow a user or if they have to log in first.<br>
+This is also the case for leaving comments. Both votes and comments are specified to each indiviual blurb and a count for each blurb for votes and comments are counted and shown to the user.<br>
+the green thumb in this image shows the 'upvote' as positive, for that blurb.<br>
+<img src="frontend/src/assets/images/readme-images-frontend/VoteCommentCount.png" width=20% height=20%><br>
+
+<br>
+
+### Upload Content.
+
+The user will have an image displayed to them when first creating a blurb, to update an image, by clicking the image. <br>
+A React Spinner will be shown to the user while a page or search is loading making the website a better user experience.<br>
+<img src="frontend/src/assets/images/readme-images-frontend/Spinner.png" width=20% height=20%><br>
+
+<br>
+
+###
+
 ### Popular section.
 
 ### News Feed.
@@ -109,6 +134,18 @@ Adjusted so the menu collapses by itself for better user experience, otherwise t
 A mouse click event Hook has been used to improve this function.<br>
 Previously the menu would stay expanded and cover some of the content underneathe, before user clicks again.<br>
 <img src="frontend/src/assets/images/readme-images-frontend/Expandedmenu1.png" height=20% width=20%>
+
+<br>
+
+<hr>
+
+<br>
+
+## Future Features.
+
+Features can be added to greatly improv this website.<br>
+A setTimeOut() function can be added to the search bar to slow the website response to keys presses. This would set a delay in which the searched items would appear, rather than flicking after each key stroke.<br>
+<br>
 
 
 # Intialise REACT project.

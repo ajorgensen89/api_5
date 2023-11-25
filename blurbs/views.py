@@ -41,7 +41,7 @@ class BlurbsView(generics.ListCreateAPIView):
     filterset_fields = [
         # Get the blurbs from a user they are following.
         'owner__followed__owner__profile',
-        # Get the blurb a user has liked.
+        # Get the blurb a user has voted for.
         'votes__owner__profile',
         # Get blurbs owned by a specific user.
         'owner__profile',
