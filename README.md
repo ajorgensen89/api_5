@@ -1,6 +1,11 @@
 # Walking Seasons.
 This project is the result of combining two repositories, a React frontend and a Django Rest Framework Application Programming Interface (API).<br>
 This product will be using data saved and sent from the API to the React frontend to produce a user friendly website for interaction.<br>
+The idea of this wesbsite is to offer a platform for users to share and comment on other users blurbs. The blurbs can be voted for, to show and highlight the best content.<br>
+Users with the best blurbs on the website can be followed.<br>
+All users will be able to view, create, edit and delete their own content.<br>
+
+<br>
 
 ## Agile.
 User Stories were created with [Github](https://github.com/) to develope ideas for a website where users can save and access their content to create blurbs about walkthing through different seasons, vote on the best content while following particular users that they enjoy hearing from.<br>
