@@ -134,8 +134,17 @@ This was installed in the terminal in the React frontend codespace - /workspace/
 The 'next' element was set in the API to hold a URL to the next page, aswell as previous. This is used in the props for infinite scroll to access this feature.<br>
 <img src="frontend/src/assets/images/readme-images-frontend/next1.png" width=20% height=20%><br>
 <br>
+Issues were faced within development mode using this component due to Gitpod error. It would continue to display the spinner prop with loading the next page fo the API. The correct results will be shown in production of project within continued scrolling.<br>
 
-###
+<img src="frontend/src/assets/images/readme-images-frontend/InfinitescrollError.png" width=30% height=30%><br>
+<br>
+
+Noted topic wihtin slack community here: https://app.slack.com/client/T0L30B202/search <br>
+
+
+### Drop down menu.
+
+Th React component Dropdown, has been used to display a menu for the user to edit and delete their own posts. This will be visable when the image itself it clicked, itself of the updated time and date.<br>
 
 ### Popular section.
 
@@ -147,6 +156,7 @@ A [React](https://react.dev/) Navigation bar has been used which make access to 
 Adjusted so the menu collapses by itself for better user experience, otherwise they would have to reclick the toggle menu button to close the expanded menu.<br>
 A mouse click event Hook has been used to improve this function.<br>
 Previously the menu would stay expanded and cover some of the content underneathe, before user clicks again.<br>
+<br>
 <img src="frontend/src/assets/images/readme-images-frontend/Expandedmenu1.png" height=20% width=20%>
 
 <br>
@@ -711,11 +721,15 @@ See [Testing](testing.md) file for full use of technologies used to test this we
 
 1. [Code Institute](https://codeinstitute.net/) for providing examples of [Django Rest Framework](https://www.djangoproject.com/) API building through [Code Institute](https://codeinstitute.net/) coursework to build backend parts to this project using databases, libaries, API Frameworks, Bootstrap, Django and Django Built-in benefits such as testing, and React for the frontend. This helped when creating my 'Profiles', 'Votes', 'Followers' and 'Blurbs' App's within this API. <br>
 
-2. [Code Institute](https://codeinstitute.net/) for providing a React front end project to build called 'Moments' Alwell as a Django Rest Framework API.<br>
+2. [Code Institute](https://codeinstitute.net/) for providing a React front end project to build called 'Moments'. Aswell as a Django Rest Framework API.<br>
 
 3. [Stack OverFlow](https://stackoverflow.com/questions/61694370/why-is-alert-not-showing-on-my-react-app) for React Alert not showing.<br>
 
 4. [CORS](https://stackoverflow.com/questions/28046422/django-cors-headers-not-work) error tips.<br>
+
+5. [Stack Overflow](https://stackoverflow.com/questions/11488974/django-create-user-profile-on-user-creation) for checking model creation in API.<br>
+
+6. [Infinite Scroll props](https://stackoverflow.com/questions/69926202/how-can-i-not-pass-children-as-props-instead-nest-children-between-the-opening) were attempted with improvements.<br>
 
 
 [Back to the top](#walking-seasons)

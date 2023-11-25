@@ -80,6 +80,7 @@ function AllBlurbs(props) {
                                         <Blurb key={blurb.id} {...blurb} setBlurb={setBlurb} />
                                     ))
                                 }
+                                // scrollThreshold={250}
                                 /** Infinite Scroll props */
                                 /** Say how many blurb data results there are. */
                                 dataLength={blurb.results.length}
@@ -91,6 +92,25 @@ function AllBlurbs(props) {
                                  * Set resource prob to blurb and setBlurb. */
                                 next={() => fetchedMoreData(blurb, setBlurb)}
                             />
+                            // <InfiniteScroll
+                            //  
+                            //     /** Infinite Scroll props */
+                            //     /** Say how many blurb data results there are. */
+                            //     dataLength={blurb.results.length}
+                            //     /**Use spinner component in Display.js */
+                            //     loader={<Display spinner />}
+                            //     /** If 'has more' is true, run 'next' prop. */
+                            //     hasMore={!!blurb.next}
+                            //     /** Created and imported from utils for 'next' prop function to be used on other pages. 
+                            //      * Set resource prob to blurb and setBlurb. */
+                            //     next={() => fetchedMoreData(blurb, setBlurb)}
+                            // >
+                            //     {
+                            //         blurb.results.map(blurb => (
+                            //             <Blurb key={blurb.id} {...blurb} setBlurb={setBlurb} />
+                            //         ))
+                            //     }
+                            // </InfiniteScroll>
 
                         ) : (
                             <Display src={NoResult} message={message} />

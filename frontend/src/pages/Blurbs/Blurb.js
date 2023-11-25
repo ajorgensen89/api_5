@@ -5,6 +5,8 @@ import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
+import { DropDownMenu } from "../../components/DropDownMenu";
+import { useHistory } from "react-router";
 
 
 const Blurb = (props) => {
@@ -24,6 +26,8 @@ const Blurb = (props) => {
         blurbPage,
         setBlurb,
     } = props;
+    /** Create history object for redirction. */
+    const history = useHistory();
 
     /**Set current user by using useCurrentuser Hook */
     const currentUser = useCurrentUser();
@@ -69,6 +73,20 @@ const Blurb = (props) => {
 
         }
     }
+    /** Direct to URL page for editing a blurb. */
+    const handleEditing = () => {
+        history.push(`/blurbs/${id}/edit`)
+    }
+
+    /** Direct to URL page for editing a blurb. */
+    const handleDeleting = async () => {
+        try {
+            await axiosRes.delete(`/blurbs/${id}/`);
+            history.goBack();
+        } catch (err) {
+            console.log(err);
+        }
+    };
 
     return <Card className={styles.ContainerContent}>
         <Card.Body>
@@ -80,7 +98,15 @@ const Blurb = (props) => {
                 </Link>
                 <div>
                     <span>Updated:{updated_at}</span>
-                    {is_owner && blurbPage && "."}
+                    {/* Drop down menu will appear if all conditions are true. If it is the owner of the blurb.
+                    The owner will then be able to edit and delete a post accordingly. */}
+                    {/* DropDownMenu has two props - edit and delete. */}
+                    {is_owner && blurbPage && (
+                        <DropDownMenu
+                            handleEditing={handleEditing}
+                            handleDeleting={handleDeleting}
+                        />
+                    )}
                 </div>
 
             </Media>

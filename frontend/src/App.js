@@ -15,6 +15,7 @@ import ShowBlurbPage from "./pages/Blurbs/ShowBlurbPage";
 // import PostCreateForm from "./pages/Blurbs/PostCreateForm";
 import AllBlurbs from "./pages/Blurbs/AllBlurbs";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
+import EditBlurbForm from "./pages/Blurbs/EditBlurbForm";
 
 /** Switch holds route. Exact path is rendered when matching. */
 /** Link to NavBar.js */
@@ -44,6 +45,7 @@ function App() {
             <Route exact path="/signup" render={() => <SignUpForm />} />
             <Route exact path="/blurbs/create" render={() => <CreateBlurbForm />} />
             <Route exact path="/blurbs/:id" render={() => <ShowBlurbPage />} />
+            <Route exact path="/blurbs/:id/edit" render={() => <EditBlurbForm />} />
             <Route render={() => <h1>Page not found!</h1>} />
           </Switch>
         </Container>
