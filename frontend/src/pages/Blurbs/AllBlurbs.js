@@ -2,7 +2,7 @@ import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Col";
 // import Container from "react-bootstrap/Container";
-import NoResults from "../../assets/images/Nothing.jpg"
+import NoResult from "../../assets/images/Nothing.jpg"
 import styles from "../../styles/AllBlurbs.module.css"
 // import appStyles from "../../styles/App.module.css";
 import { useEffect, useState } from "react";
@@ -11,6 +11,8 @@ import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import Blurb from "./Blurb";
 import Display from "../../components/Display";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { fetchedMoreData } from "../../utils/utils";
 
 function AllBlurbs(props) {
     /**Search Bar state. add search to axiosReq and set*/
@@ -44,6 +46,8 @@ function AllBlurbs(props) {
         fetchBlurbs();
     }, [filter, pathname, query]);
 
+    /** Created to Code Institute, created while producing coursework. */
+
     return (
         <Row>
             {/* className="py-2 p-0 p-md-2" */}
@@ -69,11 +73,27 @@ function AllBlurbs(props) {
                 {hasLoaded ? (
                     <>
                         {blurb.results.length ? (
-                            blurb.results.map(blurb => (
-                                <Blurb key={blurb.id} {...blurb} setBlurb={setBlurb} />
-                            ))
+                            /** Map blurb and enter into children prop. */
+                            <InfiniteScroll
+                                children={
+                                    blurb.results.map(blurb => (
+                                        <Blurb key={blurb.id} {...blurb} setBlurb={setBlurb} />
+                                    ))
+                                }
+                                /** Infinite Scroll props */
+                                /** Say how many blurb data results there are. */
+                                dataLength={blurb.results.length}
+                                /**Use spinner component in Display.js */
+                                loader={<Display spinner />}
+                                /** If 'has more' is true, run 'next' prop. */
+                                hasMore={!!blurb.next}
+                                /** Created and imported from utils for 'next' prop function to be used on other pages. 
+                                 * Set resource prob to blurb and setBlurb. */
+                                next={() => fetchedMoreData(blurb, setBlurb)}
+                            />
+
                         ) : (
-                            <Display src={NoResults} message={message} />
+                            <Display src={NoResult} message={message} />
                         )}
                     </>
 

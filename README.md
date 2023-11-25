@@ -92,6 +92,10 @@ Voting can occur when a user is logged in and they can not vote on their own blu
 Votes can be created, viewed and deleted.<br>
 <br>
 
+### Voting Error.
+I had noticed that the votes count increases by one when the post is creating and your taken to the blurb page. It does change to 0 and 'not count' as a vote when on the main Home page.<br>
+This would need correcting at a later data.<br>
+
 ### Followers.
 
 Followers/following/unfollow
@@ -109,6 +113,7 @@ The user can use the search bar to try and find particular blurb pieces and this
 Other messages that are displayed to the user for direction, include a message about whether they can vote or follow a user or if they have to log in first.<br>
 This is also the case for leaving comments. Both votes and comments are specified to each indiviual blurb and a count for each blurb for votes and comments are counted and shown to the user.<br>
 the green thumb in this image shows the 'upvote' as positive, for that blurb.<br>
+When removing a vote or comment you may have to go away from the page and come back to see the No results message if, no more votes or comments are avaliable.<br>
 <img src="frontend/src/assets/images/readme-images-frontend/VoteCommentCount.png" width=20% height=20%><br>
 
 <br>
@@ -119,6 +124,15 @@ The user will have an image displayed to them when first creating a blurb, to up
 A React Spinner will be shown to the user while a page or search is loading making the website a better user experience.<br>
 <img src="frontend/src/assets/images/readme-images-frontend/Spinner.png" width=20% height=20%><br>
 
+### Infinite Scroll.
+
+The Infiniet Scroll component can be used from React so owners can continue scrolling while new content loads automatically. Pagination is set to show 10 blurbs per page but with infinite scroll set, the user can keep scrolling while new content loads.<br>
+This is hard to demonstrate in a picture, but after 10+ blurbs are created the React component will function.<br>
+Installing input for CLI: **npm install react-infinite-scroll-component**
+This was installed in the terminal in the React frontend codespace - /workspace/api_5/frontend.<br>
+<br>
+The 'next' element was set in the API to hold a URL to the next page, aswell as previous. This is used in the props for infinite scroll to access this feature.<br>
+<img src="frontend/src/assets/images/readme-images-frontend/next1.png" width=20% height=20%><br>
 <br>
 
 ###
@@ -145,6 +159,14 @@ Previously the menu would stay expanded and cover some of the content underneath
 
 Features can be added to greatly improv this website.<br>
 A setTimeOut() function can be added to the search bar to slow the website response to keys presses. This would set a delay in which the searched items would appear, rather than flicking after each key stroke.<br>
+<br>
+It was noted that the votes count increases by one when the post is first created and your taken to the blurb page. It does change to 0 and 'not count' as a vote on the main Home page.<br>
+This would need correcting at a later data. <br>
+
+<br>
+
+<hr>
+
 <br>
 
 
