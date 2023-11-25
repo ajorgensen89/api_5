@@ -69,7 +69,7 @@ User can create a profile add images, edit content and view other user's profile
 
 ### Blurbs.
 
-Blurbs can be created to hold titles, images and content about the picture. Or just an interesting piece of content by itself can be posted.<br>
+Blurbs can be created to hold titles, images and content about the picture in the blurb.<br>
 Adding a visual image is always more appealing to the eye.<br>
 Blurbs are talking point that users may want to share with others. A category for the photo or content can be selected to filter blurbs into 4 categories.<br>
 The 4 categories are Spring, Summer, Autumn and Winter.<br>
@@ -92,6 +92,7 @@ Users will be able to successfully send and store their data from the React Fron
 The user can click on eithe the image or the comment speech bubble to leave and comment.<br>
 <img src="frontend/src/assets/images/readme-images-frontend/APICommentPost.png " width=20% height=20%>
 <br>
+From a desired comment, the user can navigate to the profile of the owner who posted the comment.<br>
 
 ### Voting.
 

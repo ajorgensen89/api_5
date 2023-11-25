@@ -31,7 +31,7 @@ function EditBlurbForm() {
         title: "",
         content: "",
         // category: "",
-        image: "",
+        image: null,
     });
 
     /** Set variables for input value. */
@@ -95,20 +95,13 @@ function EditBlurbForm() {
 
         formData.append("title", title);
         formData.append("content", content);
-        // formData.append("category", category);
-        // formData.append("image", imageInput.current.files[0]);
+
         // Checks to see if user has selected an image, if so, then add image file to formData otherwise set to null.
 
+        if (imageInput.current.files[0]) {
+            formData.append('image', imageInput);
+        }
         /**Check if image is changed, if not, submit edited fields with image in file. */
-        // if (imageInput?.current?.file[0]) {
-        formData.append('image', blurbData['image'] ? imageInput.current.files[0] : null);
-        //}
-
-
-        // if (blurbData['image'] ? imageInput.current.files[0] : null) {
-        //     formData.append('image', blurbData['image'] ? imageInput.current.files[0] : null);
-        // }
-        // formData.append('image', blurbData['image'] ? imageInput.current.files[0] : null);
 
         // due to multidata.
         try {

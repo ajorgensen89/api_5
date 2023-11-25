@@ -11,7 +11,7 @@ import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import Blurb from "./Blurb";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import CreateCommentForm from "../Comments/CreateCommentForm";
-
+import CommentContent from "../Comments/comment";
 
 function ShowBlurbPage() {
     /** Set id to get each blurb */
@@ -105,9 +105,8 @@ function ShowBlurbPage() {
                     ) : null}
                     {comments.results.length ? (
                         comments.results.map(comment => (
-                            <p key={comment.id}>
-                                {comment.owner}: {comment.content}
-                            </p>
+                            /** Spread comments, objects passed as props with id to each comment.*/
+                            <CommentContent key={comment.id} {...comment} />
                         ))
                     ) : currentUser ? (
                         <span>Be the first to comment!</span>

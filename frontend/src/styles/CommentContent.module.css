@@ -1,0 +1,16 @@
+.OwnerName {
+    color: #6c986c;
+    border: 4px soild #f1f1f1;
+    margin: 0 4px 0 0;
+    
+}
+
+.UpdatedDate {
+    color: #6c986c;
+    font-weight: lighter;
+    font-size: 10px;
+}
+
+.CommentText {
+    font-size: 14px;
+}
