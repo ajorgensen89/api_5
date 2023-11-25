@@ -1,9 +1,9 @@
 .SearchBar {
     background-color: #f1f1f1;
     border: 4px soild #6c986c;
-    border-radius: 20%;
+    border-radius: 2%;
     padding-bottom: 4px;
     margin-bottom: 4px;
-    width: 200px;
-    height: 20px;
+    width: 260px;
+    height: 60px;
 }

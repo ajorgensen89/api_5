@@ -76,13 +76,15 @@ REST_AUTH_SERIALIZERS = {
 # SECURITY WARNING: keep the secret key used in production secret!
 
 SECRET_KEY = os.getenv('SECRET_KEY')
-# SECRET_KEY = 'django-insecure-gf9oun_7gt%i3@ej$m%snop3kjea@a+ed_hch$y+%!(ftsa5w('
+# SECRET_KEY = 'django-insecure-gf9oun_7gt%i3@ej$m%snop3kjea@a+ed_hch$y+%!
+# (ftsa5w('
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEBUG' in os.environ
 # True or False.
 
-# ALLOWED_HOSTS = ['localhost', '8000-ajorgensen89-api5-4mxnlxxfqs2.ws-eu106.gitpod.io']
+# ALLOWED_HOSTS = ['localhost', '8000-ajorgensen89-api5-4mxnlxxfqs2.ws-eu106.
+# gitpod.io']
 # 'localhost', 'api-5-5ba41198804f.herokuapp.com/',
 
 ALLOWED_HOSTS = [

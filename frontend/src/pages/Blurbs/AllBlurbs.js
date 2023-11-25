@@ -51,10 +51,11 @@ function AllBlurbs(props) {
                 <p>Most Voted for blurbs for mobile.</p>
                 {/* <i class="fa-brands fa-searchengin"></i> */}
                 {/* Search Bar searches by title or user. */}
-                <Form className={styles.SearchBar}
+                <Form
                     // Stop page refreshing if 'Enter' hit.
                     onSubmit={(event) => event.preventDefault()}>
                     <Form.Control
+                        className={styles.SearchBar}
                         type="text"
                         placeholder="Start searching..."
                         /**Set query to run search */
