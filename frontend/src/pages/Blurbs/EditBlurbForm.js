@@ -49,7 +49,7 @@ function EditBlurbForm() {
             try {
                 const { data } = await axiosRes.get(`/blurbs/${id}/`)
                 /** Destructor data received from the API - A blurb with requested id for editing. */
-                const { is_owner, title, content, image } = data;
+                const { title, content, image, is_owner } = data;
                 /** Fields can be repopulated when mounted or they will be redirected if not the owner of the blurb being edited. */
                 is_owner ? setBlurbData({ title, content, image }) : history.push('/');
             } catch (err) {

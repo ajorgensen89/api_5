@@ -84,6 +84,13 @@ Each blurb shows the user who posted the blurb, date it was posted, image, title
 ### Comments.
 
 Everybody likes a discussion board, so a comment section has been created for users to make a comment or delete a comment about a particular blurb.<br>
+
+If the user is logged in, users will be able to post a comment. If not the 'typing' comments section will not appear.<br>
+<img src="frontend/src/assets/images/readme-images-frontend/comments.png" width=20% height=20%>
+<br>
+Users will be able to successfully send and store their data from the React Frontend to the API. Here is an exmaple comment created in React and stored within the API.<br>
+The user can click on eithe the image or the comment speech bubble to leave and comment.<br>
+<img src="frontend/src/assets/images/readme-images-frontend/APICommentPost.png " width=20% height=20%>
 <br>
 
 ### Voting.

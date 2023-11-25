@@ -64,6 +64,9 @@ Image validation error message ensure large images do not get uploaded. Improves
 <img src="assets/images/testing-images-backend/imageresizeerror.png" width=20% height=20%><br>
 
 <br>
+On occassion the logout request would take a few tries of a mouse click interaction to logout. Console Log errors show a token refresh, but then went to clicked again, with no changes, it would log out the user.<br>
+<img src="frontend/src/assets/images/testing-images-frontend/logouterr.png" width=20% height=20%><br>
+<br>
 
 [Back to the top](#testing)
 
