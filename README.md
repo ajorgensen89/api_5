@@ -3,12 +3,12 @@ This project is the result of combining two repositories, a React frontend and a
 This product will be using data saved and sent from the API to the React frontend to produce a user friendly website for interaction.<br>
 The idea of this wesbsite is to offer a platform for users to share and comment on other users blurbs. The blurbs can be voted for, to show and highlight the best content.<br>
 Users with the best blurbs on the website can be followed.<br>
-All users will be able to view, create, edit and delete their own content.<br>
+All users will be able to view, create, edit and delete their own content and own a profile page that they can customise.<br>
 
 <br>
 
 ## Agile.
-User Stories were created with [Github](https://github.com/) to develope ideas for a website where users can save and access their content to create blurbs about walkthing through different seasons, vote on the best content while following particular users that they enjoy hearing from.<br>
+User Stories were created with [Github](https://github.com/) to develope ideas for a website where users can save and access their content to create blurbs about walking through different topics and seasons with images and storys, vote on the best content, while following particular users that they enjoy hearing from.<br>
 <br>
 
 A User Story Project can be created within the repository itself to hold issues to follow, while creating the project.<br>
@@ -16,8 +16,6 @@ These User Stories can be created separately and linked to the project.<br>
 <img src="frontend/src/assets/images/readme-images-frontend/GithubAGgile.png" width=20% height=20%><br>
 Labels and status bars can be added to the user stories so they can be tracked for updates and progress.<br>
 <img src="frontend/src/assets/images/readme-images-frontend/GitHubUSAgile.png" width=20% height=20%><br>
-<br> 
-
 <br>
 
 <hr>
@@ -31,7 +29,7 @@ Labels and status bars can be added to the user stories so they can be tracked f
 The scheme for the website uses an array of colours to portait the vibrancy of these colours in all the different seasons avaliable to us. The grey scale background gives the website a more 'modern feel' with bursts of colour highlighting different areas.<br>
 When moving from page to page, pops of colour help to show the user an icon or link they maybe hovering over, aswell as helping to highlight the current page the user is browsing.<br>
 ![Colours]()<br>
-For [CCS](https://www.w3schools.com/Css/) in thie product Bootstrap styles are integrating in [React](https://react.dev/) functionality to help with design.<br>
+For [CCS](https://www.w3schools.com/Css/) in this product, Bootstrap styles are integrated in [React](https://react.dev/) functionality to help with design and custom css module styles are added separately.<br>
 
 
 ## Typography.
@@ -39,15 +37,15 @@ For [CCS](https://www.w3schools.com/Css/) in thie product Bootstrap styles are i
 The text styles used are from [Google Fonts](https://fonts.google.com/), they are installed by a link in the <em>'Head'</em> of the <em>'index.html'</em> page.<br>
 Donegal One - This font held the colour grey very well. It looked agreeable in different grey scale tones and remained professional against the more elaborate Google Font of Delicious Handrawn.<br>
 Sans Serif - Used for clear business standard text and is very readable. Placed incase a user finds the [Google Fonts](https://fonts.google.com/) chosen, not to work on their platform.<br>
-Delicious Handrawn - The name of the font sounded appealing to use to help emphaise text describing the seasons. It is also used at different points on the website to just add contrast to the Donegal One font.<br>
+Delicious Handrawn - The name of the font sounded appealing to use to help emphaise text describing blurbs and content. It is also used at different points on the website to just add contrast to the Donegal One font.<br>
 <br>
 
 ## Icons.
 
-[Font Awesome](https://fontawesome.com/) was used for icons throughout this project. They help portait different style faces including big grins for the Home page, encouraging winks for the sign up page and well known icons, for the well known social platform links. 
+[Font Awesome](https://fontawesome.com/) was used for icons throughout this project. They help portait different style faces including big grins for the Home page, encouraging winks for the sign up page and editing icons for content a logged in user can modify. A dropdown menu icon is used to portait the collapse navigation bar on small devices too.
 <br>
 
-[Back to the top](#)
+[Back to the top](#walking-seasons)
 
 <hr>
 
@@ -64,47 +62,47 @@ Diagrams can help to find routes within the code to link models and access diffe
 # Features.
 
 ### Profile.
-User can create a profile add images, edit content and view other user's profiles. The ability to edit profiles is targeted at each individual user. You will not be able to ammend other profiles.<br>
+User can create a profile, add an Avatar image, edit and delete content and view other user's profiles. The ability to edit profiles is targeted at each individual user. Users will not be able to ammend other profiles.<br>
 <br>
 
 ### Blurbs.
 
 Blurbs can be created to hold titles, images and content about the picture in the blurb.<br>
 Adding a visual image is always more appealing to the eye.<br>
-Blurbs are talking point that users may want to share with others. A category for the photo or content can be selected to filter blurbs into 4 categories.<br>
-The 4 categories are Spring, Summer, Autumn and Winter.<br>
-The website will have the ability for the user to filter by Season to look at a particular one they have an interest in.<br>
+Blurbs are talking points that users may want to share with others.
+
+The website will have the ability for the user to use a search bar to look for particular content or get shown a no result image, inwhich they can try again.<br>
 <br>
-A user can add a new blurb and add a title and content to an image.<br>
+A user can add a new blurb while adding a title and content to an image.<br>
 <img src="frontend/src/assets/images/readme-images-frontend/NewBlurb.png" width=20% height=20%><br>
-Each blurb shows the user who posted the blurb, date it was posted, image, title, content, whether it has been voted for and if any comments have been created about it. Clicking on the image itself takes you too the blurb own page which lists the comments underneathe.<br>
-<img src="frontend/src/assets/images/readme-images-frontend/Newsfeedview.png" width=20% height=20%>
+Each blurb shows the user who posted the blurb, date it was posted, image, title, content, whether it has been voted for and if any comments have been created about it. Clicking on the image itself takes you to the blurbs own page which lists the comments underneath.<br>
+<img src="frontend/src/assets/images/readme-images-frontend/Newsfeedview.png" width=20% height=20%><br>
 
 
 ### Comments.
 
 Everybody likes a discussion board, so a comment section has been created for users to make a comment or delete a comment about a particular blurb.<br>
 
-If the user is logged in, users will be able to post a comment. If not the 'typing' comments section will not appear.<br>
+If the user is logged in, users will be able to post a comment. If not logged in, the 'typing' comments section will not appear.<br>
 <img src="frontend/src/assets/images/readme-images-frontend/comments.png" width=20% height=20%>
 <br>
 Users will be able to successfully send and store their data from the React Frontend to the API. Here is an exmaple comment created in React and stored within the API.<br>
-The user can click on eithe the image or the comment speech bubble to leave and comment.<br>
 <img src="frontend/src/assets/images/readme-images-frontend/APICommentPost.png " width=20% height=20%>
 <br>
-From a desired comment, the user can navigate to the profile of the owner who posted the comment.<br>
+The user can click on either the image or the comment speech bubble to leave a comment.<br>
+From a desired comment, the user can navigate to the profile of the owner who posted the comment, by clicking the Avatar picture next to the users name in their comment section.<br>
 
 ### Voting.
 
-User can vote for their favourite pictures. The most popular images and content with by filtered out and revealed for the user to access more easily.<br>
-Voting can occur when a user is logged in and they can not vote on their own blurbs they have posted on the wesbite. This helps to keep the voting, fair.<br>
-Votes can be created, viewed and deleted.<br>
+Users can vote for their favourite pictures. The most popular images and content will be filtered out and revealed for the user to access more easily. They can view their 'My Votes' section to the see the content they have liked so far.<br>
+Voting can occur when a user is logged in and they will not be able to vote for their own blurbs. This helps to keep the voting, fair.<br>
+Votes are collected within a counting field and can be created, viewed and deleted.<br>
 
 <img src="frontend/src/assets/images/readme-images-frontend/VoteCommentCount.png" width=20% height=20%><br>
 <br>
 
 ### Voting Error.
-I had noticed that the votes count increases by one when the post is creating and your taken to the blurb page. It does change to 0 and 'not count' as a vote when on the main Home page.<br>
+It was noted that the votes count increases by one when the post is creatd and the user is directed to the blurb page. It does change to 0 and 'not count' as a vote when on the main Home page.<br>
 This would need correcting at a later data.<br>
 
 ### Followers.
@@ -116,27 +114,29 @@ Followers/following/unfollow
 ### No results.
 
 When there are no results in a search, a picture or a message will be displayed to the user.<br>
-The user can use the search bar to try and find particular blurb pieces and this feature includes a no results page a particular phrase is not found.<br>
+The user can use the search bar to try and find particular blurb pieces or keywords.<br>
 <br>
 <img src="frontend/src/assets/images/readme-images-frontend/Noresultspage.png" width=20% height=20%><br>
 <br>
 
 Other messages that are displayed to the user for direction, include a message about whether they can vote or follow a user or if they have to log in first.<br>
-This is also the case for leaving comments. Both votes and comments are specified to each indiviual blurb and a count for each blurb for votes and comments are counted and shown to the user.<br>
-the green thumb in this image shows the 'upvote' as positive, for that blurb.<br>
+This is also the case for leaving comments. Both votes and comments are specific to each indiviual blurb and a count for each blurb, for votes and comments, are counted and shown to the user.<br>
+The green thumb in this image shows the 'upvote' as positive, for that blurb.<br>
 When removing a vote or comment you may have to go away from the page and come back to see the No results message if, no more votes or comments are avaliable.<br>
+<img src="frontend/src/assets/images/readme-images-frontend/VoteCommentCount.png" width=20% height=20%><br>
+<br>
 
 <br>
 
 ### Upload Content.
 
-The user will have an image displayed to them when first creating a blurb, to update an image, by clicking the image. <br>
-A React Spinner will be shown to the user while a page or search is loading making the website a better user experience.<br>
+The user will have an image displayed to them when first creating a blurb.<br>
+A React Spinner will be shown to the user while a page or search is loading, making the page a better user experience.<br>
 <img src="frontend/src/assets/images/readme-images-frontend/Spinner.png" width=20% height=20%><br>
 
 ### Infinite Scroll.
 
-The Infiniet Scroll component can be used from React so owners can continue scrolling while new content loads automatically. Pagination is set to show 10 blurbs per page but with infinite scroll set, the user can keep scrolling while new content loads.<br>
+The Infinite Scroll component can be used from React so owners can continue scrolling while new content loads automatically. Pagination is set to show 10 blurbs per page but with infinite scroll set, the user can keep scrolling while new content loads.<br>
 This is hard to demonstrate in a picture, but after 10+ blurbs are created the React component will function.<br>
 Installing input for CLI: **npm install react-infinite-scroll-component**
 This was installed in the terminal in the React frontend codespace - /workspace/api_5/frontend.<br>
@@ -144,17 +144,17 @@ This was installed in the terminal in the React frontend codespace - /workspace/
 The 'next' element was set in the API to hold a URL to the next page, aswell as previous. This is used in the props for infinite scroll to access this feature.<br>
 <img src="frontend/src/assets/images/readme-images-frontend/next1.png" width=20% height=20%><br>
 <br>
-Issues were faced within development mode using this component due to Gitpod error. It would continue to display the spinner prop with loading the next page fo the API. The correct results will be shown in production of project within continued scrolling.<br>
+Issues were faced within development mode using this component due to Gitpod error. It would continue to display the spinner prop with loading the next page fo the API. The correct results will be shown in production of the project with continued scrolling.<br>
 
 <img src="frontend/src/assets/images/readme-images-frontend/InfinitescrollError.png" width=30% height=30%><br>
 <br>
 
-Noted topic wihtin slack community here: https://app.slack.com/client/T0L30B202/search <br>
+Noted topic within slack community here: https://app.slack.com/client/T0L30B202/search <br>
 
 
 ### Drop down menu.
 
-Th React component Dropdown, has been used to display a menu for the user to edit and delete their own posts. This will be visable when the image itself it clicked, itself of the updated time and date.<br>
+The React component Dropdown, has been used to display a menu for the user to edit and delete their own posts. This will be visable when the image itself it clicked and directed to the blurbs page.<br>
 
 ### Popular section.
 
@@ -162,11 +162,11 @@ Th React component Dropdown, has been used to display a menu for the user to edi
 
 ### Navigation Bar.
 
-A [React](https://react.dev/) Navigation bar has been used which make access to each element of the site simpler and more obvious. Using React, a toggle menu function is created for smaller screens to have a drop down menu which collapses and expands open on use mouse click, such as clicking on a link in the menu.<br>
-Adjusted so the menu collapses by itself for better user experience, otherwise they would have to reclick the toggle menu button to close the expanded menu.<br>
+A [React](https://react.dev/) Navigation bar has been used which makes access to each element of the site simpler and more obvious. Using React, a toggle menu function is created for smaller screens to have a drop down menu which collapses and expands open on use mouse click, such as clicking on a link in the menu.<br>
+Adjusted, so the menu collapses by itself for better user experience, otherwise they would have to reclick the toggle menu button to close the expanded menu.<br>
 A mouse click event Hook has been used to improve this function.<br>
-Previously the menu would stay expanded and cover some of the content underneathe, before user clicks again.<br>
-<br>
+Previously, the menu would stay expanded and cover some of the content underneath before user clicked again.<br>
+This image shows the expanded navigation menu view.<br>
 <img src="frontend/src/assets/images/readme-images-frontend/Expandedmenu1.png" height=20% width=20%>
 
 <br>
