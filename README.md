@@ -1,11 +1,27 @@
 # Walking Seasons.
-Project Idea
+This project is the result of combining two repositories, a React frontend and a Django Rest Framework Application Programming Interface (API).<br>
+This product will be using data saved and sent from the API to the React frontend to produce a user friendly website for interaction.<br>
 
-## Agile
+## Agile.
+User Stories were created with [Github](https://github.com/) to develope ideas for a website where users can save and access their content to create blurbs about walkthing through different seasons, vote on the best content while following particular users that they enjoy hearing from.<br>
+<br>
 
-# Design
+A User Story Project can be created within the repository itself to hold issues to follow, while creating the project.<br>
+These User Stories can be created separately and linked to the project.<br>
+<img src="frontend/src/assets/images/readme-images-frontend/GithubAGgile.png" width=20% height=20%><br>
+Labels and status bars can be added to the user stories so they can be tracked for updates and progress.<br>
+<img src="frontend/src/assets/images/readme-images-frontend/GitHubUSAgile.png" width=20% height=20%><br>
+<br> 
 
-## Colour Scheme
+<br>
+
+<hr>
+
+<br>
+
+# Design.
+
+## Colour Scheme.
 
 The scheme for the website uses an array of colours to portait the vibrancy of these colours in all the different seasons avaliable to us. The grey scale background gives the website a more 'modern feel' with bursts of colour highlighting different areas.<br>
 When moving from page to page, pops of colour help to show the user an icon or link they maybe hovering over, aswell as helping to highlight the current page the user is browsing.<br>
@@ -13,7 +29,7 @@ When moving from page to page, pops of colour help to show the user an icon or l
 For [CCS](https://www.w3schools.com/Css/) in thie product Bootstrap styles are integrating in [React](https://react.dev/) functionality to help with design.<br>
 
 
-## Typography
+## Typography.
 
 The text styles used are from [Google Fonts](https://fonts.google.com/), they are installed by a link in the <em>'Head'</em> of the <em>'index.html'</em> page.<br>
 Donegal One - This font held the colour grey very well. It looked agreeable in different grey scale tones and remained professional against the more elaborate Google Font of Delicious Handrawn.<br>
@@ -21,7 +37,7 @@ Sans Serif - Used for clear business standard text and is very readable. Placed 
 Delicious Handrawn - The name of the font sounded appealing to use to help emphaise text describing the seasons. It is also used at different points on the website to just add contrast to the Donegal One font.<br>
 <br>
 
-## Icons
+## Icons.
 
 [Font Awesome](https://fontawesome.com/) was used for icons throughout this project. They help portait different style faces including big grins for the Home page, encouraging winks for the sign up page and well known icons, for the well known social platform links. 
 <br>
@@ -29,6 +45,16 @@ Delicious Handrawn - The name of the font sounded appealing to use to help empha
 [Back to the top](#)
 
 <hr>
+
+## Coding Diagrams.
+
+Diagrams can help to find routes within the code to link models and access different parts of one model while making connections to and from different objects.<br>
+<img src="/frontend/src/assets/images/readme-images-frontend/diagrams.jpg" width=20% height=20%><br>
+<br>
+
+<hr>
+
+<br>
 
 # Features.
 
@@ -80,7 +106,7 @@ Previously the menu would stay expanded and cover some of the content underneath
 <img src="frontend/src/assets/images/readme-images-frontend/Expandedmenu1.png" height=20% width=20%>
 
 
-### Intialise REACT project.
+# Intialise REACT project.
 
 No student template has been added to this project due to conflicting information with the [React](https://react.dev/) Application. A workspace for coding was created in [Github](https://github.com/) and opened into the coding enviroment, [Gitpod](https://www.gitpod.io/).<br>
 App.js page holds all the routes.<br>
@@ -164,52 +190,45 @@ React provides a boilerplate for individual coding to be added. This exmaple inc
 <img src="frontend/src/assets/images/readme-images-frontend/ReactExample.png" width=30% height=30%>
 <br>
 
-
-## Authenication.
-Authenication is important so a user will have the ability to view, create, edit and delete their own blurbs and comments.<br>
-Using authenication of a user, only the logged in user can remove their vote that they have created.<br>
-<br>
-To further user experience, ease for authenication situations, [Django Rest Auth](https://pypi.org/project/dj-rest-auth/) can installed.<br>
-CLI Input - **pip3 install dj-rest-auth==2.1.9** <br> (2.1.9 not necessary in input if different version preferred.) <br>
-Followed by adding it to INSTALLED_APP in settings.py.<br>
-
-
-[JSON web tokens](https://jwt.io/) (JWT) securely transmit data between and server as JSON objects. JWT are stored on the client side and they can be refered to as 'stateless'.<br>
-Using Django's built in authenication module relies on Sessions for data storage. User experience can be improved with use of these sercuity measure which can deal with access and refresh tokens.<br>
-<br>
-
-Raw JSON data can be manipulated for a better user experience. Within the administraion panel to update items such as the Profile Application, a more user frendly approach can be used by setting the serializer class on a view, [Django Rest Framework](https://www.django-rest-framework.org/) sets it out in a form format automatically.<br>
-<br>
-The Bad Request can be shown here as a method to catch and raise errors.<br>
-<img src="assets/images/readme-images/RawJSON.png" width=20% height=20%><br>
-Status is OK and the input fields look much better for user and clients to input data.<br>
-<img src="assets/images/readme-images/Jsonform.png" width=20% height=20%><br>
-
-[Simple JWT](https://pypi.org/project/djangorestframework-simplejwt/) tokens will be used in production and for development, sessions is used.<br>
-INSTALL CLI COMMAND<br>
-**pip install djangorestframework-simplejwt**<br>
-<br>
-
-## Register
-If a user would like to register [Django REST Auth](https://www.django-rest-framework.org/api-guide/authentication/) offers a standard registration process to install. <br>
-CLI input - **pip install 'dj-rest-auth[with_social]'**<br>
-Full information for the process can be accessed here: https://pypi.org/project/dj-rest-auth/ <br>
-<br>
-Use of the [Django Rest Authentication](https://pypi.org/project/dj-rest-auth/) library enable handling of registraion, login, logout, user and token refresh.<br>
-Credited from Code Institute is a map of dj-rest-auth endpoints for an API.<br>
-<img src="assets/images/readme-images/djrestauth.jpg" width=20% height=20%>
-
 <hr>
 
 <br>
 
+### Context Hooks Refactoring
 
+In React Frontend, context hooks were created to lessen coding in certain files sush as App.js. This help refactor and organise code when developing.
+A new folder was created to separate out code.<br>
+<img src="frontend/src/assets/images/readme-images-frontend/CreateContextFolder.png" width=10% height=10%><br>
+<br>
+Code for each context are placed in a separte .js file. Now returned in context file.<br>
+<img src="frontend/src/assets/images/readme-images-frontend/ContextHook1.png" width=10% height=10%><br>
+<br>
+Decreases code in App.js <br>
+<img src="frontend/src/assets/images/readme-images-frontend/ContextHooktidyApp.png" width=10% height=10%><br>
+<br>
+Provider wraps App function for App.js in Provider.<br>
+<img src="frontend/src/assets/images/readme-images-frontend/ContextHookprovideset.png" width=10% height=10%><br>
+<br>
+Context hooks set to fulfil their duties stated in the comments.<br>
+<img src="frontend/src/assets/images/readme-images-frontend/contexthookNavBadLogInForm.png" width=10% height=10%><br>
+<br>
 
 <hr>
 
 [Back to the top](#walking-seasons)
 
 <hr>
+
+# CRUD.
+
+CRUD stand for Create, Read, Undo and Delete. This is four interactions the developer or the user can have with a website on either the frontend or the backend.<br>
+[Django Signal](https://code.djangoproject.com/wiki/Signals) can be used for creating, retrieving, viewing and deleting data within the backend API.<br>
+<br>
+For React Frontend CRUD is also implemented for users to safely create blurbs without others being able to delete their content. If the owner wishes to update, edit or delete they can do so on their own content.<br>
+
+Deleting and creating a vote can be done by the owner, if they dont own the blurb. Users will also be able to create a 'follow' and delete the 'follow' request to 'follow and unfollow' particular users. Again, this will be controled by the user being logged in as a particular user.<br>
+<br>
+
 
 # Django Rest Framework for an application programming interface (API).
 
@@ -228,21 +247,17 @@ In this example the owner of the profile is revealed as True and the user not lo
 This can be built up, to access user information and their pertaining objects for manipulation depending on authenication criteria.<br>
 <img src="assets/images/readme-images/AuthTF.png" width=40% height=40%><br>
 
-
-
-# CRUD.
-
-CRUD stand for Create, Read, Undo and Delete. This is four interactions the developer or the user can have with a website on either the frontend or the backend.<br>
-[Django Signal](https://code.djangoproject.com/wiki/Signals) can be used for creating, retrieving, viewing and deleting data.<br>
-Delete<br>
+<br>
 
 <hr>
 
+<br>
+
 
 ## Serializers.
-Data needs to be deserialized and serialized for the API to GET and POST details from the models in views using serializers from the Rest Framework.<br>
+Data needs to be deserialized and serialized for the API to VIEW, GET, PUT, UPDATE and POST details from the models in views using serializers from the Rest Framework.<br>
 <img src="assets/images/readme-images/JSON select.png" width=50% height=50%><br>
-As Applications are developed and models created. More serializers will be used to creat JSON files for data manipulation when sending and receiving from the backend to the frontend of the website.
+As Applications are developed and models created, more serializers will be used to create JSON files for data manipulation when sending and receiving from the backend, to the frontend of the website.<br>
 <img src="assets/images/readme-images/JSON view.png" width=50% height=50%><br>
 
 <br>
@@ -267,7 +282,7 @@ Each application within the project is added further down.<br>
 **Final Image for all secret files connected into workspace.**<br>
     - Entry for Cloudinary in **settings.py**.<br>
     <img src="assets/images/readme-images/setcloud.png" width=50% height=50%><br>
-
+<br>
 
 <hr>
 
@@ -307,10 +322,46 @@ Imported into **profiles** app into **models.py**. <br>
 <hr>
 
 
-### Access Admin panel
+## Access Admin panel
 Create superuser, input for CLI:<br>
 **python manage.py createsuperuser**<br>
 Enter a Username and a Password. Skip email for easier option.<br>
+
+### Authenication.
+Authenication is important so a user will have the ability to view, create, edit and delete their own blurbs and comments.<br>
+Using authenication of a user, only the logged in user can remove their vote that they have created.<br>
+<br>
+To further user experience, ease for authenication situations, [Django Rest Auth](https://pypi.org/project/dj-rest-auth/) can installed.<br>
+CLI Input - **pip3 install dj-rest-auth==2.1.9** <br> (2.1.9 not necessary in input if different version preferred.) <br>
+Followed by adding it to INSTALLED_APP in settings.py.<br>
+
+
+[JSON web tokens](https://jwt.io/) (JWT) securely transmit data between and server as JSON objects. JWT are stored on the client side and they can be refered to as 'stateless'.<br>
+Using Django's built in authenication module relies on Sessions for data storage. User experience can be improved with use of these sercuity measure which can deal with access and refresh tokens.<br>
+<br>
+
+Raw JSON data can be manipulated for a better user experience. Within the administraion panel to update items such as the Profile Application, a more user frendly approach can be used by setting the serializer class on a view, [Django Rest Framework](https://www.django-rest-framework.org/) sets it out in a form format automatically.<br>
+<br>
+The Bad Request can be shown here as a method to catch and raise errors.<br>
+<img src="assets/images/readme-images/RawJSON.png" width=20% height=20%><br>
+Status is OK and the input fields look much better for user and clients to input data.<br>
+<img src="assets/images/readme-images/Jsonform.png" width=20% height=20%><br>
+
+[Simple JWT](https://pypi.org/project/djangorestframework-simplejwt/) tokens will be used in production and for development, sessions is used.<br>
+INSTALL CLI COMMAND<br>
+**pip install djangorestframework-simplejwt**<br>
+<br>
+
+### Register
+If a user would like to register [Django REST Auth](https://www.django-rest-framework.org/api-guide/authentication/) offers a standard registration process to install. <br>
+CLI input - **pip install 'dj-rest-auth[with_social]'**<br>
+Full information for the process can be accessed here: https://pypi.org/project/dj-rest-auth/ <br>
+<br>
+Use of the [Django Rest Authentication](https://pypi.org/project/dj-rest-auth/) library enable handling of registraion, login, logout, user and token refresh.<br>
+Credited from Code Institute is a map of dj-rest-auth endpoints for an API.<br>
+<img src="assets/images/readme-images/djrestauth.jpg" width=20% height=20%><br>
+
+<br>
 
 <hr>
 
@@ -461,26 +512,6 @@ Before Refactoring code for the comment section.<br>
 After Refactoring the code for the comments section using [Django Generic Views](https://www.django-rest-framework.org/api-guide/generic-views/)<br>
 <img src="assets/images/readme-images/Afterrefactor.png" width=10% height=10%><br>
 <br>
-
-### Context Hooks Refactoring
-
-In React Frontend, context hooks were created to lessen coding in certain files sush as App.js. This help refactor and organise code when developing.
-A new folder was created to separate out code.<br>
-<img src="frontend/src/assets/images/readme-images-frontend/CreateContextFolder.png" width=10% height=10%><br>
-<br>
-Code for each context are placed in a separte .js file. Now returned in context file.<br>
-<img src="frontend/src/assets/images/readme-images-frontend/ContextHook1.png" width=10% height=10%><br>
-<br>
-Decreases code in App.js <br>
-<img src="frontend/src/assets/images/readme-images-frontend/ContextHooktidyApp.png" width=10% height=10%><br>
-<br>
-Provider wraps App function for App.js in Provider.<br>
-<img src="frontend/src/assets/images/readme-images-frontend/ContextHookprovideset.png" width=10% height=10%><br>
-<br>
-Context hooks set to fulfil their duties stated in the comments.<br>
-<img src="frontend/src/assets/images/readme-images-frontend/contexthookNavBadLogInForm.png" width=10% height=10%><br>
-<br>
-
 
 
 
