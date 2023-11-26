@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from "react-router-dom";
 import { CurrentUserProvider } from './contexts/CurrentUserContext';
 import { ProfileDataProvider } from './contexts/ProfileContext';
+// import { BlurbDataProvider } from './contexts/BlurbContext';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,7 +15,9 @@ ReactDOM.render(
       {/* Remove Providers from App.js and enter new Provider. */}
       <CurrentUserProvider>
         <ProfileDataProvider>
-          <App />
+          {/* <BlurbDataProvider> */}
+            <App />
+          {/* </BlurbDataProvider> */}
         </ProfileDataProvider>
       </CurrentUserProvider>
     </Router>

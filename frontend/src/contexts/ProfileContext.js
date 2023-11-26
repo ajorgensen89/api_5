@@ -19,7 +19,7 @@ export const ProfileDataProvider = ({ children }) => {
         pageProfile: { results: [] },
         popularFollowers: { results: [] },
     });
-    // Remove deserializer
+    // Remove destructor
     // const { popularFollowers } = profileData;
     const currentUser = useCurrentUser();
 

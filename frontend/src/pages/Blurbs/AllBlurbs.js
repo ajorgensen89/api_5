@@ -21,6 +21,7 @@ function AllBlurbs(props) {
     /** Sets props. Set default empty string */
     const { message, filter = "" } = props;
     /** Store objects in results array.*/
+    // const { blurb } = useBlurbData();
     const [blurb, setBlurb] = useState({ results: [] });
     /** Check if all data fetched. */
     const [hasLoaded, setHasloaded] = useState(false);
