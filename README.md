@@ -134,23 +134,6 @@ The user will have an image displayed to them when first creating a blurb.<br>
 A React Spinner will be shown to the user while a page or search is loading, making the page a better user experience.<br>
 <img src="frontend/src/assets/images/readme-images-frontend/Spinner.png" width=20% height=20%><br>
 
-### Infinite Scroll.
-
-The Infinite Scroll component can be used from React so owners can continue scrolling while new content loads automatically. Pagination is set to show 10 blurbs per page but with infinite scroll set, the user can keep scrolling while new content loads.<br>
-This is hard to demonstrate in a picture, but after 10+ blurbs are created the React component will function.<br>
-Installing input for CLI: **npm install react-infinite-scroll-component**
-This was installed in the terminal in the React frontend codespace - /workspace/api_5/frontend.<br>
-<br>
-The 'next' element was set in the API to hold a URL to the next page, aswell as previous. This is used in the props for infinite scroll to access this feature.<br>
-<img src="frontend/src/assets/images/readme-images-frontend/next1.png" width=20% height=20%><br>
-<br>
-Issues were faced within development mode using this component due to Gitpod error. It would continue to display the spinner prop with loading the next page fo the API. The correct results will be shown in production of the project with continued scrolling.<br>
-
-<img src="frontend/src/assets/images/readme-images-frontend/InfinitescrollError.png" width=30% height=30%><br>
-<br>
-
-Noted topic within slack community here: https://app.slack.com/client/T0L30B202/search <br>
-
 
 ### Drop down menu.
 
@@ -177,8 +160,8 @@ This image shows the expanded navigation menu view.<br>
 
 ## Future Features.
 
-Features can be added to greatly improv this website.<br>
-A setTimeOut() function can be added to the search bar to slow the website response to keys presses. This would set a delay in which the searched items would appear, rather than flicking after each key stroke.<br>
+Features can be added to greatly improve this website.<br>
+A setTimeOut() function can be added to the search bar to slow the website response to keys presses. This would set a delay in which the searched items would appear, rather than flicking and sending the data request after each key stroke.<br>
 <br>
 It was noted that the votes count increases by one when the post is first created and your taken to the blurb page. It does change to 0 and 'not count' as a vote on the main Home page.<br>
 This would need correcting at a later data. <br>
@@ -193,10 +176,10 @@ This would need correcting at a later data. <br>
 # Intialise REACT project.
 
 No student template has been added to this project due to conflicting information with the [React](https://react.dev/) Application. A workspace for coding was created in [Github](https://github.com/) and opened into the coding enviroment, [Gitpod](https://www.gitpod.io/).<br>
-App.js page holds all the routes.<br>
+App.js page holds alot of the routes dor which data to display.<br>
 
-To initilise  [React](https://react.dev/) Application the command in th terminal is : **npm install**<br> This installs all the files neeeded for a [React](https://react.dev/) Application start point.<br>
-To start To project, CLI input: **npm start**<br>
+To initilise  the [React](https://react.dev/) Application the command in the terminal used was : **npm install** for a [Javascript Package Manager](https://www.npmjs.com/)<br> This installs all the files neeeded for a [React](https://react.dev/) Application start point.<br>
+
 Depending on version that works a version may have ot be used. In this case extra code needed entering to ensure the project would run.<br>
 CLI input enter enter time the workspace was run in a browser:<br>
 - **nvm install 16.18.0**
@@ -206,7 +189,8 @@ CLI input enter enter time the workspace was run in a browser:<br>
 <br>
 Set up installations in 'project_5'.<br>
 -  Enter into CLI: <br>
-    -  **pip install django** ( pip3 install 'django<4>' - used here as prefered for Long Term Support (LTS)').
+    -  **pip install django** ( pip3 install 'django<4>' - used here as prefered for Long Term Support (LTS)').<br>
+    These two below are the same for the React frontend repository.
     -  **pip install django-cloudinary-storage**
     -  **pip install Pillow**
     <br>
@@ -237,9 +221,9 @@ Best practise for each CSS file is to have a module.css file for each component.
 
 ## React Router Library.
 
-[React Router](https://reactrouter.com/en/main)Handle routing for URL's to render different pages within the webpage.<br>
+[React Router](https://reactrouter.com/en/main )handles routing for URL's to render different pages within the webpage.<br>
 CLI input for installation - **npm install react-router-dom@5.3.0**
-The library controls what the user sees depending on what is render in the HTML for React App's.<br>
+The library controls what the user sees depending on what is returned in the HTML.<br>
 <br>
 Routes to switch need to be added to the Index.js file including App.js.<br>
 <img src="frontend/src/assets/images/readme-images-frontend/routechaning.png" width=30% height=30%><br>
@@ -248,8 +232,11 @@ Paths for switching betweeen pages are added to the App.j file.<br>
 <br>
 
 ### React Navigation.
-[React NavBar](https://react-bootstrap.github.io/docs/components/navbar)
+[React NavBar](https://react-bootstrap.github.io/docs/components/navbar) helps install a layout for a standard navigation bar where users can more around the website and the navigation bar remains to every page.<br>
+<img src="frontend/src/assets/images/readme-images-frontend/navbar.png" width=30% height=30%><br>
+A dropdown menu displays for smaller screens.<br>
 <br>
+<img src="frontend/src/assets/images/readme-images-frontend/navbardrop.png" width=30% height=30%><br>
 Wrap 'App' conponent inside <Router> on App.js page.
 <br>
 
@@ -258,29 +245,44 @@ Wrap 'App' conponent inside <Router> on App.js page.
 ## Axios Library.
 
 Used to tell this React App to send request to the API. Enables they to communicate for better data transfer and changes.<br>
-Using [Axios](https://axios-http.com/) also enabled combining workspaces between React and API.<br>
+Using [Axios](https://axios-http.com/) also enabled combining workspaces between React frontend and API backend.<br>
 CLI input - **npm install axios**
 
-### INFINTE SCROLL LIBARY<br>
+## INFINTE SCROLL LIBARY<br>
 
 **npm install react-infinite-scroll-component** <br>
+
+### Infinite Scroll.
+
+The Infinite Scroll component can be used from React so owners can continue scrolling while new content loads automatically. Pagination is set to show 10 blurbs per page but with infinite scroll set, the user can keep scrolling while new content loads.<br>
+This is hard to demonstrate in a picture, but after 10+ blurbs are created the React component will function.<br>
 <br>
+Installing input for CLI: **npm install react-infinite-scroll-component**
+This was installed in the terminal in the React frontend codespace - /workspace/api_5/frontend.<br>
+<br>
+The 'next' element was set in the API to hold a URL to the next page, aswell as previous. This is used in the props for infinite scroll to access this feature.<br>
+<img src="frontend/src/assets/images/readme-images-frontend/next1.png" width=20% height=20%><br>
+<br>
+Issues were faced within development mode using this component due to Gitpod error. It would continue to display the spinner prop with loading the next page fo the API.<br> 
+The correct results will be shown in production of the project with continued scrolling.<br>
+
+<img src="frontend/src/assets/images/readme-images-frontend/InfinitescrollError.png" width=30% height=30%><br>
+<br>
+
+Noted topic within slack community here: https://app.slack.com/client/T0L30B202/search <br>
 
 ### React Bootstrap Form
 <br>
-[React Bootstrap Form](https://react-bootstrap-v4.netlify.app/components/forms/)
+
+[React Bootstrap Form](https://react-bootstrap-v4.netlify.app/components/forms/)<br>
 Other Bootstrap items have been use throughout the project. Within the Form section alone, React Bootstrap classes called Images, Column, Row and Button have been used.<br>
 React provides a boilerplate for individual coding to be added. This exmaple includes boilerplate and some starting code to transform it.<br>
 <img src="frontend/src/assets/images/readme-images-frontend/ReactExample.png" width=30% height=30%>
 <br>
 
-<hr>
-
-<br>
-
 ### Context Hooks Refactoring
 
-In React Frontend, context hooks were created to lessen coding in certain files sush as App.js. This help refactor and organise code when developing.
+In React Frontend, context hooks were created to lessen coding in certain files sush as App.js. This helped refactor and organise code when developing.
 A new folder was created to separate out code.<br>
 <img src="frontend/src/assets/images/readme-images-frontend/CreateContextFolder.png" width=10% height=10%><br>
 <br>
@@ -295,7 +297,6 @@ Provider wraps App function for App.js in Provider.<br>
 <br>
 Context hooks set to fulfil their duties stated in the comments.<br>
 <img src="frontend/src/assets/images/readme-images-frontend/contexthookNavBadLogInForm.png" width=10% height=10%><br>
-<br>
 
 <hr>
 
@@ -305,7 +306,7 @@ Context hooks set to fulfil their duties stated in the comments.<br>
 
 # CRUD.
 
-CRUD stand for Create, Read, Undo and Delete. This is four interactions the developer or the user can have with a website on either the frontend or the backend.<br>
+CRUD stands for Create, Read, Undo and Delete. This is four interactions the developer or the user can have with a website on either the frontend or the backend.<br>
 [Django Signal](https://code.djangoproject.com/wiki/Signals) can be used for creating, retrieving, viewing and deleting data within the backend API.<br>
 <br>
 For React Frontend CRUD is also implemented for users to safely create blurbs without others being able to delete their content. If the owner wishes to update, edit or delete they can do so on their own content via the EDIT and DELETE links.<br>
@@ -323,8 +324,8 @@ Install [Django Rest Framework](https://www.django-rest-framework.org/).<br>
 - Add to INSTALLED_APPS as - **'rest_framework',** (with comma).<br>
 - APIviews used for extra functionality for receiving instances, handling errors and adding context to Response objects and instances.
 
-This workspace holds the API developed, for use with connection to Project 5, for backend storage for user interface requests.<br>
-This is built to hold models and display content using React for the frontend of the project named, Project 5.<br>
+One workspace holds the API developed, for use with connection to Project 5, for backend storage for user interface requests.<br>
+This is built to hold models, serializers, views and urls to display content using React for the frontend of the project named, Project 5.<br>
 This project contains storage and responses for HTTP requests, JSON Web Tokens for authentication, permission and to tell user input apart from other user input.<br>
 The Django Rest Framework replaces the use of many HTML pages and displays the information requests using the React Frontend project, Project 5.<br>
 <br>
@@ -332,8 +333,6 @@ Authentication for each user can be checked and monitored, for example, only a u
 In this example the owner of the profile is revealed as True and the user not logged in, is viewed as false.<br>
 This can be built up, to access user information and their pertaining objects for manipulation depending on authenication criteria.<br>
 <img src="assets/images/readme-images/AuthTF.png" width=40% height=40%><br>
-
-<br>
 
 <hr>
 
@@ -369,8 +368,11 @@ Each application within the project is added further down.<br>
     - Entry for Cloudinary in **settings.py**.<br>
     <img src="assets/images/readme-images/setcloud.png" width=50% height=50%><br>
 <br>
-
+API repository was built separatley to the React frontend, then combined at a later date to help reduce issues such as CORS errors.
 <hr>
+This will need to be rebuilt during production to 
+
+[Heroku](https://dashboard.heroku.com/login).<br>
 
 [Back to the top](#walking-seasons)
 
@@ -390,7 +392,6 @@ The application example in this API, can be repeated to create 'profiles', 'vote
 - At the top of **models.py** inside **profiles app** import Django User Model to reference it in our custom models.<br>
   Using '**from django.contrib.auth.models import User**'  <br>
  - [Django Signal](https://code.djangoproject.com/wiki/Signals) is used to listen for events occuring in the models, that trigger a piece of code, method or function to run.<br>
-This can encourage saving and deleting of new informtaion passed.
 Imported into **profiles** app into **models.py**. <br>
 - **from django.db.models.signals import post_save.**
 
@@ -400,7 +401,7 @@ Imported into **profiles** app into **models.py**. <br>
 
 [Django](https://www.djangoproject.com/) is used to create url paths.<br>
 <img src="assets/images/readme-images/urls.png" width=30% height=30%><br>
-
+This method was repeated to create other applications within the workspace.<br>
 <hr>
 
 [Back to the top](#walking-seasons)
@@ -412,12 +413,17 @@ Imported into **profiles** app into **models.py**. <br>
 Create superuser, input for CLI:<br>
 **python manage.py createsuperuser**<br>
 Enter a Username and a Password. Skip email for easier option.<br>
+A main user can be used to access this panel and other members can be added to it with different sercuity levels.<br>
+
 
 ### Authenication.
 Authenication is important so a user will have the ability to view, create, edit and delete their own blurbs and comments.<br>
 Using authenication of a user, only the logged in user can remove their vote that they have created.<br>
 <br>
-To further user experience, ease for authenication situations, [Django Rest Auth](https://pypi.org/project/dj-rest-auth/) can installed.<br>
+To further user experience, ease for authenication situations, 
+
+[Django Rest Auth](https://pypi.org/project/dj-rest-auth/) can installed.<br>
+
 CLI Input - **pip3 install dj-rest-auth==2.1.9** <br> (2.1.9 not necessary in input if different version preferred.) <br>
 Followed by adding it to INSTALLED_APP in settings.py.<br>
 
@@ -426,7 +432,7 @@ Followed by adding it to INSTALLED_APP in settings.py.<br>
 Using Django's built in authenication module relies on Sessions for data storage. User experience can be improved with use of these sercuity measure which can deal with access and refresh tokens.<br>
 <br>
 
-Raw JSON data can be manipulated for a better user experience. Within the administraion panel to update items such as the Profile Application, a more user frendly approach can be used by setting the serializer class on a view, [Django Rest Framework](https://www.django-rest-framework.org/) sets it out in a form format automatically.<br>
+Raw JSON data can be manipulated for a better user experience. Within the administraion panel, to update items such as the Profile Application, a more user frendly approach can be used by setting the serializer class on a view, [Django Rest Framework](https://www.django-rest-framework.org/) sets it out in a form format automatically.<br>
 <br>
 The Bad Request can be shown here as a method to catch and raise errors.<br>
 <img src="assets/images/readme-images/RawJSON.png" width=20% height=20%><br>
@@ -434,6 +440,7 @@ Status is OK and the input fields look much better for user and clients to input
 <img src="assets/images/readme-images/Jsonform.png" width=20% height=20%><br>
 
 [Simple JWT](https://pypi.org/project/djangorestframework-simplejwt/) tokens will be used in production and for development, sessions is used.<br>
+
 INSTALL CLI COMMAND<br>
 **pip install djangorestframework-simplejwt**<br>
 <br>
@@ -458,7 +465,7 @@ Credited from Code Institute is a map of dj-rest-auth endpoints for an API.<br>
 
 # Technologies.
 
-Content includes a range of technologies to create the frontend and back end portions of this project to help function and to improve the development, aesthetics, functionality and compatability.<br>
+Content includes a range of technologies to create the frontend and back end portions of this project to help the function and to improve the development, aesthetics, functionality and compatability.<br>
 <br>
 Some installations are necessary and more can be added to improve the website service and usefulness.
 
@@ -467,7 +474,10 @@ Some installations are necessary and more can be added to improve the website se
 
 A workspace for coding was created in [Github](https://github.com/) and opened into the coding enviroment, [Gitpod](https://www.gitpod.io/).
 [Github](https://github.com/) offers a platform and cloud-based service for software development and allows management and storage for code.
-[Gitpod](https://www.gitpod.io/) is open source developer platform ready for coding. Adding, commiting and pushing new work can be completed from the Command Line Interface [CLI](https://www.freecodecamp.org/news/how-to-use-the-cli-beginner-guide/), aswell as installing new packages, libraries, frameworks or programmes with pre-written code that can introduce into a new project to improve it.
+[Gitpod](https://www.gitpod.io/) is open source developer platform ready for coding. Adding, commiting and pushing new work can be completed from the Command Line Interface [CLI](https://www.freecodecamp.org/news/how-to-use-the-cli-beginner-guide/), aswell as installing new packages, libraries, frameworks or programmes with pre-written code that can introduce into a new project to improve it.<br>
+git add . ( . to add all, or speicify)<br>
+git commit -m "messgae"<br>
+git push<br>
 
 
 ## Starting Installations.
@@ -477,7 +487,7 @@ Steps to take for Starting a [Django Rest Framework](https://www.django-rest-fra
 
 ### Django.
 
-[Django](https://www.djangoproject.com/) is installed as the Python based web development framwork.<br>
+[Django](https://www.djangoproject.com/) is installed as the Python based web development framework.<br>
 [Django Signal](https://code.djangoproject.com/wiki/Signals) is used for profile creation. This includes the retrieval (create) and update (edit) operations for CRUD (create, read, undo or edit and delete).
 
 
@@ -537,6 +547,13 @@ File required for Heroku use:
 
 <br>
 
+### Procfile
+Procfile. (Capital **P** needed.)<br>
+<img src="frontend/src/assets/images/readme-images-frontend/Procfile.png" width=10% height=10%>
+
+A mechanism for declaring what commands are run by the application’s dynos on the platform, [Heroku](https://dashboard.heroku.com/login).
+[Procfile](https://devcenter.heroku.com/articles/procfile) information.<br>
+
 
 ### POSTGRESQL LIBARY - ELEPHANTSQL.
 
@@ -546,7 +563,9 @@ CLI input - **pip3 install dj_database_url==0.5.0 psycopg2**.<br>
 Import dj_database_url into settings.py file.
 See Deployment for further deployment details relating to this.<br>
 <br>
-Create a new instance in the appropriate region and then copy the URL to use in config vars for Heroku deployment.<br>
+Create a new instance in the appropriate region and then copy the URL to use in config vars in setting for 
+
+[Heroku](https://dashboard.heroku.com/login) deployment. <br>
 <br>
 
 <hr>
@@ -556,6 +575,7 @@ Create a new instance in the appropriate region and then copy the URL to use in 
 
 Migrate changes are needed for each new App or change to the App.<br>
 This includes new models or again, any changes too.<br>
+They are slightly tempermental with changes, after a migration has occur, so take care.<br>
 
 CLI input - **python3 manage.py migrate** <br>
 
@@ -580,6 +600,8 @@ CLI input - **python3 manage.py migrate** <br>
 
 <img src="assets/images/readme-images/makeandmigrate.png" width=30% height=30%><br>
 
+[ElephantSql](https://www.elephantsql.com/) databade offered a method to reset the database, when issues arose with migrations, during development but, Tutor Support via [Code Institute](https://codeinstitute.net/) was sort after for this due to further errors that can be caused. This method may not be suitable when working with a team without consultation.<br>
+
 <hr>
 
 [Back to the top](#walking-seasons)
@@ -600,9 +622,7 @@ After Refactoring the code for the comments section using [Django Generic Views]
 <br>
 
 
-
-
-[Django Generic Filtering](https://www.django-rest-framework.org/api-guide/filtering/) is used and offers better organisation of data for the users viewing pleasure.<br>
+[Django Generic Filtering](https://www.django-rest-framework.org/api-guide/filtering/) is used and offers better organisation of data for the users viewing pleasure in the backend API.<br>
 Filtering gets applied into the [queryset](https://docs.djangoproject.com/en/4.2/ref/models/querysets/).<br>
 Use of queryset before filters are applied.<br>
 <img src="assets/images/readme-images/queryset.png" width=10% height=10%><br>
@@ -623,7 +643,7 @@ CLI input: **pip install django-filter**<br>
 <hr>
 
 # Combining React project and DRF API.
-Steps to take from Code Institute CourseWork. This enabled the React and API projects to be unified.<br>
+Steps to take from [Code Institute](https://codeinstitute.net/) CourseWork. This enabled the React and API projects to be unified.<br>
 <img src="assets/images/readme-images/combine1.png" width=30% height=30%><br>
 <br>
 <img src="assets/images/readme-images/combine2.png" width=30% height=30%><br>
@@ -690,12 +710,12 @@ Additionally needed files for Heroku use:
 
 </ul>
 <br>
-In preparation for Heroku deployment a view extra steps took place including adding root route, pagination to ListViews, providing a defualt JSON renderer and formtatting for date and time.<br>
+In preparation for use with React Frontend, a view extra steps took place including adding root route, pagination to ListViews, providing a default JSON renderer and formtatting for date and time with the API development.<br>
 <br>
 
 ### SERVER GUNICORN
 
-To run [Django](https://www.djangoproject.com/) on, for [Heroku](https://dashboard.heroku.com/) devlopment.
+To run [Django](https://www.djangoproject.com/) on, for [Heroku](https://dashboard.heroku.com/) devlopment for allowing cross origin resourse sharing.<br>
 
 CLI input - **pip3 install 'django<4' gunicorn**.<br>
 CLI input **pip3 install gunicorn django-cors-headers**<br>
@@ -709,7 +729,7 @@ Add to requiremnts.txt file and add to INSTALLED_APPS and MIDDLEWARE in settings
 
 ## Clone website.
 
-All installing and requirements for this project have to be completed correctly before a Clong of the website can be created. <br>
+All installing and requirements for this project have to be completed correctly before a Clone of the website can be created. <br>
 
 To clone the project. I _clicked_ **code** in the respository file. In the dropdown menu, **copy** the link.<br>
 Here, on the image below,  the locations are highlighted in **pink**.<br>
@@ -752,7 +772,7 @@ See [Testing](testing.md) file for full use of technologies used to test this we
 # Awknowledgements.
 To the **Tutor Support** team for [Code Institute](https://codeinstitute.net/) for continued support and assitance.<br>
 To mentor **Precious Ijege** for continued support and patience while taking part in the course provided by [Code Institute](https://codeinstitute.net/) for a Diploma in Full Stack Software Development.<br>
-To the Walkthrough projects of both <em>''</em> and <em>''</em> mini projects supplied by [Code Institute](https://codeinstitute.net/) Coursework.<br>
+To the Walkthrough projects of both <em>'Moments'</em> and <em>'DRF-API'</em>, mini projects supplied by [Code Institute](https://codeinstitute.net/) Coursework.<br>
 
 <hr>
 
