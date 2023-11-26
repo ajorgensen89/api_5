@@ -58,7 +58,8 @@ const Blurb = (props) => {
     const handleRemoveVote = async () => {
         try {
             /** no const {data} needed as the vote_id is being deleted. */
-            await axiosRes.delete(`/votes/${votes_id}`, { blurb: id });
+            // await axiosRes.delete(`/votes/${votes_id}`, { blurb: id });
+            await axiosRes.delete(`/votes/${votes_id}`);
             setBlurb((prevBlurb) => ({
                 ...prevBlurb,
                 results: prevBlurb.results.map((blurb) => {
@@ -127,9 +128,11 @@ const Blurb = (props) => {
                 ) : votes_id ? (
                     <span onClick={handleRemoveVote}>
                         <i className={`fa-solid fa-thumbs-up ${styles.ThumbsUpVote}`}></i>
+                        {/* <i className="fa-solid fa-thumbs-up"></i> */}
                     </span>
                 ) : currentUser ? (
                     <span onClick={handleVote}>
+                        {/* <i className={`fa-solid fa-thumbs-up ${styles.ThumbsUpVote}`}></i> */}
                         <i className="fa-solid fa-thumbs-up"></i>
                     </span>
                 ) : (

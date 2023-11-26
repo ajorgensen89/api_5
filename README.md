@@ -316,6 +316,8 @@ For React Frontend CRUD is also implemented for users to safely create blurbs wi
 Deleting and creating a vote can be done by the owner, if they dont own the blurb. Users will also be able to create a 'follow' and delete the 'follow' request to 'follow and unfollow' particular users. Again, this will be controled by the user being logged in as a particular user.<br>
 <br>
 
+Editing and deleting fields are accessed via dropdown menu when clicking on the 'edit icon'. This image displays a user 'twofishes' being logged out and in. The icon is only avaliable when the user is logged in, for their own comment fields.<br>
+<img src="frontend/src/assets/images/readme-images-frontend/editfieldcomment.png" width=10% height=10%><br>
 
 # Django Rest Framework for an application programming interface (API).
 

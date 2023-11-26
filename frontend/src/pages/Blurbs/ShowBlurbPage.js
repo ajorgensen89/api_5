@@ -17,9 +17,6 @@ function ShowBlurbPage() {
     /** Set id to get each blurb */
     const { id } = useParams();
 
-
-    /** Set to get a single object or an array of blurbs.*/
-    const [blurb, setBlurb] = useState({ results: [] });
     // const currentUser = useCurrentUser();
 
     // const profile_image = currentUser?.profile_image;
@@ -30,6 +27,9 @@ function ShowBlurbPage() {
     const currentUser = useCurrentUser();
     const profile_image = currentUser?.profile_image;
     const [comments, setComments] = useState({ results: [] });
+
+    /** Set to get a single object or an array of blurbs.*/
+    const [blurb, setBlurb] = useState({ results: [] });
 
 
     useEffect(() => {
@@ -48,7 +48,7 @@ function ShowBlurbPage() {
                 setBlurb({ results: [blurb] });
                 console.log(blurb, "errsettingBlurb")
                 /** Update state and display comments to users. */
-                setComments(comments)
+                setComments(comments);
 
             } catch (err) {
                 console.log(err, "errsettingBlurbCatch")
@@ -57,32 +57,6 @@ function ShowBlurbPage() {
         }
         handleMount();
     }, [id]);
-
-    //     // useEffect(() => {
-
-    //     //     /** Try and catch request */
-    //     //     const handleMount = async () => {
-    //     //         try {
-
-    //     //             /** Make 2 requests, one for the blurb and one for the blurb comments. 
-    //     //              * Destructor data property from API. Rename variables for both blurb and comments.
-    //     //              * Promise accepts array.*/
-    //     //             const [{ data: post }] = await Promise.all([
-    //     //                 axiosReq.get(`/blurbs/${id}`),
-    //     //                 // axiosReq.get(`/comments/?blurbs=${id}`),
-    //     //             ]);
-    //     //             setBlurb({ results: [post] });
-    //     //             console.log(post)
-    //     //             // setComments(comments);
-    //     //             // console.log(comments)
-    //     //         }   catch (err) {
-    //     //             console.log(err)
-    //     //         }
-    //     //     };
-
-    //     //     handleMount();
-    //     //     /** Run the above handle mount every time the id changes. */
-    //     // }, [id]);
 
     /** Credit to creating within project, from Code Institute coursework */
 
@@ -104,9 +78,11 @@ function ShowBlurbPage() {
                         "Comments"
                     ) : null}
                     {comments.results.length ? (
-                        comments.results.map(comment => (
+                        comments.results.map((comment) => (
                             /** Spread comments, objects passed as props with id to each comment.*/
-                            <CommentContent key={comment.id} {...comment} />
+                            /**Add setComments and setBlurb props, for edited and deleting comments.
+                             * Add to prop in comment.js with id field. */
+                            <CommentContent key={comment.id} {...comment} setComments={setComments} setBlurb={setBlurb} />
                         ))
                     ) : currentUser ? (
                         <span>Be the first to comment!</span>

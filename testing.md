@@ -68,6 +68,8 @@ On occassion the logout request would take a few tries of a mouse click interact
 <img src="frontend/src/assets/images/testing-images-frontend/logouterr.png" width=20% height=20%><br>
 <br>
 
+It was noted that occasionally on login, even when the home screen was able to view when logged out, the counts from comments or votes would not appear. However in this image, the comments are seen and s user is not logged in.<br>
+<img src="frontend/src/assets/images/testing-images-frontend/Notloggedinerr.png" width=20% height=20%><br>
 [Back to the top](#testing)
 
 <hr>
@@ -103,7 +105,7 @@ Correctly signals, POST and GET, are also seen in the terminal for confimation t
 <br>
 - Errors faced. POST error.<br>
 This error kept appearing once the backend and frontend projects had been combined.<br>
-If the backend API 'python manage.py runserver', had not been entered to get the server running in conjuction with the React frontend server which ran on 'nvm install 16.18.0', 'nvm use 16.18.0', then 'npm start', these errors would appear.<br>
+If the backend API **python manage.py runserver**, had not been entered to get the server running in conjuction with the React frontend server which ran on 'nvm install 16.18.0', 'nvm use 16.18.0', then 'npm start', these errors would appear. To run in the react frontend, A Frontend folder was created in the directory. All commands for the frontend were ran here. CLI **cd frontend** to ensure inside the correct folder.<br>
 This error showed together with the above Proxy Error.<br>
 <img src="frontend/src/assets/images/testing-images-frontend/POSTerror.png" width=30% height=30%>
 <br>

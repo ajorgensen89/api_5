@@ -11,6 +11,10 @@
     width: 80%;
 }
 
+.ThumbsUpVote:hover {
+    color: #50ee50;
+}
+
 .ThumbsUpVote {
     color: #50ee50;
 }
