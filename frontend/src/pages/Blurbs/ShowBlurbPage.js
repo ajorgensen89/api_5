@@ -15,6 +15,7 @@ import CommentContent from "../Comments/comment";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchedMoreData } from "../../utils/utils";
 import Display from "../../components/Display";
+import Popular from "../profiles/Popular";
 
 function ShowBlurbPage() {
     /** Set id to get each blurb */
@@ -66,7 +67,7 @@ function ShowBlurbPage() {
     return (
         <Row>
             <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
-                <p>Most Voted for blurbs for mobile.</p>
+                <Popular />
                 <Blurb {...blurb.results[0]} setBlurb={setBlurb} blurbPage />
                 <Container className={styles.ContainerContent}>
                     {currentUser ? (

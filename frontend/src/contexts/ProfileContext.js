@@ -1,6 +1,9 @@
-import { axiosReq } from "../api/axiosDefaults";
+import { axiosReq, axiosRes } from "../api/axiosDefaults";
+import { followHelper, unfollowHelper } from "../utils/utils";
 import { useCurrentUser } from "./CurrentUserContext";
 import { createContext, useContext, useEffect, useState } from "react";
+
+/** Profile content created during Coursework content with Code Institute. */
 
 // Create two context objects to get and set data.
 export const ProfileContext = createContext();
@@ -13,15 +16,61 @@ export const useSetProfileData = () => useContext(SetProfileContext);
 
 export const ProfileDataProvider = ({ children }) => {
 
-    // const { popularProfiles } = useProfileData();
+
     const [profileData, setProfileData] = useState({
         // we will use the pageProfile later!
         pageProfile: { results: [] },
         popularFollowers: { results: [] },
     });
-    // Remove destructor
-    // const { popularFollowers } = profileData;
+
     const currentUser = useCurrentUser();
+
+    const handleUnFollow = async (clickedProfile) => {
+        try {
+            await axiosRes.delete(`/followers/${clickedProfile.following_id}`);
+            setProfileData((prevState) => ({
+                ...prevState,
+                pageProfile: {
+                    results: prevState.pageProfile.results.map((profile) =>
+                        unfollowHelper(profile, clickedProfile)
+                    ),
+                },
+                popularFollowers: {
+                    ...prevState.popularFollowers,
+                    results: prevState.popularFollowers.results.map((profile) =>
+                        unfollowHelper(profile, clickedProfile)
+                    ),
+                },
+            }));
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    const handleFollow = async (clickedProfile) => {
+        try {
+            const { data } = await axiosRes.post('/followers/', {
+                followed: clickedProfile.id
+            });
+
+            setProfileData(prevState => ({
+                ...prevState,
+                pageProfile: {
+                    results: prevState.pageProfile.results.map((profile) =>
+                        // Auto import mapping over array function for following, call it on each value.
+                        followHelper(profile, clickedProfile, data.id)),
+                },
+                popularFollowers: {
+                    ...prevState.popularFollowers,
+                    results: prevState.popularFollowers.results.map((profile) =>
+                        // Auto import mapping over array function for following in popular.
+                        followHelper(profile, clickedProfile, data.id)),
+                },
+            }));
+        } catch (err) {
+            console.log(err);
+        }
+    }
 
     useEffect(() => {
         const handleMount = async () => {
@@ -49,7 +98,7 @@ export const ProfileDataProvider = ({ children }) => {
 
     return (
         <ProfileContext.Provider value={profileData}>
-            <SetProfileContext.Provider value={setProfileData}>
+            <SetProfileContext.Provider value={{ setProfileData, handleUnFollow, handleFollow }}>
                 {children}
             </SetProfileContext.Provider>
         </ProfileContext.Provider>

@@ -32,7 +32,7 @@ function ProfileHome() {
     const { id } = useParams();
 
     // Update page profile data.
-    const setProfileData = useSetProfileData();
+    const { setProfileData, handleUnFollow, handleFollow } = useSetProfileData();
 
     // Destructor to access page profile data and save in useProfileData hook.
     const { pageProfile } = useProfileData();
@@ -98,16 +98,16 @@ function ProfileHome() {
                     {currentUser && !is_owner && (profile?.following_id ? (
                         <Button
                             classname={`${btnStyles.Button} ${styles.OtherButton}`}
-                            onClick={() => { }}
+                            onClick={() => handleUnFollow(profile)}
                         >
-                            unfollow
+                            Unfollow
                         </Button>
                     ) : (
                         <Button
                             className={btnStyles.Button}
-                            onClick={() => { }}
+                            onClick={() => handleFollow(profile)}
                         >
-                            follow
+                            Follow
                         </Button>
                     ))}
                 </Col>

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import Avatar from "../../components/Avatar";
 import Button from "react-bootstrap/Button";
 import styles from "../../styles/Profiles.module.css"
+import { useSetProfileData } from "../../contexts/ProfileContext";
 
 // Pasing props. Image size will set Avatar size.
 const UserProfile = ({ profile, imageSize = 35 }) => {
@@ -14,6 +15,8 @@ const UserProfile = ({ profile, imageSize = 35 }) => {
     // Check if user owns the profile.
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
+
+    const { handleUnFollow, handleFollow } = useSetProfileData();
 
     return (
         // Align profile avatar picture and the owner name. Make gap between each user.
@@ -35,12 +38,15 @@ const UserProfile = ({ profile, imageSize = 35 }) => {
                     // If the following_id does exist - unfollow, otherwise, follow avaliable.
                     following_id ? (
                         // Bootstrap Button
-                        <Button classname={`${btnStyles.Button} ${styles.OtherButton}`}
-                            onClick={() => { }}
+                        <Button
+                            className={`${btnStyles.Button} ${styles.OtherButton}`}
+                            onClick={() => handleUnFollow(profile)}
                         >Unfollow</Button>
                     ) : (
-                        <Button className={btnStyles.Button}
-                            onClick={() => { }}
+                        <Button
+                            className={btnStyles.Button}
+                            // Pass profile as argument as user just clicked.
+                            onClick={() => handleFollow(profile)}
                         >Follow</Button>
                     )
                 )}
