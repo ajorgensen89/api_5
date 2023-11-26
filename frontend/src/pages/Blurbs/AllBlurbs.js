@@ -13,6 +13,7 @@ import Blurb from "./Blurb";
 import Display from "../../components/Display";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchedMoreData } from "../../utils/utils";
+import Popular from "../profiles/Popular";
 
 function AllBlurbs(props) {
     /**Search Bar state. add search to axiosReq and set*/
@@ -51,8 +52,10 @@ function AllBlurbs(props) {
     return (
         <Row>
             {/* className="py-2 p-0 p-md-2" */}
-            <Col md={7} lg={8}>
-                <p>Most Voted for blurbs for mobile.</p>
+            <Col lg={8}>
+                <Col md={5}>
+                    <Popular />
+                </Col>
                 {/* <i class="fa-brands fa-searchengin"></i> */}
                 {/* Search Bar searches by title or user. */}
                 <Form
@@ -69,7 +72,7 @@ function AllBlurbs(props) {
                     />
 
                 </Form>
-                <p></p>
+
                 {hasLoaded ? (
                     <>
                         {blurb.results.length ? (
@@ -125,9 +128,7 @@ function AllBlurbs(props) {
                 </Container> */}
             </Col>
             {/* className="d-none d-md-block p-0 p-md-2" */}
-            <Col md={5} lg={4}>
-                <p>Most Voted for blurbs for desktop.</p>
-            </Col>
+
         </Row>
     );
 

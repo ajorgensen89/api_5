@@ -41,9 +41,10 @@ REST_FRAMEWORK = {
     )],
 
     # Set pagination for 10 to a page. Can be changed.
+    # Set to 100 due to Infinite Scroll inconsistencies.
     'DEFAULT_PAGINATION_CLASS':
         'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10,
+    'PAGE_SIZE': 100,
 
     # Makes time and date look better. From DRF strftime format.
     'DATETIME_FORMAT': '%d %b %Y',

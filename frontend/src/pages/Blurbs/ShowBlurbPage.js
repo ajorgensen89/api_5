@@ -12,6 +12,9 @@ import Blurb from "./Blurb";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import CreateCommentForm from "../Comments/CreateCommentForm";
 import CommentContent from "../Comments/comment";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { fetchedMoreData } from "../../utils/utils";
+import Display from "../../components/Display";
 
 function ShowBlurbPage() {
     /** Set id to get each blurb */
@@ -78,12 +81,27 @@ function ShowBlurbPage() {
                         "Comments"
                     ) : null}
                     {comments.results.length ? (
-                        comments.results.map((comment) => (
-                            /** Spread comments, objects passed as props with id to each comment.*/
-                            /**Add setComments and setBlurb props, for edited and deleting comments.
-                             * Add to prop in comment.js with id field. */
-                            <CommentContent key={comment.id} {...comment} setComments={setComments} setBlurb={setBlurb} />
-                        ))
+                        <InfiniteScroll
+                            children={comments.results.map((comment) => (
+                                <CommentContent
+                                    key={comment.id}
+                                    {...comment}
+                                    setBlurb={setBlurb}
+                                    setComments={setComments}
+                                />
+                            ))}
+                            dataLength={comments.results.length}
+                            loader={<Display spinner />}
+                            hasMore={!!comments.next}
+                            next={() => fetchedMoreData(comments, setComments)}
+                        />
+
+                        // comments.results.map((comment) => (
+                        //     /** Spread comments, objects passed as props with id to each comment.*/
+                        //     /**Add setComments and setBlurb props, for edited and deleting comments.
+                        //      * Add to prop in comment.js with id field. */
+                        //     <CommentContent key={comment.id} {...comment} setComments={setComments} setBlurb={setBlurb} />
+                        // ))
                     ) : currentUser ? (
                         <span>Be the first to comment!</span>
                     ) : (

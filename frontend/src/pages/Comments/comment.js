@@ -70,9 +70,8 @@ const CommentContent = ({ profile_image, profile_id, owner, content, updated_at,
                             setShowEditForm={setShowEditForm}
                         />
                     ) : (
-                        <p>{content}</p>
+                        <p className={styles.CommentText}>{content}</p>
                     )}
-                    <p className={styles.CommentText}>{content}</p>
                 </Media.Body>
                 {is_owner && !showEditForm && (
                     // DropDownMenu Icon shown and used for editing and deleting comments. 
