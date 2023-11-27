@@ -19,11 +19,13 @@ import btnStyles from "../../styles/Button.module.css";
 // import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
+import { useRedirect } from "../../hooks/useRedirect.js";
 
 // import { useRedirect } from "../../hooks/useRedirect";
 
 function CreateBlurbForm() {
-    //   useRedirect("loggedOut");
+    // If logged out, user is redirected to home page.
+    useRedirect('loggedOut')
 
     /**useState to store errors used. Imported.*/
     const [errors, setErrors] = useState({});

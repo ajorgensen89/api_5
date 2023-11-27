@@ -18,27 +18,29 @@ import appStyles from "../../styles/App.module.css";
 // import { useRedirect } from "../../hooks/useRedirect";
 // import { setTokenTimestamp } from "../../utils/utils";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
+import { useRedirect } from "../../hooks/useRedirect";
 
 function LogInForm() {
+    // Redirect user from page if logged in.
+    useRedirect('loggedIn');
 
     /**useState to store errors used. Imported.*/
     const [errors, setErrors] = useState({});
-    
+
     /**Refactor and use Hooks instead of useContext. */
     /**Hooks in CurrentUserContext.js. */
     /** Set useSetCurrentUser variable to update user on successful log in. */
 
     const setCurrentUser = useSetCurrentUser();
 
-    // useRedirect("loggedIn");
-
+    // set state to store username and passwords for manipulation.
     const [logInData, setLogInData] = useState({
         username: "",
         password: "",
     });
     const { username, password } = logInData;
 
-    
+
 
     const history = useHistory();
 
@@ -53,7 +55,8 @@ function LogInForm() {
             console.log("login /login/")
             // setTokenTimestamp(data);
             history.push("/");
-            // history.goBack();
+            // Send user back, not to home page.
+            history.goBack();
         } catch (err) {
             console.log(err, "errsetErrorslogin")
             setErrors(err.response?.data);

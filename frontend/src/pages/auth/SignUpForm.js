@@ -8,13 +8,15 @@ import styles from "../../styles/SigningForm.module.css"
 // import Form from "react-bootstrap/Form";
 import { Form, Button, Image, Col, Row, Container, Alert } from "react-bootstrap";
 import axios from "axios";
+import { useRedirect } from "../../hooks/useRedirect";
 // import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 /**Store values in useState Hook imported from React. */
 
 
 const SignUpForm = () => {
-    // useRedirect("loggedIn");
+    // Users who are looged in are sent to home page.
+    useRedirect('loggedIn')
 
     /**Set for controlID in Form.Group fields. Create and set new user on sign up page. With password. 
      * Value set to each state in Form.Control prop */

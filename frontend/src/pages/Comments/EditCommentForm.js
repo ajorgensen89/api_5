@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 import { axiosRes } from "../../api/axiosDefaults";
 import btnStyles from "../../styles/Button.module.css"
 
-import styles from "../../styles/CommentContent.module.css";
+// import styles from "../../styles/CommentContent.module.css";
 
 /** Credit to creating within project, building this from Code Institute coursework 
  * and redeveloped. */
@@ -29,14 +29,14 @@ function CommentEditForm(props) {
         });
         setComments((prevComments) => ({
           ...prevComments,
-          results: prevComments.results.map((comment) => {
-            return comment.id === id
+          results: prevComments.results.map((comments) => {
+            return comments.id === id
               ? {
-                  ...comment,
+                  ...comments,
                   content: formContent.trim(),
                   updated_at: "now",
                 }
-              : comment;
+              : comments;
           }),
         }));
         setShowEditForm(false);
@@ -49,7 +49,6 @@ function CommentEditForm(props) {
       <Form onSubmit={handleSubmit}>
         <Form.Group className="pr-1">
           <Form.Control
-            className={styles.Form}
             as="textarea"
             value={formContent}
             onChange={handleChange}
