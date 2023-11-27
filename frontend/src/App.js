@@ -12,11 +12,15 @@ import SignUpForm from "./pages/auth/SignUpForm";
 import LogInForm from "./pages/auth/LogInForm";
 import CreateBlurbForm from "./pages/Blurbs/CreateBlurbForm";
 import ShowBlurbPage from "./pages/Blurbs/ShowBlurbPage";
-// import PostCreateForm from "./pages/Blurbs/PostCreateForm";
 import AllBlurbs from "./pages/Blurbs/AllBlurbs";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
 import EditBlurbForm from "./pages/Blurbs/EditBlurbForm";
 import ProfileHome from "./pages/profiles/ProfileHome"
+
+
+import UsernameForm from "./pages/profiles/UsernameForm";
+import UserPasswordForm from "./pages/profiles/UserPasswordForm";
+import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 
 /** Switch holds route. Exact path is rendered when matching. */
 /** Link to NavBar.js */
@@ -48,6 +52,21 @@ function App() {
             <Route exact path="/blurbs/:id" render={() => <ShowBlurbPage />} />
             <Route exact path="/blurbs/:id/edit" render={() => <EditBlurbForm />} />
             <Route exact path="/profiles/:id" render={() => <ProfileHome />} />
+            <Route
+              exact
+              path="/profiles/:id/edit/username"
+              render={() => <UsernameForm />}
+            />
+            <Route
+              exact
+              path="/profiles/:id/edit/password"
+              render={() => <UserPasswordForm />}
+            />
+            <Route
+              exact
+              path="/profiles/:id/edit"
+              render={() => <ProfileEditForm />}
+            />
             <Route render={() => <h1>Page not found!</h1>} />
           </Switch>
         </Container>

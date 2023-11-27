@@ -16,8 +16,8 @@ import Upload from "../../assets/images/upload.jpg";
 import styles from "../../styles/BlurbsForm.module.css";
 import appStyles from "../../styles/App.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-// import { useHistory } from "react-router";
+// import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 
 // import { useRedirect } from "../../hooks/useRedirect";

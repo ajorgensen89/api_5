@@ -2,11 +2,10 @@ import React from "react";
 import styles from "../../styles/Blurb.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 import { DropDownMenu } from "../../components/DropDownMenu";
-import { useHistory } from "react-router";
 
 
 const Blurb = (props) => {

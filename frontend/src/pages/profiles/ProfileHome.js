@@ -21,6 +21,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Blurb from "../Blurbs/Blurb";
 import { fetchedMoreData } from "../../utils/utils";
 import NoResults from "../../assets/images/Nothing.jpg";
+import { ProfileEditDropdown } from "../../components/DropDownMenu";
 
 /** Profile content created during Coursework content with Code Institute. */
 
@@ -73,6 +74,8 @@ function ProfileHome() {
 
     const mainProfile = (
         <>
+            {/* If owner owns profile being requested to edit, show dropdown menu. */}
+            {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
             <Row noGutters className="px-3 text-center">
                 <Col lg={3} className="text-lg-left">
                     <Image roundedCircle src={profile?.image} />
