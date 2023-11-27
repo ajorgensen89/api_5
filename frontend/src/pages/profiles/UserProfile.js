@@ -1,10 +1,10 @@
 import React from "react";
-import btnStyles from "../../styles/Button.module.css"
+
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import Avatar from "../../components/Avatar";
 import Button from "react-bootstrap/Button";
-import styles from "../../styles/Profiles.module.css"
+import appStyles from "../../styles/Profiles.module.css"
 import { useSetProfileData } from "../../contexts/ProfileContext";
 
 // Pasing props. Image size will set Avatar size.
@@ -31,20 +31,20 @@ const UserProfile = ({ profile, imageSize = 35 }) => {
             <div classname="mx-2">
                 {owner}
             </div>
-            <div className="text-right ml-auto">
+            <div className="text-right ml-auto text-wrap">
                 {/* Check if current user is logged in 
                 and not the owner of the profile being followed. */}
                 {currentUser && !is_owner && (
                     // If the following_id does exist - unfollow, otherwise, follow avaliable.
                     following_id ? (
-                        // Bootstrap Button
+                        // Bootstrap Button className={`${appStyles.FollowStatusButton} ${appStyles.OtherButton}`}
                         <Button
-                            className={`${btnStyles.Button} ${styles.OtherButton}`}
+                            className={`${appStyles.OtherButton} mx-2`}
                             onClick={() => handleUnFollow(profile)}
                         >Unfollow</Button>
                     ) : (
                         <Button
-                            className={btnStyles.Button}
+                            className={`${appStyles.FollowStatusButton} mx-2`}
                             // Pass profile as argument as user just clicked.
                             onClick={() => handleFollow(profile)}
                         >Follow</Button>

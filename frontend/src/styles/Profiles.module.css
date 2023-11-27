@@ -1,4 +1,29 @@
 .OtherButton {
- color: rgb(252, 248, 248);
- background-color: black;
+    color: rgb(252, 248, 248);
+    background-color: #6c986c;
+    font-size: 15px;
+    border: 2px solid black;
+    font-family: 'Delicious Handrawn';
+}
+
+.OtherButton:hover {
+    background-color: black;
+    font-size: 20px;
+}
+
+.FollowStatusButton {
+    font-size: 15px;
+    align-self: center;
+    padding: 2px;
+    background-color: #9aca73;
+    border: 2px solid #6c986c;
+    text-align: center;
+    margin-right: 2px;
+    font-family: 'Delicious Handrawn';
+}
+
+.FollowStatusButton:hover {
+    cursor: pointer;
+    background-color: #18da18;
+    font-size: 20px;
 }

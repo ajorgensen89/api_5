@@ -111,9 +111,9 @@ function ShowBlurbPage() {
                     )}
                 </Container>
             </Col>
-            <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
+            {/* <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
                 <p>Most Voted for blurbs for desktop.</p>
-            </Col>
+            </Col> */}
         </Row>
     );
 

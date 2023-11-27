@@ -181,7 +181,7 @@ function EditBlurbForm() {
             >
                 Cancel
             </Button>
-            {/** Button creates new blurb no submit. */}
+            {/** Button creates new blurb on submit. */}
             <Button className={btnStyles.Button} type="submit">
                 Save edits.
             </Button>

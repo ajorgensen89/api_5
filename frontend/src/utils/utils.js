@@ -3,6 +3,7 @@ import { axiosReq } from "../api/axiosDefaults"
 
 
 /** Credit from Code Institute content, created during the supplied coursework. */
+/**Use in conjunction with infinite scroll to access the 'next' url in API for further posts. */
 
 /** Can be used for separeate occasions. */
 export const fetchedMoreData = async (resource, setResource) => {

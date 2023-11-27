@@ -8,7 +8,7 @@ import Display from "../../components/Display";
 
 // import proStyles from "../../styles/ProfileHome.module.css";
 import styles from "../../styles/App.module.css";
-import btnStyles from "../../styles/Button.module.css";
+import appStyles from "../../styles/Profiles.module.css"
 
 import Popular from "./Popular";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
@@ -25,7 +25,7 @@ import { ProfileEditDropdown } from "../../components/DropDownMenu";
 
 /** Profile content created during Coursework content with Code Institute. */
 
-function ProfileHome() {
+function ProfileHome({ imageSize = 200 }) {
     const [hasLoaded, setHasLoaded] = useState(false);
     const currentUser = useCurrentUser();
 
@@ -74,40 +74,41 @@ function ProfileHome() {
 
     const mainProfile = (
         <>
-            {/* If owner owns profile being requested to edit, show dropdown menu. */}
+            {/* If owner owns profile being requested to edit, show dropdown menu at the top of the profile. */}
             {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
-            <Row noGutters className="px-3 text-center">
+            <Row className="px-3 text-center">
                 <Col lg={3} className="text-lg-left">
-                    <Image roundedCircle src={profile?.image} />
+                    {/* Use imagesize prop to set size. */}
+                    <Image rounded src={profile?.image} height={imageSize} width={imageSize} />
                 </Col>
                 <Col lg={6}>
                     <h3 className="m-2">{profile?.owner}</h3>
                     <Row className="justify-content-center no-gutters" >
-                        <Col xs={3} className="my-2">
+                        <Col xs={3} className="m-1">
                             <div>{profile?.blurbs_count}</div>
                             <div>Blurbs</div>
                         </Col>
-                        <Col xs={3} className="my-2">
+                        <Col xs={3} className="m-1">
                             <div>{profile?.followers_count}</div>
                             <div>Followers</div>
                         </Col>
-                        <Col xs={3} className="my-2">
+                        <Col xs={3} className="m-1">
                             <div>{profile?.following_count}</div>
                             <div>Following</div>
                         </Col>
                     </Row>
                 </Col>
-                <Col lg={3} className="text-lg-right">
+                <Col lg={3} className="text-lg-right text-wrap">
                     {currentUser && !is_owner && (profile?.following_id ? (
                         <Button
-                            classname={`${btnStyles.Button} ${styles.OtherButton}`}
+                            classname={`${appStyles.OtherButton} mx-2 `}
                             onClick={() => handleUnFollow(profile)}
                         >
                             Unfollow
                         </Button>
                     ) : (
                         <Button
-                            className={btnStyles.Button}
+                            className={`${appStyles.FollowStatusButton} mx-2`}
                             onClick={() => handleFollow(profile)}
                         >
                             Follow
