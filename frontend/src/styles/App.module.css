@@ -25,7 +25,7 @@ a:hover {
 }
 
 a:hover i {
-  color: #e85100;
+  color: #ad56a9;
   transition: color ease-in-out 0.1s;
 }
 
@@ -40,7 +40,23 @@ i {
 i:hover {
   cursor: pointer;
   transition: color ease-in-out 0.1s;
-  color: #f95c07;
+  color: #ad56a9;
+}
+
+i active {
+  color: #3b2fe8;
+}
+
+i:active {
+  color: #f5c66e;
+}
+
+.Navlink {
+  color: #555555;
+}
+
+.active {
+  color: #d99a9a;
 }
 
 /* Headers */

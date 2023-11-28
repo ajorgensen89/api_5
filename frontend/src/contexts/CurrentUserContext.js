@@ -3,7 +3,6 @@ import axios from "axios";
 import { axiosReq, axiosRes } from "../api/axiosDefaults";
 import { useHistory } from "react-router";
 import { removeTimestampToken, setRefreshToken } from "../utils/utils";
-// import { removeTokenTimestamp, shouldRefreshToken } from "../utils/utils";
 
 // Create context for current user details.
 export const CurrentUserContext = createContext();

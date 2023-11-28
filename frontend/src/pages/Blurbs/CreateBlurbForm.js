@@ -79,13 +79,14 @@ function CreateBlurbForm() {
         /**Create variable to append for each state. */
         const formData = new FormData();
 
+        // Append title and content form data.
         formData.append("title", title);
         formData.append("content", content);
 
+        // Checks to see if user has selected an image, 
+        // if so, then add image file to formData otherwise set to null.
         formData.append("image", imageInput.current.files[0]);
-        // Checks to see if user has selected an image, if so, then add image file to formData otherwise set to null.
-
-
+        
         // due to multidata.
         try {
             /** axios updated to request interceptor and post on url link.*/

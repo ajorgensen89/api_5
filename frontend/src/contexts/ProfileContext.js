@@ -57,13 +57,15 @@ export const ProfileDataProvider = ({ children }) => {
                 ...prevState,
                 pageProfile: {
                     results: prevState.pageProfile.results.map((profile) =>
-                        // Auto import mapping over array function for following, call it on each value.
+                        // Auto import mapping over array function for following, 
+                        // call it on each value.
                         followHelper(profile, clickedProfile, data.id)),
                 },
                 popularFollowers: {
                     ...prevState.popularFollowers,
                     results: prevState.popularFollowers.results.map((profile) =>
-                        // Auto import mapping over array function for following in popular.
+                        // Auto import mapping over array function for following 
+                        // in popular.
                         followHelper(profile, clickedProfile, data.id)),
                 },
             }));
@@ -98,7 +100,8 @@ export const ProfileDataProvider = ({ children }) => {
 
     return (
         <ProfileContext.Provider value={profileData}>
-            <SetProfileContext.Provider value={{ setProfileData, handleUnFollow, handleFollow }}>
+            <SetProfileContext.Provider
+                value={{ setProfileData, handleUnFollow, handleFollow }}>
                 {children}
             </SetProfileContext.Provider>
         </ProfileContext.Provider>

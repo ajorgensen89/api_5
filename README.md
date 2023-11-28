@@ -27,8 +27,11 @@ Labels and status bars can be added to the user stories so they can be tracked f
 ## Colour Scheme.
 
 The scheme for the website uses an array of colours to portait the vibrancy of these colours in all the different seasons avaliable to us. The grey scale background gives the website a more 'modern feel' with bursts of colour highlighting different areas.<br>
+
 When moving from page to page, pops of colour help to show the user an icon or link they maybe hovering over, aswell as helping to highlight the current page the user is browsing.<br>
-![Colours]()<br>
+
+<img src="frontend/src/assets/images/readme-images-frontend/P5colors.png" height=5% width=5%><br>
+
 For [CCS](https://www.w3schools.com/Css/) in this product, Bootstrap styles are integrated in [React](https://react.dev/) functionality to help with design and custom css module styles are added separately.<br>
 
 
@@ -111,20 +114,28 @@ Followers/following/unfollow
 
 <br>
 
-### No results.
+## No results.
 
 When there are no results in a search, a picture or a message will be displayed to the user.<br>
 The user can use the search bar to try and find particular blurb pieces or keywords.<br>
 <br>
-<img src="frontend/src/assets/images/readme-images-frontend/Noresultspage.png" width=20% height=20%><br>
+<img src="frontend/src/assets/images/readme-images-frontend/Noresultspage.png" width=30% height=30%><br>
 <br>
 
 Other messages that are displayed to the user for direction, include a message about whether they can vote or follow a user or if they have to log in first.<br>
 This is also the case for leaving comments. Both votes and comments are specific to each indiviual blurb and a count for each blurb, for votes and comments, are counted and shown to the user.<br>
 The green thumb in this image shows the 'upvote' as positive, for that blurb.<br>
 When removing a vote or comment you may have to go away from the page and come back to see the No results message if, no more votes or comments are avaliable.<br>
-<img src="frontend/src/assets/images/readme-images-frontend/VoteCommentCount.png" width=20% height=20%><br>
+<img src="frontend/src/assets/images/readme-images-frontend/VoteCommentCount.png" width=30% height=30%><br>
 <br>
+
+### Page Not Found.
+
+A custom Page Not Found page has been added to the project to encourage users away from wrong url input and navigation.<br>
+A link is provided for them to navigate away from the page not found zone.<br>
+This could be changed to navigate them back to the home page, log in or log out pages.<br>
+
+<img src="frontend/src/assets/images/readme-images-frontend/PageNotFound.png" width=30% height=30%><br>
 
 <br>
 
@@ -132,7 +143,7 @@ When removing a vote or comment you may have to go away from the page and come b
 
 The user will have an image displayed to them when first creating a blurb.<br>
 A React Spinner will be shown to the user while a page or search is loading, making the page a better user experience.<br>
-<img src="frontend/src/assets/images/readme-images-frontend/Spinner.png" width=20% height=20%><br>
+<img src="frontend/src/assets/images/readme-images-frontend/Spinner.png" width=30% height=30%><br>
 
 
 ### Drop down menu.
@@ -141,7 +152,14 @@ The React component Dropdown, has been used to display a menu for the user to ed
 
 ### Popular section.
 
+User will be able to see the most popular users.<br>
+Users will have access to a search bar, they can browse the blurbs to get something from a key word or phrase. They can also search for other users by inputting their username into the search bat.<br>
+
+Due to skill and time constraints of the project the final popular section was not fully developed. For future features, a display of the most UpVoted blurbs from other users would also be access here.<br>
+
 ### News Feed.
+
+All blurbs will be able to be viewed. The user can nvaigate to a different page in profile to see their own blurbs or navigate to the My Votes sectionn to the blurbs they have voted for. They can be removed from this page too.<br>
 
 ### Navigation Bar.
 
@@ -163,8 +181,18 @@ This image shows the expanded navigation menu view.<br>
 Features can be added to greatly improve this website.<br>
 A setTimeOut() function can be added to the search bar to slow the website response to keys presses. This would set a delay in which the searched items would appear, rather than flicking and sending the data request after each key stroke.<br>
 <br>
+
 It was noted that the votes count increases by one when the post is first created and your taken to the blurb page. It does change to 0 and 'not count' as a vote on the main Home page.<br>
-This would need correcting at a later data. <br>
+This would need correcting at a later data. The vote count and comment count is CORRECT when showing all of the blurbs, but on navigation to a single blurb, the counts are not correct. Due to time constraints, this could not be corrected but it is a noted issue for this project.<br> 
+To vote, it is best to make a click response from the main page when viewing all blurbs to ensure the counts are correct. A blurb context, to improve the code overall for data on the votes and comments count, was attempted but due to skill and errors, it could not be completed at this stage which is a shame.<br>
+
+
+User experience could benefit from seeing different fields when it came to up voting, down voting or even loving a particular blurb. This would mean greatly developing the votes counted fields or even having a separate aspect within an API model to get these results.<br>
+
+
+Users being able to share content is good platform, but they would have a much better experience if that platform could include clips and videos such as movie trailers or an own video.<br>
+
+
 
 <br>
 

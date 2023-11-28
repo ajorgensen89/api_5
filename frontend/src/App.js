@@ -21,6 +21,7 @@ import ProfileHome from "./pages/profiles/ProfileHome"
 import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
+import PageNotFound from "./components/PageNotFound";
 
 /** Switch holds route. Exact path is rendered when matching. */
 /** Link to NavBar.js */
@@ -67,7 +68,7 @@ function App() {
               path="/profiles/:id/edit"
               render={() => <ProfileEditForm />}
             />
-            <Route render={() => <h1>Page not found!</h1>} />
+            <Route render={() => <PageNotFound />} />
           </Switch>
         </Container>
       </div>

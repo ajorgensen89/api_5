@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
@@ -8,15 +7,10 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
-
 import { Link, useHistory } from "react-router-dom";
-
 import styles from "../../styles/SigningForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../styles/App.module.css";
-// import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
-// import { useRedirect } from "../../hooks/useRedirect";
-// import { setTokenTimestamp } from "../../utils/utils";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { useRedirect } from "../../hooks/useRedirect";
 import { setTimestampToken } from "../../utils/utils";
@@ -55,7 +49,7 @@ function LogInForm() {
             setCurrentUser(data.user);
             console.log("login /login/")
             // Set for when user signin with data from the API. 
-            // Function extracts access tokens expiry date, saves it to users local storage.
+            // Function extracts access token expiry date, saves to user local storage.
             setTimestampToken(data)
             history.push("/");
             // Send user back, not to home page.
@@ -78,7 +72,8 @@ function LogInForm() {
         <Row>
             <Row>
                 <Col className={appStyles.ColText}>
-                    <Container className={`${appStyles.Border} ${appStyles.CenterText} ${styles.Header}`} >
+                    <Container
+                        className={`${appStyles.Border} ${appStyles.CenterText}`} >
                         <h1 className={styles.Header}>sign in</h1>
                         <Form onSubmit={handleSubmit}>
                             <Form.Group controlId="username">
@@ -143,7 +138,7 @@ function LogInForm() {
                 <Col className={appStyles.ColImage}>
                     <Image
                         className={`${appStyles.FillerImage} ${appStyles.CenterText}`}
-                        src={"https://res.cloudinary.com/dtsaa4qbs/image/upload/v1688082376/g4ha4dejebjbmmwul6gv.png"}
+                        src={"https://res.cloudinary.com/dtsaa4qbs/image/upload/v1688082376/smile.png"}
                     />
                 </Col>
                 <Col></Col>

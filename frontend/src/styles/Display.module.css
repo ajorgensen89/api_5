@@ -6,3 +6,8 @@
     min-height: 200px;
     text-decoration: none;
 }
+
+.PageNotFound {
+    font-family: "Delicious Handrawn";
+    font-size: 50px;
+}

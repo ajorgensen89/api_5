@@ -8,11 +8,18 @@
     padding: 5px;
   } */
   
-  .Active i {
+  /* .Active i {
+    color: #3b2fe8;
+  }
+
+  .NavLink active {
     color: #f5c66e;
   }
 
-  .NavLink:active {
-    color: #f5c66e;
+  .Navlink {
+    color: #555555;
   }
-
+  
+  .active {
+    color: rgb(221, 53, 171), 110, 238)
+  } */

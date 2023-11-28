@@ -78,7 +78,8 @@ const CommentContent = ({ profile_image, profile_id, owner, content, updated_at,
                     // Same as blurb.
                     // Props passed are edit and delete handlers.
                     <DropDownMenu
-                        // Pass handle edit function to handle edit prop.
+                        // Pass handle edit function to handle edit using setShowEditForm
+                        // from EditCommentForm.js
                         handleEditing={() => setShowEditForm(true)}
                         // Pass handle delete function to handle delete prop.
                         handleDeleting={handleDeleting}

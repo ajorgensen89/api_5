@@ -1,4 +1,7 @@
 .SearchBar {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: 'Delicious Handrawn';
     background-color: #f1f1f1;
     border: 4px soild #6c986c;
     border-radius: 2%;
@@ -6,4 +9,5 @@
     margin:4px 0 4px 0;
     width: 260px;
     height: 40px;
+    letter-spacing: 0.75px;
 }

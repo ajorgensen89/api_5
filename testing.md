@@ -19,9 +19,25 @@ Example of using an extention.<br>
 <br>
 'Problems' tab within the coding workspace can be used to suggest problems within the code to be fixed with use of an extension.<br>
 Example showing whitespace that needs to be removed and unused imports.<br>
-<img src="assets/images/testing-images-backend/problemstab.png" width="50%" height="50%">
+<img src="assets/images/testing-images-backend/problemstab.png" width="30%" height="30%">
 <br>
 'Problems' tab can identify many other issues thoughout building a website.<br>
+
+## Python Linting.
+
+Test were carried out on different Linting platforms including:
+- [Code Institute Linter](https://pep8ci.herokuapp.com/)
+- [Visual Studio code](https://code.visualstudio.com/docs/python/linting)
+This helped to indentify linting errors within the code to establish and better format for the workspace environment.<br>
+[Visual Studio code](https://code.visualstudio.com/docs/python/linting)<br>
+<img src="frontend/src/assets/images/testing-images-frontend/LintingEx2.png" width=20% height=20%><br>
+
+<br>
+[Code Institute Linter](https://pep8ci.herokuapp.com/)<br>
+<img src="frontend/src/assets/images/testing-images-frontend/LintingEx.png" width=20% height=20%><br>
+<br>
+
+Some corrections suggested, such as removing whitespace from after and before the curly braces in { Navlink }, for example, did not improve my code, therefore it was left. Same as the linter request to remove many semi-colons from areas where I felt they were neccessary, were not removed.<br>
 
 <hr>
 
@@ -77,15 +93,28 @@ It was noted that occasionally on login, even when the home screen was able to v
 
 A POST error kept popping up and was unhappy regarding leaky code in an unmounted component wihtin the useEffect React function. Using some guidance from ChatGPT, I found a model to a solution and adapted it for use for this project by setting a clean up, like it suggests.<br>
 **Code Error showing in console log as a POST error.**<br>
-<img src="frontend/src/assets/images/testing-images-frontend/leakerror.png" width=20% height=20%><br>
+<img src="frontend/src/assets/images/testing-images-frontend/leakerror.png" width=30% height=20%><br>
 <br>
 **Suggested solution to be implemented.**<br>
-<img src="frontend/src/assets/images/testing-images-frontend/LeakFix.png" width=20% height=20%><br>
+<img src="frontend/src/assets/images/testing-images-frontend/LeakFix.png" width=30% height=20%><br>
 <br>
 **Code that was adapted to remove POST error in console. Setting a clean up for the useEffect function when fetching posts.**<br>
-<img src="frontend/src/assets/images/testing-images-frontend/LeakCode.png" width=20% height=20%><br>
+<img src="frontend/src/assets/images/testing-images-frontend/LeakCode.png" width=30% height=30%><br>
 <br>
 
+Console log error seemed to be coming from the package.json files.<br>
+Tampering with this code did not seem a smart idea due to skill level and understanding so they were left alone.<br>
+Error logged for the project as noticed.<br>
+
+Console Log error messgae. <br>
+<img src="frontend/src/assets/images/testing-images-frontend/classnameerror.png" width=30% height=0%><br>
+
+Noted areas where the issue of 'classname' not 'className' was found within the workspace.<br>
+<img src="frontend/src/assets/images/testing-images-frontend/classnameerror2.png" width=30% height=30%><br>
+
+
+Developers that create the packages are responsible for these errors in the image below. Fixes maybe released and can be applied with an **npm audit fix**<br>
+<img src="frontend/src/assets/images/testing-images-frontend/auditnpm.png" width=30% height=30%><br>
 <hr>
 
 # User input Errors.
@@ -138,6 +167,12 @@ With the help of a Slack Community Individual, the problem was found and resolve
 
 These network requests will always display in console.log when first signing in as these three, together, confirm whether a user is actually logged out.<br>
 <img src="frontend/src/assets/images/testing-images-frontend/NetworkRequestunauth.png" width=20% height=20% >
+
+When first loading the development website, it would get 'sticky' going back and forth to workspace and hosted website. An extra CTRL + ALT + R to refresh would tend to sort the page links when navigating.
+This maybe due to the local timestamp being set still in local storage.<br>
+
+When the page is refreshed, a 400 error is sent due to no username input on sign in.<br>
+<img src="frontend/src/assets/images/testing-images-frontend/NoUsername.png" width=20% height=20% >
 
 <hr>
 

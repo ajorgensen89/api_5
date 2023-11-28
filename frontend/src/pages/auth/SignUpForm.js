@@ -18,7 +18,8 @@ const SignUpForm = () => {
     // Users who are looged in are sent to home page.
     useRedirect('loggedIn')
 
-    /**Set for controlID in Form.Group fields. Create and set new user on sign up page. With password. 
+    /**Set for controlID in Form.Group fields. 
+     * Create and set new user on sign up page. With password. 
      * Value set to each state in Form.Control prop */
     const [signUpData, setSignUpData] = useState({
         username: "",
@@ -40,14 +41,15 @@ const SignUpForm = () => {
 
     /**Universal onChange handler for input fields for new user and password.*/
     /**JavaScript for Username 'KEY: VALUE =  input field name: user's input'.*/
-    /** Add handler to each component to allow changes for all fields in signUpdata in useState.*/
+    /** Add handler to each component to allow changes for all fields in signUpdata 
+     * in useState.*/
 
     const handleChange = (event) => {
         setSignUpData({
             // Access all data without deleting previous item with Spread(...).
             ...signUpData,
             [event.target.name]: event.target.value,
-            
+
         });
     };
 
@@ -79,7 +81,7 @@ const SignUpForm = () => {
             setErrors(err.response?.data);
         }
     };
-    
+
 
 
     return (
@@ -97,7 +99,7 @@ const SignUpForm = () => {
             </Row>
             <Row>
                 <Col className={appStyles.ColText}>
-                    <Container className={`${appStyles.Border} ${appStyles.CenterText} ${styles.Header}`}>
+                    <Container className={`${appStyles.Border} ${appStyles.CenterText}`}>
                         <h1>
                             Sign Up Here!
                         </h1>
@@ -115,7 +117,8 @@ const SignUpForm = () => {
                                 />
                             </Form.Group>
 
-                            {/* Optional chaining (?). Map over all errors in state. If error in object, produce alert. Alert imported. */}
+                            {/* Optional chaining (?). Map over all errors in state. 
+                            If error in object, produce alert. Alert imported. */}
                             {errors.username?.map((message, idx) => (
                                 <Alert variant="warning" key={idx}>{message}</Alert>
                             ))}
@@ -133,7 +136,8 @@ const SignUpForm = () => {
                                 />
                             </Form.Group>
 
-                            {/* Optional chaining (?). Map over all errors in state. If error in object, produce alert. */}
+                            {/* Optional chaining (?). Map over all errors in state. 
+                            If error in object, produce alert. */}
                             {errors.password1?.map((message, idx) => (
                                 <Alert key={idx} variant="warning">
                                     {message}
@@ -152,7 +156,8 @@ const SignUpForm = () => {
                                 />
                             </Form.Group>
 
-                            {/* Optional chaining (?). Map over all errors for each key(idx) in error state. 
+                            {/* Optional chaining (?). 
+                            Map over all errors for each key(idx) in error state. 
                             If error in object, produce alert. */}
                             {errors.password2?.map((message, idx) => (
                                 <Alert key={idx} variant="warning">

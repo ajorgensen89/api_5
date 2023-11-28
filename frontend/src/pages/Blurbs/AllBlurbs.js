@@ -26,13 +26,15 @@ function AllBlurbs(props) {
     /** Check if all data fetched. */
     const [hasLoaded, setHasloaded] = useState(false);
     /** To refetch blurbs when owners move between home, newsfeed and votes pages. 
-     * From React router Hook to return objects with data about URL. Credit to Code Institute Coursework project Moments. */
+     * From React router Hook to return objects with data about URL. 
+     * Credit to Code Institute Coursework project Moments. */
     const { pathname } = useLocation();
 
     useEffect(() => {
         const fetchBlurbs = async () => {
             try {
-                /**Filter prop is used to filter what the user will see. Followed/voted for blurbs. */
+                /**Filter prop is used to filter what the user will see. 
+                 * Followed/voted for blurbs. */
                 const { data } = await axiosReq(`/blurbs/?${filter}search=${query}`);
                 setBlurb(data);
                 setHasloaded(true);
@@ -74,7 +76,7 @@ function AllBlurbs(props) {
                     <Form.Control
                         className={styles.SearchBar}
                         type="text"
-                        placeholder="Start searching..."
+                        placeholder="START A SEARCH..."
                         /**Set query to run search */
                         value={query}
                         // API request handed by onChange event and updates.
@@ -101,29 +103,11 @@ function AllBlurbs(props) {
                                 loader={<Display spinner />}
                                 /** If 'has more' is true, run 'next' prop. */
                                 hasMore={!!blurb.next}
-                                /** Created and imported from utils for 'next' prop function to be used on other pages. 
+                                /** Created and imported from utils for 'next' prop function,
+                                 * to be used on other pages. 
                                  * Set resource prob to blurb and setBlurb. */
                                 next={() => fetchedMoreData(blurb, setBlurb)}
                             />
-                            // <InfiniteScroll
-                            //  
-                            //     /** Infinite Scroll props */
-                            //     /** Say how many blurb data results there are. */
-                            //     dataLength={blurb.results.length}
-                            //     /**Use spinner component in Display.js */
-                            //     loader={<Display spinner />}
-                            //     /** If 'has more' is true, run 'next' prop. */
-                            //     hasMore={!!blurb.next}
-                            //     /** Created and imported from utils for 'next' prop function to be used on other pages. 
-                            //      * Set resource prob to blurb and setBlurb. */
-                            //     next={() => fetchedMoreData(blurb, setBlurb)}
-                            // >
-                            //     {
-                            //         blurb.results.map(blurb => (
-                            //             <Blurb key={blurb.id} {...blurb} setBlurb={setBlurb} />
-                            //         ))
-                            //     }
-                            // </InfiniteScroll>
 
                         ) : (
                             <Display src={NoResult} message={message} />
@@ -134,10 +118,7 @@ function AllBlurbs(props) {
                     <Display spinner />
                 )}
 
-                {/* <Container className={styles.ContainerContent}>
-                </Container> */}
             </Col>
-            {/* className="d-none d-md-block p-0 p-md-2" */}
 
         </Row>
     );

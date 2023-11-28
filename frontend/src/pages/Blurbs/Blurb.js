@@ -74,7 +74,7 @@ const Blurb = (props) => {
     }
     /** Direct to URL page for editing a blurb. */
     const handleEditing = () => {
-        history.push(`/blurbs/${id}/edit`)
+        history.push(`/blurbs/${id}/edit`);
     }
 
     /** Direct to URL page for editing a blurb. */
@@ -97,7 +97,8 @@ const Blurb = (props) => {
                 </Link>
                 <div>
                     <span>Updated:{updated_at}</span>
-                    {/* Drop down menu will appear if all conditions are true. If it is the owner of the blurb.
+                    {/* Drop down menu will appear if all conditions are true. 
+                    If it is the owner of the blurb.
                     The owner will then be able to edit and delete a post accordingly. */}
                     {/* DropDownMenu has two props - edit and delete. */}
                     {is_owner && blurbPage && (
@@ -120,17 +121,17 @@ const Blurb = (props) => {
                 {/* Terinary codition depending on whether user is logged in. 
                 User can vote, if not logged in user will a React Tooltip message*/}
                 {is_owner ? (
-                    <OverlayTrigger placement="top" overlay={<Tooltip>No voting for your own stuff!</Tooltip>}>
+                    <OverlayTrigger
+                        placement="top"
+                        overlay={<Tooltip>No voting for your own stuff!</Tooltip>}>
                         <i className="fa-solid fa-thumbs-up"></i>
                     </OverlayTrigger>
                 ) : votes_id ? (
                     <span onClick={handleRemoveVote}>
                         <i className={`fa-solid fa-thumbs-up ${styles.ThumbsUpVote}`}></i>
-                        {/* <i className="fa-solid fa-thumbs-up"></i> */}
                     </span>
                 ) : currentUser ? (
                     <span onClick={handleVote}>
-                        {/* <i className={`fa-solid fa-thumbs-up ${styles.ThumbsUpVote}`}></i> */}
                         <i className="fa-solid fa-thumbs-up"></i>
                     </span>
                 ) : (

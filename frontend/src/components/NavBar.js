@@ -1,12 +1,11 @@
 import React from "react";
-// import { NavDropdown } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import logo from "../assets/logo5.jpg";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
-
+import appStyles from "../styles/App.module.css"
 import { useCurrentUser, useSetCurrentUser } from "../contexts/CurrentUserContext";
 import Avatar from "./Avatar";
 import axios from "axios";
@@ -18,11 +17,12 @@ import { removeTimestampToken } from "../utils/utils";
 /**Navlink takes 'to' prop to link to App.js Routes. */
 
 const NavBar = () => {
-  
-  /** Use Hook to collaspe and expand burger dropdown menu on click. */
-  const { collapseExpand, setCollapseExpand, burgerRef } = useToggle();  
 
-  /** Access data in a child component to display Ternary condition in navigation View. */
+  /** Use Hook to collaspe and expand burger dropdown menu on click. */
+  const { collapseExpand, setCollapseExpand, burgerRef } = useToggle();
+
+  /** Access data in a child component to display Ternary condition in 
+   * navigation View. */
   const currentUser = useCurrentUser();
 
   const setCurrentUser = useSetCurrentUser();
@@ -33,11 +33,11 @@ const NavBar = () => {
       // Set current user to null field. Noone is logged in.
       setCurrentUser(null);
       // Remove timestamp token when use logs out.
-      
+
       removeTimestampToken();
       console.log("logged out /logout/")
     } catch (err) {
-      console.log(err,"errlogout");
+      console.log(err, "errlogout");
     }
   };
 
@@ -55,7 +55,13 @@ const NavBar = () => {
         <i className="fa-regular fa-newspaper"></i>News Feed
       </NavLink>
       <NavLink
-        className={styles.NavLink}
+        className={({ isActive }) => {
+          const linkClass = [appStyles.i];
+          if (isActive) linkClass.push(appStyles.active);
+
+          // returns "NavLink" or "Navlink.active"
+          return linkClass.join(" ");
+        }}
         // activeClassName={styles.Active}
 
         // Link to blurbs or users they have voted for.
@@ -67,7 +73,13 @@ const NavBar = () => {
 
         // Link to home when logging out.
         to="/"
-        className={styles.NavLink}
+        className={({ isActive }) => {
+          const linkClass = [styles.NavLink];
+          if (isActive) linkClass.push(styles.active);
+
+          // returns "NavLink" or "Navlink.active"
+          return linkClass.join(" ");
+        }}
         onClick={handleLogout}
       // activeClassName={styles.Active}
       >
@@ -81,8 +93,6 @@ const NavBar = () => {
 
       // activeClassName={styles.Active}
       >
-        {/* <i className="fa-regular fa-face-smile-wink"></i>Sign Out */}
-        {/* <img src={currentUser?.profile_image} alt="Profile avatar for user" ></img> */}
         <Avatar src={currentUser?.profile_image} text="Profile" height={35} />
 
       </NavLink>
@@ -92,8 +102,14 @@ const NavBar = () => {
   const loggedOutNavView = (
     <>
       <NavLink
-        className={styles.NavLink}
-        // activeClassName={styles.Active}
+        className={({ isActive }) => {
+          const linkClass = [styles.NavLink];
+          if (isActive) linkClass.push(styles.active);
+
+          // returns "NavLink" or "Navlink.active"
+          return linkClass.join(" ");
+        }}
+
 
         // Link to url.
         to="/login"
@@ -145,7 +161,10 @@ const NavBar = () => {
 
         {/* Toggle and Collapse NavBar used when screen size changes on devices. 
          */}
-        <Navbar.Toggle ref={burgerRef} onClick={() => setCollapseExpand(!collapseExpand)} aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle
+          ref={burgerRef}
+          onClick={() => setCollapseExpand(!collapseExpand)}
+          aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto text-left">
             <NavLink
@@ -159,25 +178,10 @@ const NavBar = () => {
               <i className="fa-regular fa-face-laugh-beam"></i>Home
             </NavLink>
 
-            {/* Ternary conditions ro render depending on code conditions above in 
-            'const' loggedInIcons and loggedOutIcons depending on context set up for currentUser. */}
+            {/* Ternary conditions to render depending on code conditions above in 
+            'const' loggedInIcons and loggedOutIcons depending on context set up 
+            for currentUser. */}
             {currentUser ? loggedInNavView : loggedOutNavView}
-
-            {/* <i className="fa-regular fa-face-grin-tongue"></i>
-            <NavDropdown title="More Info" id="basic-nav-dropdown" className={styles.NavLink}
-            // exact activeClassName={styles.Active}
-            >
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown> */}
-
           </Nav>
         </Navbar.Collapse>
       </Container>

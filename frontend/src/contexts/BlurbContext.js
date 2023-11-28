@@ -17,13 +17,15 @@
 //     /** Check if all data fetched. */
 //     const [hasLoaded, setHasloaded] = useState(false);
 //     /** To refetch blurbs when owners move between home, newsfeed and votes pages. 
-//      * From React router Hook to return objects with data about URL. Credit to Code Institute Coursework project Moments. */
+//      * From React router Hook to return objects with data about URL. 
+// Credit to Code Institute Coursework project Moments. */
 //     const { pathname } = useLocation();
 
 //     useEffect(() => {
 //         const fetchBlurbs = async () => {
 //             try {
-//                 /**Filter prop is used to filter what the user will see. Followed/voted for blurbs. */
+//                 /**Filter prop is used to filter what the user will see. 
+// Followed/voted for blurbs. */
 //                 const { data } = await axiosReq(`/blurbs/?${filter}search=${query}`);
 //                 setBlurb(data);
 //                 setHasloaded(true);
