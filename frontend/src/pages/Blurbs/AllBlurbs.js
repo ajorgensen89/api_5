@@ -14,17 +14,26 @@ import Display from "../../components/Display";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchedMoreData } from "../../utils/utils";
 import Popular from "../profiles/Popular";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 function AllBlurbs(props) {
+    /**Get blurbs on log in and log out by 
+     * adding it to dependancy array for in useEffect. */
+    const currentUser = useCurrentUser();
+
     /**Search Bar state. add search to axiosReq and set*/
     const [query, setQuery] = useState("");
+
     /** Sets props. Set default empty string */
     const { message, filter = "" } = props;
+
     /** Store objects in results array.*/
     // const { blurb } = useBlurbData();
     const [blurb, setBlurb] = useState({ results: [] });
+
     /** Check if all data fetched. */
     const [hasLoaded, setHasloaded] = useState(false);
+
     /** To refetch blurbs when owners move between home, newsfeed and votes pages. 
      * From React router Hook to return objects with data about URL. 
      * Credit to Code Institute Coursework project Moments. */
@@ -57,7 +66,7 @@ function AllBlurbs(props) {
             clearTimeout(timeOut)
         };
 
-    }, [filter, pathname, query]);
+    }, [filter, pathname, query, currentUser]);
 
     /** Created to Code Institute, created while producing coursework. */
 
