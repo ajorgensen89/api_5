@@ -24,7 +24,8 @@ import { useRedirect } from "../../hooks/useRedirect.js";
 // import { useRedirect } from "../../hooks/useRedirect";
 
 function CreateBlurbForm() {
-    // If logged out, user is redirected to home page.
+    // If attempts to access create a blurb page and 
+    // user is logged out, user is redirected to home page.
     useRedirect('loggedOut')
 
     /**useState to store errors used. Imported.*/

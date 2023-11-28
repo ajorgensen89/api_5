@@ -45,7 +45,14 @@ function AllBlurbs(props) {
         /**reset loading sppin to show to user each time. */
         setHasloaded(false);
         /**Run useEffect each time the filter, search query or path changes. */
-        fetchBlurbs();
+        const timeOut = setTimeout(() => {
+            fetchBlurbs();
+        }, 1000);
+
+        return () => {
+            clearTimeout(timeOut)
+        };
+
     }, [filter, pathname, query]);
 
     /** Created to Code Institute, created while producing coursework. */

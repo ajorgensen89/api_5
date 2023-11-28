@@ -1,6 +1,6 @@
 // import jwtDecode from "jwt-decode"
 import { axiosReq } from "../api/axiosDefaults"
-
+import jwtDecode from "jwt-decode"
 
 /** Credit from Code Institute content, created during the supplied coursework. */
 /**Use in conjunction with infinite scroll to access the 'next' url in API for further posts. */
@@ -74,38 +74,20 @@ export const unfollowHelper = (profile, clickedProfile) => {
             // Not any in question, return unchanged.
             : profile;
 }
-// export const followHelper = (profile, clickedProfile, following_id) => {
-//     return profile.id === clickedProfile.id
-//         ? // This is the profile I clicked on,
-//         // update its followers count and set its following id
-//         {
-//             ...profile,
-//             followers_count: profile.followers_count + 1,
-//             following_id,
-//         }
-//         : profile.is_owner
-//             ? // This is the profile of the logged in user
-//             // update its following count
-//             { ...profile, following_count: profile.following_count + 1 }
-//             : // this is not the profile the user clicked on or the profile
-//             // the user owns, so just return it unchanged
-//             profile;
-// };
 
-// export const unfollowHelper = (profile, clickedProfile) => {
-//     return profile.id === clickedProfile.id
-//         ? // This is the profile I clicked on,
-//         // update its followers count and set its following id
-//         {
-//             ...profile,
-//             followers_count: profile.followers_count - 1,
-//             following_id: null,
-//         }
-//         : profile.is_owner
-//             ? // This is the profile of the logged in user
-//             // update its following count
-//             { ...profile, following_count: profile.following_count - 1 }
-//             : // this is not the profile the user clicked on or the profile
-//             // the user owns, so just return it unchanged
-//             profile;
-// };
+// Token refresh for login using setItem.
+export const setTimestampToken = (data) => {
+    const refreshTokenTimestamp = jwtDecode(data?.refresh_token).exp;
+    localStorage.setItem("setTokenTimestamp", refreshTokenTimestamp);
+};
+
+// Will or will not refresh token using '!!' on users local storage using getItem ,
+// depending on if the expiry date exists.
+export const setRefreshToken = () => {
+    return !!localStorage.getItem("setTokenTimestamp");
+};
+
+// Removes token using removeItem from users local storage.
+export const removeTimestampToken = () => {
+    localStorage.removeItem("setTokenTimestamp");
+};

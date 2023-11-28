@@ -120,6 +120,10 @@ With the help of a Slack Community Individual, the problem was found and resolve
 <img src="frontend/src/assets/images/testing-images-frontend/owner_id.png" width=20% height=20%><br>
 <br>
 
+## Unauthorized user check errors.
+
+These network requests will always display in console.log when first signing in as these three, together, confirm whether a user is actually logged out.<br>
+<img src="frontend/src/assets/images/testing-images-frontend/NetworkRequestunauth.png" width=20% height=20% >
 
 <hr>
 

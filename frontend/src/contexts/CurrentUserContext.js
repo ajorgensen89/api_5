@@ -2,14 +2,18 @@ import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import axios from "axios";
 import { axiosReq, axiosRes } from "../api/axiosDefaults";
 import { useHistory } from "react-router";
+import { removeTimestampToken, setRefreshToken } from "../utils/utils";
 // import { removeTokenTimestamp, shouldRefreshToken } from "../utils/utils";
 
+// Create context for current user details.
 export const CurrentUserContext = createContext();
 export const SetCurrentUserContext = createContext();
 
+// Use context to create current user variables storing object details.
 export const useCurrentUser = () => useContext(CurrentUserContext);
 export const useSetCurrentUser = () => useContext(SetCurrentUserContext);
 
+// 
 export const CurrentUserProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState(null);
     const history = useHistory();
@@ -32,20 +36,23 @@ export const CurrentUserProvider = ({ children }) => {
     useMemo(() => {
         axiosReq.interceptors.request.use(
             async (config) => {
-                // if (shouldRefreshToken()) {
-                try {
-                    await axios.post("/dj-rest-auth/token/refresh/");
-                } catch (err) {
-                    setCurrentUser((prevCurrentUser) => {
-                        if (prevCurrentUser) {
-                            history.push("/signin");
-                        }
-                        return null;
-                    });
-                    // removeTokenTimestamp();
-                    return config;
+                // Only run 'if' statement if token needs to be refreshed.
+                if (setRefreshToken()) {
+                    try {
+                        await axios.post("/dj-rest-auth/token/refresh/");
+                    } catch (err) {
+                        // Set logged in user.
+                        setCurrentUser((prevCurrentUser) => {
+                            if (prevCurrentUser) {
+                                history.push("/signin");
+                            }
+                            return null;
+                        });
+                        // Remove timestamp token.
+                        removeTimestampToken();
+                        return config;
+                    }
                 }
-                // }
                 console.log("axiosReq")
                 return config;
             },
@@ -61,19 +68,22 @@ export const CurrentUserProvider = ({ children }) => {
                     try {
                         await axios.post("/dj-rest-auth/token/refresh/");
                     } catch (err) {
+                        // Set logged in user.
                         setCurrentUser((prevCurrentUser) => {
                             if (prevCurrentUser) {
                                 history.push("/signin");
                             }
                             return null;
                         });
+                        // Remove timestamp token
+                        removeTimestampToken();
                     }
-                    // removeTokenTimestamp();
+
                     return axios(err.config);
                 }
                 console.log("axiosRes")
                 return Promise.reject(err);
-                
+
             }
         );
     }, [history]);

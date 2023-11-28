@@ -19,6 +19,7 @@ import appStyles from "../../styles/App.module.css";
 // import { setTokenTimestamp } from "../../utils/utils";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { useRedirect } from "../../hooks/useRedirect";
+import { setTimestampToken } from "../../utils/utils";
 
 function LogInForm() {
     // Redirect user from page if logged in.
@@ -53,7 +54,9 @@ function LogInForm() {
             /** Save user data in variable on successful log in. */
             setCurrentUser(data.user);
             console.log("login /login/")
-            // setTokenTimestamp(data);
+            // Set for when user signin with data from the API. 
+            // Function extracts access tokens expiry date, saves it to users local storage.
+            setTimestampToken(data)
             history.push("/");
             // Send user back, not to home page.
             history.goBack();

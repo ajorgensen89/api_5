@@ -12,7 +12,6 @@ const Blurb = (props) => {
     const {
         id,
         owner,
-        // created_at,
         updated_at,
         title,
         content,

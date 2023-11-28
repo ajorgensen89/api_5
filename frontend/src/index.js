@@ -11,18 +11,19 @@ import { ProfileDataProvider } from './contexts/ProfileContext';
 // import { BlurbDataProvider } from './contexts/BlurbContext';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Router>
-      {/* Remove Providers from App.js and enter new Provider. */}
-      <CurrentUserProvider>
-        <ProfileDataProvider>
-          {/* <BlurbDataProvider> */}
-            <App />
-          {/* </BlurbDataProvider> */}
-        </ProfileDataProvider>
-      </CurrentUserProvider>
-    </Router>
-  </React.StrictMode >,
+  // <React.StrictMode> used in development mode.
+  <Router>
+    {/* Remove Providers from App.js and enter new Provider. */}
+    <CurrentUserProvider>
+      <ProfileDataProvider>
+        {/* <BlurbDataProvider> */}
+        <App />
+        {/* </BlurbDataProvider> */}
+      </ProfileDataProvider>
+    </CurrentUserProvider>
+  </Router>,
+  // </React.StrictMode >,
+  
   // Provide route to index.html page.
   document.getElementById('root')
 );

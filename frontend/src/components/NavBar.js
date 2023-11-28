@@ -11,12 +11,14 @@ import { useCurrentUser, useSetCurrentUser } from "../contexts/CurrentUserContex
 import Avatar from "./Avatar";
 import axios from "axios";
 import useToggle from "../hooks/useToggle";
+import { removeTimestampToken } from "../utils/utils";
+
 
 /**Icons from Font Awesome. */
 /**Navlink takes 'to' prop to link to App.js Routes. */
 
-
 const NavBar = () => {
+  
   /** Use Hook to collaspe and expand burger dropdown menu on click. */
   const { collapseExpand, setCollapseExpand, burgerRef } = useToggle();  
 
@@ -28,7 +30,11 @@ const NavBar = () => {
   const handleLogout = async () => {
     try {
       await axios.post("dj-rest-auth/logout/");
+      // Set current user to null field. Noone is logged in.
       setCurrentUser(null);
+      // Remove timestamp token when use logs out.
+      
+      removeTimestampToken();
       console.log("logged out /logout/")
     } catch (err) {
       console.log(err,"errlogout");

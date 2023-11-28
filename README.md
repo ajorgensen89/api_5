@@ -186,6 +186,9 @@ CLI input enter enter time the workspace was run in a browser:<br>
 - **nvm use 16.18.0**
 - THEN **npm start** can be entered.<br>
   REPEAT EACH TIME WHEN RUNNING SERVER.<br>
+Once the API and the React project repositories were combined, the node version module (nvm) input, had to be entered within the frontend current directory. CLI input to navigate here: **cd frontend**<br>
+A proxy error (see errors in [Testing](testing.md)), would show untill I entered, in a separate terminal for api_5 main directory, CLI input: **python manage.py runserver**<br>
+Both of these combined, would run my developemental project in the URL. See 'combining projects' for further details.<br> [Combining project](#combining-react-project-and-drf-api)
 <br>
 Set up installations in 'project_5'.<br>
 -  Enter into CLI: <br>
@@ -445,6 +448,14 @@ Status is OK and the input fields look much better for user and clients to input
 
 INSTALL CLI COMMAND<br>
 **pip install djangorestframework-simplejwt**<br>
+<br>
+
+
+### Set timestamp.
+
+As token refresh was making uneccessary requests for unauthorised users when starting application interaction, adjustments were made so extra requests did not activate. The npm used was [jwt decode]() to store a local time stamp in the users brower for refresh tokens. Before making an attempt to refresh access tokens, code input would check the timestamp exists. This would also be removed after expiring.<br>
+**npm install jwt-decode**<br>
+<img src="frontend/src/assets/images/readme-images-frontend/setToken.png" width=10% height=10%><br>
 <br>
 
 ### Register
