@@ -4,6 +4,8 @@ import axios from 'axios';
 /** Import into App.js. */
 
 // axios.defaults.baseURL = "https://aj-project-5-c79c48d5b453.herokuapp.com/"
+// For Deployment.
+axios.defaults.baseURL = "/api";
 
 /** multipart for images and text requests. */
 axios.defaults.headers.post['Content-Type'] = "multipart/form-data"

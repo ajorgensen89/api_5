@@ -703,7 +703,7 @@ CLIENT_ORIGIN_DEV needed removing from Config Vars in Heroku.<br>
 
 
 
-# Deployment
+# Deployment for API.
 
 To deploy this Full Stack project, [Heroku](https://dashboard.heroku.com/), a cloud based platform was used.
 Follow the steps for deployment method:<br>
@@ -753,6 +753,58 @@ Additionally needed files for Heroku use:
 <br>
 In preparation for use with React Frontend, a view extra steps took place including adding root route, pagination to ListViews, providing a default JSON renderer and formtatting for date and time with the API development.<br>
 <br>
+
+# Deployment for both applications for Advanced Front End Project.
+
+Guide for deploying both React frontend and Django API backend using [Whitenoise]() will store static files for the Django Admin panel.<br>
+<br>
+
+1. From root directory (main) CLI: **pip3 install whitenoise==6.4.0** (Add to requirements.txt file **pip3 freeze > requirements.txt**)<br>
+<br>
+
+2. Create New folder **staticfiles** in main root using CLI: **mkdir staticfiles** <br>
+<br>
+
+3. In **settings.py** add <em>'django.contrib.staticfiles',</em> to INSTALLED_APPS <em>above</em> 'cloudinary_storage', to avoid interference.<br>
+<br>
+
+4. In **settings.py** in MIDDLEWARE add **'whitenoise.middleware.WhiteNoiseMiddleware',** *below* **.SecurityMiddleware** and *above* **.SessionMiddleware** <br>
+<br> 
+
+5. To tell Django and Whitenoise where to look for Reacts *index.html* in final deployment.<br>
+   In **settings.py** in TEMPLATES add to DIRS key code add between [],: **os.path.join(BASE_DIR, 'staticfiles', 'build')**<br>
+<br> 
+
+6. Tell Django and Whitenoise where to look for admin and React static files on deployment. In **settings.py** 'static file section'<br>
+   Add **STATIC_ROOT = BASE_DIR / 'staticfiles'** <br>
+   Add **WHITENOISE_ROOT = BASE_DIR / 'staticfiles' / 'build'**<br>
+<br> 
+
+Now, configuring the route allows for React frontend viewing. Ensure the home page of the React frontend is shown and not the API.<br>
+Redirect 404 errors to React application using react-route-dom.<br>
+API URL's are adjusted to ensure no clashing with React application's routes by adding **/api_5/**<br>
+
+7. In **urls.py** remove *root_route* from imports. Add **from django.views.generic import TemplateView** at the top.<br>
+Then to *urlpatterns* remove *root_route* from the path and replace with **path('', TemplateView.as_view(template_name='index.html')),**<br>
+Add 404 handler at the bottom of urlpatterns in urls.py.<br>
+<img src="frontend/src/assets/images/readme-images-frontend/handler404.png" width=40% height=30%><br>
+
+8. Add **api/** to all API URLs but NOT home page or admin panel path().<br>
+<img src="frontend/src/assets/images/readme-images-frontend/apipath.png" width=40% height=40%><br>
+<br> 
+
+9. In **axiosDefault.js** set baseURL to **"/api";** for API requests in React application.<br>
+<br>
+
+10. 
+<br> 
+
+11. 
+<br>
+
+
+
+
 
 ### SERVER GUNICORN
 

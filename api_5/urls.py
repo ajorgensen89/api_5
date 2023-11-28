@@ -15,26 +15,30 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import root_route, logout_route
+from django.views.generic import TemplateView
+from .views import logout_route
 
 urlpatterns = [
-    path('', root_route),
+    path('', TemplateView.as_view(template_name='index.html')),
     path('admin/', admin.site.urls),
 
     # Path included in Rest Framework for login and logout views.
-    path('api-auth/', include('rest_framework.urls')),
+    path('api/api-auth/', include('rest_framework.urls')),
 
     # Logout route above to be matched first
-    path('dj-rest-auth/logout/', logout_route),
-    path('dj-rest-auth/', include('dj_rest_auth.urls')),
+    path('api/dj-rest-auth/logout/', logout_route),
+    path('api/dj-rest-auth/', include('dj_rest_auth.urls')),
     path(
-       'dj-rest-auth/registration/',
+       'api/dj-rest-auth/registration/',
        include('dj_rest_auth.registration.urls')
     ),
 
-    path('', include('profiles.urls')),
-    path('', include('blurbs.urls')),
-    path('', include('comments.urls')),
-    path('', include('votes.urls')),
-    path('', include('followers.urls')),
+    path('api/', include('profiles.urls')),
+    path('api/', include('blurbs.urls')),
+    path('api/', include('comments.urls')),
+    path('api/', include('votes.urls')),
+    path('api/', include('followers.urls')),
 ]
+
+# Allow React to handle 404 errors.
+handler404 = TemplateView.as_view(template_name='index.html')
