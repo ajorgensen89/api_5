@@ -84,7 +84,7 @@ Each blurb shows the user who posted the blurb, date it was posted, image, title
 
 ### Comments.
 
-Everybody likes a discussion board, so a comment section has been created for users to make a comment or delete a comment about a particular blurb.<br>
+Everybody likes a discussion board, so a comment section has been created for users to make a comment, edit their own comments or delete a comment about a particular blurb. Users can not delete or edit other users comments.<br>
 
 If the user is logged in, users will be able to post a comment. If not logged in, the 'typing' comments section will not appear.<br>
 <img src="frontend/src/assets/images/readme-images-frontend/comments.png" width=20% height=20%>
