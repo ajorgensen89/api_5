@@ -81,7 +81,7 @@ function ProfileHome({ imageSize = 200 }) {
                     {/* Use imagesize prop to set size. */}
                     <Image rounded src={profile?.image} height={imageSize} width={imageSize} />
                 </Col>
-                <Col lg={6}>
+                <Col lg={8}>
                     <h3 className="m-2">{profile?.owner}</h3>
                     <Row className="justify-content-center no-gutters" >
                         <Col xs={3} className="m-1">
@@ -98,7 +98,7 @@ function ProfileHome({ imageSize = 200 }) {
                         </Col>
                     </Row>
                 </Col>
-                <Col lg={3} className="text-lg-right text-wrap">
+                <Col lg={1} className="text-lg-right text-wrap">
                     {currentUser && !is_owner && (profile?.following_id ? (
                         <Button
                             classname={`${appStyles.OtherButton} mx-2 `}

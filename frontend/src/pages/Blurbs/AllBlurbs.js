@@ -46,10 +46,12 @@ function AllBlurbs(props) {
         setHasloaded(false);
         /**Run useEffect each time the filter, search query or path changes. */
         const timeOut = setTimeout(() => {
+            console.log("timeout1")
             fetchBlurbs();
-        }, 1000);
+        }, 2000);
 
         return () => {
+            console.log("timeout2")
             clearTimeout(timeOut)
         };
 

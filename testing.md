@@ -70,7 +70,21 @@ On occassion the logout request would take a few tries of a mouse click interact
 
 It was noted that occasionally on login, even when the home screen was able to view when logged out, the counts from comments or votes would not appear. However in this image, the comments are seen and s user is not logged in.<br>
 <img src="frontend/src/assets/images/testing-images-frontend/Notloggedinerr.png" width=20% height=20%><br>
+
 [Back to the top](#testing)
+<br>
+<br>
+
+A POST error kept popping up and was unhappy regarding leaky code in an unmounted component wihtin the useEffect React function. Using some guidance from ChatGPT, I found a model to a solution and adapted it for use for this project by setting a clean up, like it suggests.<br>
+**Code Error showing in console log as a POST error.**<br>
+<img src="frontend/src/assets/images/testing-images-frontend/leakerror.png" width=20% height=20%><br>
+<br>
+**Suggested solution to be implemented.**<br>
+<img src="frontend/src/assets/images/testing-images-frontend/LeakFix.png" width=20% height=20%><br>
+<br>
+**Code that was adapted to remove POST error in console. Setting a clean up for the useEffect function when fetching posts.**<br>
+<img src="frontend/src/assets/images/testing-images-frontend/LeakCode.png" width=20% height=20%><br>
+<br>
 
 <hr>
 
