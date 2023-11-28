@@ -37,7 +37,7 @@ const UserProfile = ({ profile, imageSize = 35 }) => {
                 {currentUser && !is_owner && (
                     // If the following_id does exist - unfollow, otherwise, follow avaliable.
                     following_id ? (
-                        // Bootstrap Button className={`${appStyles.FollowStatusButton} ${appStyles.OtherButton}`}
+                        // Bootstrap Button.
                         <Button
                             className={`${appStyles.OtherButton} mx-2`}
                             onClick={() => handleUnFollow(profile)}

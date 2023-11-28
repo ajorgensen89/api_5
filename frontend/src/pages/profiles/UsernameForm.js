@@ -30,7 +30,8 @@ const UsernameForm = () => {
     const setCurrentUser = useSetCurrentUser();
 
     useEffect(() => {
-        // Convert id number to s string to check the logged in user owns the profile with the same id.
+        // Convert id number to a string to check the logged in user owns the 
+        // profile with the same id.
         if (currentUser?.profile_id?.toString() === id) {
             setUsername(currentUser.username);
         } else {
@@ -45,6 +46,7 @@ const UsernameForm = () => {
             await axiosRes.put("/dj-rest-auth/user/", {
                 username,
             });
+            // Set users previous username to new username on submit with new value.
             setCurrentUser((prevUser) => ({
                 ...prevUser,
                 username,
@@ -63,6 +65,7 @@ const UsernameForm = () => {
                     <Form onSubmit={handleSubmit} className="my-2">
                         <Form.Group>
                             <Form.Label>Change username</Form.Label>
+                            {/* Set value with ne =w username details. */}
                             <Form.Control
                                 placeholder="username"
                                 type="text"

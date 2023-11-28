@@ -1,22 +1,16 @@
 import React, { useEffect, useState } from "react";
-
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-
 import Display from "../../components/Display";
-
-// import proStyles from "../../styles/ProfileHome.module.css";
 import styles from "../../styles/App.module.css";
 import appStyles from "../../styles/Profiles.module.css"
-
 import Popular from "./Popular";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useProfileData, useSetProfileData } from "../../contexts/ProfileContext";
 import { Button, Image } from "react-bootstrap";
-
 import InfiniteScroll from "react-infinite-scroll-component";
 import Blurb from "../Blurbs/Blurb";
 import { fetchedMoreData } from "../../utils/utils";
@@ -26,6 +20,7 @@ import { ProfileEditDropdown } from "../../components/DropDownMenu";
 /** Profile content created during Coursework content with Code Institute. */
 
 function ProfileHome({ imageSize = 200 }) {
+    // Show spinner depending on if a page has loaded or not yet.
     const [hasLoaded, setHasLoaded] = useState(false);
     const currentUser = useCurrentUser();
 
@@ -53,6 +48,7 @@ function ProfileHome({ imageSize = 200 }) {
             try {
                 const [{ data: pageProfile }, { data: profilePosts }] =
                     await Promise.all([
+                        // Get the profile of the user by id, alongside their blurbs. 
                         axiosReq.get(`/profiles/${id}/`),
                         axiosReq.get(`/blurbs/?owner__profile=${id}`),
                     ]);
@@ -62,6 +58,7 @@ function ProfileHome({ imageSize = 200 }) {
                 }))
                 // call function in useEffect hook.
                 setProfilePosts(profilePosts);
+                // Stop spinner showing as blurbs are rendered.
                 setHasLoaded(true);
             } catch (err) {
                 console.log(err)
@@ -74,7 +71,8 @@ function ProfileHome({ imageSize = 200 }) {
 
     const mainProfile = (
         <>
-            {/* If owner owns profile being requested to edit, show dropdown menu at the top of the profile. */}
+            {/* If owner owns profile being requested to edit, 
+            show dropdown menu at the top of the profile. */}
             {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
             <Row className="px-3 text-center">
                 <Col lg={3} className="text-lg-left">
@@ -84,15 +82,18 @@ function ProfileHome({ imageSize = 200 }) {
                 <Col lg={8}>
                     <h3 className="m-2">{profile?.owner}</h3>
                     <Row className="justify-content-center no-gutters" >
-                        <Col xs={3} className="m-1">
+                        <Col xs={4} className="m-1">
+                            {/* Set the amount of blurbs the user has. */}
                             <div>{profile?.blurbs_count}</div>
                             <div>Blurbs</div>
                         </Col>
-                        <Col xs={3} className="m-1">
+                        <Col xs={4} className="m-1">
+                            {/* Set the amount of followers the user has. */}
                             <div>{profile?.followers_count}</div>
                             <div>Followers</div>
                         </Col>
-                        <Col xs={3} className="m-1">
+                        <Col xs={4} className="m-1">
+                            {/* Set the amount of other users following the user who is logged in. */}
                             <div>{profile?.following_count}</div>
                             <div>Following</div>
                         </Col>
@@ -100,6 +101,7 @@ function ProfileHome({ imageSize = 200 }) {
                 </Col>
                 <Col lg={1} className="text-lg-right text-wrap">
                     {currentUser && !is_owner && (profile?.following_id ? (
+                        // Unfollow a user profile on click.
                         <Button
                             classname={`${appStyles.OtherButton} mx-2 `}
                             onClick={() => handleUnFollow(profile)}
@@ -107,6 +109,7 @@ function ProfileHome({ imageSize = 200 }) {
                             Unfollow
                         </Button>
                     ) : (
+                        // Follow a user profile on click
                         <Button
                             className={`${appStyles.FollowStatusButton} mx-2`}
                             onClick={() => handleFollow(profile)}
@@ -115,7 +118,7 @@ function ProfileHome({ imageSize = 200 }) {
                         </Button>
                     ))}
                 </Col>
-                {/* Conditionally render if the content if defined. */}
+                {/* Conditionally render if the content is defined. */}
                 {profile?.content && (<Col className="p-3">{profile.content}</Col>)}
             </Row>
         </>
@@ -133,6 +136,7 @@ function ProfileHome({ imageSize = 200 }) {
                     ))}
                     dataLength={profilePosts.results.length}
                     loader={<Display spinner />}
+                    // Set the next page of blurbs from API 'next' field.
                     hasMore={!!profilePosts.next}
                     next={() => fetchedMoreData(profilePosts, setProfilePosts)}
                 />
@@ -150,6 +154,7 @@ function ProfileHome({ imageSize = 200 }) {
             <Col className="py-2 p-0 p-lg-2" lg={8}>
                 <Popular />
                 <Container className={styles.ContainerContent}>
+                    {/* Fetch the blurbs and post them or display a spinner when loading. */}
                     {hasLoaded ? (
                         <>
                             {mainProfile}

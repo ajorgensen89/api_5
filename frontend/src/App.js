@@ -36,12 +36,15 @@ function App() {
         <NavBar />
         <Container className={styles.Main}>
           <Switch>
+            {/* View all blurbs */}
             <Route exact path="/" render={() => <AllBlurbs message="No results... Try another search?" />} />
+            {/* View blurbs of user that the current user is following. */}
             <Route exact path="/newsfeed" render={() => (
               <AllBlurbs
                 message="No results... Try another search? Or follower a user."
                 filter={`owner__followed__owner__profile=${profile_id}&`}
               />)} />
+              {/* View blurbs that user has voted for from main '/' page or '/newsfeed' page. */}
             <Route exact path="/upVoted" render={() => (
               <AllBlurbs
                 message="No results... Try another search? Or vote for the best blurbs."

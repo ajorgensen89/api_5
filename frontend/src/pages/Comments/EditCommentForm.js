@@ -85,6 +85,7 @@ function CommentEditForm(props) {
             className={btnStyles.Button}
             // Return with no changes.
             onClick={() => setShowEditForm(false)}
+            // Set type to button for user interaction.
             type="button"
           >
             cancel
@@ -93,8 +94,9 @@ function CommentEditForm(props) {
           
           <Button
             className={btnStyles.Button}
+            // Save new formContent.
             value={formContent}
-            // disabled={!content.trim()}
+            // Set button to submit for user interaction.
             type="submit"
           >
             save

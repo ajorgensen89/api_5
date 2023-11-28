@@ -14,7 +14,6 @@ const Popular = ({ mobile }) => {
     const { popularFollowers } = useProfileData();
 
     return (
-        // ${mobile && 'd-lg-none text-center mb-3'}`
         <Container className={`${styles.ContainerContent} ${mobile && 'd-lg-none text-center mb-3'}`}>
 
             {popularFollowers.results.length ? (

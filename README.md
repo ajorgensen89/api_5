@@ -105,12 +105,17 @@ Votes are collected within a counting field and can be created, viewed and delet
 <br>
 
 ### Voting Error.
-It was noted that the votes count increases by one when the post is creatd and the user is directed to the blurb page. It does change to 0 and 'not count' as a vote when on the main Home page.<br>
-This would need correcting at a later data.<br>
+
+It was noted that the votes count increases by one on the created blurbs page. If a user was to vote on the individual blurb page itself, after clicking image or comment bubble, the vote would not count correctly.<br>
+It does change to 0 and 'not count' as a vote when on the main Home page or newsfeed page. (main '/' page or '/newsfeed' page.) <br>
+This would need correcting at a later data due to time constraints.<br>
 
 ### Followers.
 
-Followers/following/unfollow
+Users can follow and unfollow other users. The users they follow will appear within the 'newsfeed' navigation page.<br>
+Popular profiles are shown and easily accessed for the user.<br>
+When visiting their own profile, the user will be able to see how many other user follow them. Also, they will be able to see the users that they like and are following.<br>
+Users can 'follow' and 'unfollow' simply by clicking the toggle button.<br>
 
 <br>
 
@@ -178,6 +183,8 @@ This image shows the expanded navigation menu view.<br>
 
 ## Future Features.
 
+Due to time constraints, errors faced and skill, this section has been written to hightlight some future features that the site could have benefitted from.<br>
+
 Features can be added to greatly improve this website.<br>
 A setTimeOut() function can be added to the search bar to slow the website response to keys presses. This would set a delay in which the searched items would appear, rather than flicking and sending the data request after each key stroke.<br>
 <br>
@@ -187,12 +194,11 @@ This would need correcting at a later data. The vote count and comment count is 
 To vote, it is best to make a click response from the main page when viewing all blurbs to ensure the counts are correct. A blurb context, to improve the code overall for data on the votes and comments count, was attempted but due to skill and errors, it could not be completed at this stage which is a shame.<br>
 
 
-User experience could benefit from seeing different fields when it came to up voting, down voting or even loving a particular blurb. This would mean greatly developing the votes counted fields or even having a separate aspect within an API model to get these results.<br>
+User experience could benefit from having different fields when it came to votes. This could of included up voting, down voting or even loving a particular blurb. This would mean greatly developing the votes counted fields or even having a separate aspect within an API model to get these results.<br>
 
+Users being able to share content is a good platform, but they would have had a much better experience if that platform could include clips and videos such as movie trailers or an own video.<br>
 
-Users being able to share content is good platform, but they would have a much better experience if that platform could include clips and videos such as movie trailers or an own video.<br>
-
-
+A drop down menu for the user to select a category when submitting a blurb should of been implemented. This category would of offered a separate selection of fields to choose from for the user to filter out the posts. They would have been Spring, Summer, Autumn and Winter. This would of given the user at extra individual touch to the blurbs they could post and filter out by. For example, they could filter out and look at all the blurbs relating to 'Winter' category. Or they could have posted blurbs and selected a category for that blurb to be a 'Spring' time blurb. This would have given the user another filtering option then most votes and most followers.<br>
 
 <br>
 

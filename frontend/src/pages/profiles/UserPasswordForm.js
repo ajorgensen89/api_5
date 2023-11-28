@@ -20,14 +20,18 @@ const UserPasswordForm = () => {
     const { id } = useParams();
     const currentUser = useCurrentUser();
 
+    // Set states for new passwords for comparing inputs.
     const [userData, setUserData] = useState({
         new_password1: "",
         new_password2: "",
     });
+
+    // set both passwords to userData.
     const { new_password1, new_password2 } = userData;
 
     const [errors, setErrors] = useState({});
 
+    // Spread userData and set the values for change.
     const handleChange = (event) => {
         setUserData({
             ...userData,
@@ -36,13 +40,16 @@ const UserPasswordForm = () => {
     };
 
     useEffect(() => {
-        // Convert id number to s string to check the logged in user owns the profile with the same id.
+        // Convert id number to a string to check the logged in 
+        // user owns the profile with the same id.
         if (currentUser?.profile_id?.toString() !== id) {
             // Redirect user who do not own the profile with matching id.
             history.push("/");
         }
+        // Pass useEffect dependancies for when to change.
     }, [currentUser, history, id]);
 
+    // Handle submission and post axios request to change user data.
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
@@ -58,9 +65,12 @@ const UserPasswordForm = () => {
         <Row>
             <Col className="py-2 mx-auto text-center" md={6}>
                 <Container className={styles.ContainerContent}>
+                    {/* Handle submission for the changes made to password. */}
                     <Form onSubmit={handleSubmit}>
                         <Form.Group>
                             <Form.Label>New password</Form.Label>
+                            {/* Handle changes and save new passwords if they both match
+                            on submit button click. */}
                             <Form.Control
                                 placeholder="new password"
                                 type="password"
@@ -69,6 +79,7 @@ const UserPasswordForm = () => {
                                 name="new_password1"
                             />
                         </Form.Group>
+                        {/* Set errors if password do not match. */}
                         {errors?.new_password1?.map((message, idx) => (
                             <Alert key={idx} variant="warning">
                                 {message}
@@ -84,6 +95,7 @@ const UserPasswordForm = () => {
                                 name="new_password2"
                             />
                         </Form.Group>
+                        {/* Set errors if password do not match. */}
                         {errors?.new_password2?.map((message, idx) => (
                             <Alert key={idx} variant="warning">
                                 {message}
@@ -95,6 +107,7 @@ const UserPasswordForm = () => {
                         >
                             cancel
                         </Button>
+                        {/* Submit the changes using button. */}
                         <Button
                             type="submit"
                             className={btnStyles.Button}
