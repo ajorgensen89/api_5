@@ -796,14 +796,44 @@ Add 404 handler at the bottom of urlpatterns in urls.py.<br>
 9. In **axiosDefault.js** set baseURL to **"/api";** for API requests in React application.<br>
 <br>
 
-10. 
-<br> 
+10. Collect admin and API staticfiles into the empty staticfiles directory created earlier.<br>
+CLI: **python3 manage.py collectstatic**<br>
+<img src="frontend/src/assets/images/readme-images-frontend/collectstaticfiles.png" width=40% height=30%><br>
 
-11. 
+11. IN A SEPARATE TERMINAL *cd* into *frontend* using CLI: **cd frontend** <br>
+Should be in '/workspace/api_5/frontend' <br>
+
 <br>
 
+12. Run command to compile and move React files.<br>
+**npm run build && mv build ../staticfiles/.** <br>
+<img src="frontend/src/assets/images/readme-images-frontend/Compile.png" width=40% height=30%><br>
+<br>
 
+**IMPORTANT NOTE** above command in bullet point 12 will need re-running after any changes to the static files in the project, including to React code.<br>
+*DELETE* existing folder and rebuild. <br>
+This Command will delete old folder and replace with new folder, run CLI:<br>
 
+**npm run build && rm -rf ../staticfiles/build && mv build ../staticfiles/.**
+
+13. Create file in root directory called **runtime.txt** <br>
+    Add correct version of Python for Heroku.<br>
+    **python-3.9.16**
+<br>
+<hr>
+
+**TESTRUN**
+
+<hr>
+- Terminate running servers using **CTRL + C**<br>
+- In **env.py**, comment out both DEBUG and DEV environment variables.<br>
+- Run Django server **python3 manage.py runserver** <br>
+- Check Django is serving the React static files by previewing the running application on **port 8000** <br>
+<img src="frontend/src/assets/images/readme-images-frontend/8000port.png" width=40% height=30%><br>
+
+<br>
+
+<hr>
 
 
 ### SERVER GUNICORN
