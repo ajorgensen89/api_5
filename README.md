@@ -142,13 +142,13 @@ This could be changed to navigate them back to the home page, log in or log out 
 ### Upload Content.
 
 The user will have an image displayed to them when first creating a blurb.<br>
-A React Spinner will be shown to the user while a page or search is loading, making the page a better user experience.<br>
+A [React](https://react.dev/) Spinner will be shown to the user while a page or search is loading, making the page a better user experience.<br>
 <img src="frontend/src/assets/images/readme-images-frontend/Spinner.png" width=30% height=30%><br>
 
 
 ### Drop down menu.
 
-The React component Dropdown, has been used to display a menu for the user to edit and delete their own posts. This will be visable when the image itself it clicked and directed to the blurbs page.<br>
+The [React](https://react.dev/) component Dropdown, has been used to display a menu for the user to edit and delete their own posts. This will be visable when the image itself it clicked and directed to the blurbs page.<br>
 
 ### Popular section.
 
@@ -163,7 +163,7 @@ All blurbs will be able to be viewed. The user can nvaigate to a different page 
 
 ### Navigation Bar.
 
-A [React](https://react.dev/) Navigation bar has been used which makes access to each element of the site simpler and more obvious. Using React, a toggle menu function is created for smaller screens to have a drop down menu which collapses and expands open on use mouse click, such as clicking on a link in the menu.<br>
+A [React](https://react.dev/) Navigation bar has been used which makes access to each element of the site simpler and more obvious. Using [React](https://react.dev/), a toggle menu function is created for smaller screens to have a drop down menu which collapses and expands open on use mouse click, such as clicking on a link in the menu.<br>
 Adjusted, so the menu collapses by itself for better user experience, otherwise they would have to reclick the toggle menu button to close the expanded menu.<br>
 A mouse click event Hook has been used to improve this function.<br>
 Previously, the menu would stay expanded and cover some of the content underneath before user clicked again.<br>
@@ -214,7 +214,7 @@ CLI input enter enter time the workspace was run in a browser:<br>
 - **nvm use 16.18.0**
 - THEN **npm start** can be entered.<br>
   REPEAT EACH TIME WHEN RUNNING SERVER.<br>
-Once the API and the React project repositories were combined, the node version module (nvm) input, had to be entered within the frontend current directory. CLI input to navigate here: **cd frontend**<br>
+Once the API and the [React](https://react.dev/) project repositories were combined, the node version module (nvm) input, had to be entered within the frontend current directory. CLI input to navigate here: **cd frontend**<br>
 A proxy error (see errors in [Testing](testing.md)), would show untill I entered, in a separate terminal for api_5 main directory, CLI input: **python manage.py runserver**<br>
 Both of these combined, would run my developemental project in the URL. See 'combining projects' for further details.<br> [Combining project](#combining-react-project-and-drf-api)
 <br>
@@ -275,8 +275,8 @@ Wrap 'App' conponent inside <Router> on App.js page.
 
 ## Axios Library.
 
-Used to tell this React App to send request to the API. Enables they to communicate for better data transfer and changes.<br>
-Using [Axios](https://axios-http.com/) also enabled combining workspaces between React frontend and API backend.<br>
+Used to tell this [React](https://react.dev/) App to send request to the API. Enables they to communicate for better data transfer and changes.<br>
+Using [Axios](https://axios-http.com/) also enabled combining workspaces between [React](https://react.dev/) frontend and API backend.<br>
 CLI input - **npm install axios**
 
 ## INFINTE SCROLL LIBARY<br>
@@ -285,11 +285,11 @@ CLI input - **npm install axios**
 
 ### Infinite Scroll.
 
-The Infinite Scroll component can be used from React so owners can continue scrolling while new content loads automatically. Pagination is set to show 10 blurbs per page but with infinite scroll set, the user can keep scrolling while new content loads.<br>
-This is hard to demonstrate in a picture, but after 10+ blurbs are created the React component will function.<br>
+The Infinite Scroll component can be used from [React](https://react.dev/) so owners can continue scrolling while new content loads automatically. Pagination is set to show 10 blurbs per page but with infinite scroll set, the user can keep scrolling while new content loads.<br>
+This is hard to demonstrate in a picture, but after 10+ blurbs are created the [React](https://react.dev/) component will function.<br>
 <br>
 Installing input for CLI: **npm install react-infinite-scroll-component**
-This was installed in the terminal in the React frontend codespace - /workspace/api_5/frontend.<br>
+This was installed in the terminal in the [React](https://react.dev/) frontend codespace - /workspace/api_5/frontend.<br>
 <br>
 The 'next' element was set in the API to hold a URL to the next page, aswell as previous. This is used in the props for infinite scroll to access this feature.<br>
 <img src="frontend/src/assets/images/readme-images-frontend/next1.png" width=20% height=20%><br>
@@ -307,13 +307,13 @@ Noted topic within slack community here: https://app.slack.com/client/T0L30B202/
 
 [React Bootstrap Form](https://react-bootstrap-v4.netlify.app/components/forms/)<br>
 Other Bootstrap items have been use throughout the project. Within the Form section alone, React Bootstrap classes called Images, Column, Row and Button have been used.<br>
-React provides a boilerplate for individual coding to be added. This exmaple includes boilerplate and some starting code to transform it.<br>
+[React](https://react.dev/) provides a boilerplate for individual coding to be added. This exmaple includes boilerplate and some starting code to transform it.<br>
 <img src="frontend/src/assets/images/readme-images-frontend/ReactExample.png" width=30% height=30%>
 <br>
 
 ### Context Hooks Refactoring
 
-In React Frontend, context hooks were created to lessen coding in certain files sush as App.js. This helped refactor and organise code when developing.
+In [React](https://react.dev/) Frontend, context hooks were created to lessen coding in certain files sush as App.js. This helped refactor and organise code when developing.
 A new folder was created to separate out code.<br>
 <img src="frontend/src/assets/images/readme-images-frontend/CreateContextFolder.png" width=10% height=10%><br>
 <br>
@@ -340,7 +340,7 @@ Context hooks set to fulfil their duties stated in the comments.<br>
 CRUD stands for Create, Read, Undo and Delete. This is four interactions the developer or the user can have with a website on either the frontend or the backend.<br>
 [Django Signal](https://code.djangoproject.com/wiki/Signals) can be used for creating, retrieving, viewing and deleting data within the backend API.<br>
 <br>
-For React Frontend CRUD is also implemented for users to safely create blurbs without others being able to delete their content. If the owner wishes to update, edit or delete they can do so on their own content via the EDIT and DELETE links.<br>
+For [React](https://react.dev/) Frontend, CRUD is also implemented for users to safely create blurbs without others being able to delete their content. If the owner wishes to update, edit or delete they can do so on their own content via the EDIT and DELETE links.<br>
 <img src="frontend/src/assets/images/readme-images-frontend/EditDelete.png" width=10% height=10%><br>
 <br>
 
@@ -358,9 +358,9 @@ Install [Django Rest Framework](https://www.django-rest-framework.org/).<br>
 - APIviews used for extra functionality for receiving instances, handling errors and adding context to Response objects and instances.
 
 One workspace holds the API developed, for use with connection to Project 5, for backend storage for user interface requests.<br>
-This is built to hold models, serializers, views and urls to display content using React for the frontend of the project named, Project 5.<br>
+This is built to hold models, serializers, views and urls to display content using [React](https://react.dev/) for the frontend of the project named, Project 5.<br>
 This project contains storage and responses for HTTP requests, JSON Web Tokens for authentication, permission and to tell user input apart from other user input.<br>
-The Django Rest Framework replaces the use of many HTML pages and displays the information requests using the React Frontend project, Project 5.<br>
+The Django Rest Framework replaces the use of many HTML pages and displays the information requests using the [React](https://react.dev/) Frontend project, Project 5.<br>
 <br>
 Authentication for each user can be checked and monitored, for example, only a user of a certain profile can edit their information fields.<br>
 In this example the owner of the profile is revealed as True and the user not logged in, is viewed as false.<br>
@@ -401,7 +401,7 @@ Each application within the project is added further down.<br>
     - Entry for Cloudinary in **settings.py**.<br>
     <img src="assets/images/readme-images/setcloud.png" width=50% height=50%><br>
 <br>
-API repository was built separatley to the React frontend, then combined at a later date to help reduce issues such as CORS errors.
+API repository was built separatley to the [React](https://react.dev/) frontend, then combined at a later date to help reduce issues such as CORS errors.
 <hr>
 This will need to be rebuilt during production to 
 
@@ -516,9 +516,10 @@ Some installations are necessary and more can be added to improve the website se
 A workspace for coding was created in [Github](https://github.com/) and opened into the coding enviroment, [Gitpod](https://www.gitpod.io/).
 [Github](https://github.com/) offers a platform and cloud-based service for software development and allows management and storage for code.
 [Gitpod](https://www.gitpod.io/) is open source developer platform ready for coding. Adding, commiting and pushing new work can be completed from the Command Line Interface [CLI](https://www.freecodecamp.org/news/how-to-use-the-cli-beginner-guide/), aswell as installing new packages, libraries, frameworks or programmes with pre-written code that can introduce into a new project to improve it.<br>
-git add . ( . to add all, or speicify)<br>
-git commit -m "messgae"<br>
-git push<br>
+
+**git add . ( . to add all, or speicify)<br>
+git commit -m "message"<br>
+git push<br>**
 
 
 ## Starting Installations.
@@ -684,7 +685,7 @@ CLI input: **pip install django-filter**<br>
 <hr>
 
 # Combining React project and DRF API.
-Steps to take from [Code Institute](https://codeinstitute.net/) CourseWork. This enabled the React and API projects to be unified.<br>
+Steps to take from [Code Institute](https://codeinstitute.net/) CourseWork. This enabled the [React](https://react.dev/) and API projects to be unified.<br>
 <img src="assets/images/readme-images/combine1.png" width=30% height=30%><br>
 <br>
 <img src="assets/images/readme-images/combine2.png" width=30% height=30%><br>
@@ -732,9 +733,6 @@ else:<br>
     print('connected')**<br>
 (CORRECT INDENTATION NEEDED FOR ABOVE CODE)<br>
 <br>
-Config Vars example on project deployment.<br>
-<img src="" width=30% height=30%><br>
-<br>
 **ALSO**<br>
 <em>DEBUG</em> in settings.py need to be set to <em>FALSE</em> for deployment.<br>
 
@@ -751,12 +749,12 @@ Additionally needed files for Heroku use:
 
 </ul>
 <br>
-In preparation for use with React Frontend, a view extra steps took place including adding root route, pagination to ListViews, providing a default JSON renderer and formtatting for date and time with the API development.<br>
+In preparation for use with [React](https://react.dev/) Frontend, a view extra steps took place including adding root route, pagination to ListViews, providing a default JSON renderer and formtatting for date and time with the API development.<br>
 <br>
 
 # Deployment for both applications for Advanced Front End Project.
 
-Guide for deploying both React frontend and Django API backend using [Whitenoise]() will store static files for the Django Admin panel.<br>
+Guide for deploying both [React](https://react.dev/) frontend and Django API backend using [Whitenoise]() will store static files for the Django Admin panel.<br>
 
 COMMIT ANY CHANGES BEFORE DEPLOYMENT! <br>
 **git add .** <br>
@@ -781,14 +779,14 @@ COMMIT ANY CHANGES BEFORE DEPLOYMENT! <br>
    In **settings.py** in TEMPLATES add to DIRS key code add between [],: **os.path.join(BASE_DIR, 'staticfiles', 'build')**<br>
 <br> 
 
-6. Tell Django and Whitenoise where to look for admin and React static files on deployment. In **settings.py** 'static file section'<br>
+6. Tell Django and Whitenoise where to look for admin and [React](https://react.dev/) static files on deployment. In **settings.py** 'static file section'<br>
    Add **STATIC_ROOT = BASE_DIR / 'staticfiles'** <br>
    Add **WHITENOISE_ROOT = BASE_DIR / 'staticfiles' / 'build'**<br>
 <br> 
 
-Now, configuring the route allows for React frontend viewing. Ensure the home page of the React frontend is shown and not the API.<br>
-Redirect 404 errors to React application using react-route-dom.<br>
-API URL's are adjusted to ensure no clashing with React application's routes by adding **/api_5/**<br>
+Now, configuring the route allows for [React](https://react.dev/) frontend viewing. Ensure the home page of the [React](https://react.dev/) frontend is shown and not the API.<br>
+Redirect 404 errors to [React](https://react.dev/) application using react-route-dom.<br>
+API URL's are adjusted to ensure no clashing with [React](https://react.dev/) application's routes by adding **/api_5/**<br>
 
 7. In **urls.py** remove *root_route* from imports. Add **from django.views.generic import TemplateView** at the top.<br>
 Then to *urlpatterns* remove *root_route* from the path and replace with **path('', TemplateView.as_view(template_name='index.html')),**<br>
@@ -799,7 +797,7 @@ Add 404 handler at the bottom of urlpatterns in urls.py.<br>
 <img src="frontend/src/assets/images/readme-images-frontend/apipath.png" width=40% height=40%><br>
 <br> 
 
-9. In **axiosDefault.js** set baseURL to **"/api";** for API requests in React application.<br>
+9. In **axiosDefault.js** set baseURL to **"/api";** for API requests in [React](https://react.dev/) application.<br>
 <br>
 
 10. Collect admin and API staticfiles into the empty staticfiles directory created earlier.<br>
@@ -811,19 +809,19 @@ Should be in '/workspace/api_5/frontend' <br>
 
 <br>
 
-12. Run command to compile and move React files.<br>
+12. Run command to compile and move [React](https://react.dev/) files.<br>
 **npm run build && mv build ../staticfiles/.** <br>
 <img src="frontend/src/assets/images/readme-images-frontend/Compile.png" width=40% height=30%><br>
 <br>
 
-**IMPORTANT NOTE** above command in bullet point 12 will need re-running after any changes to the static files in the project, including to React code.<br>
+**IMPORTANT NOTE** above command in bullet point 12 will need re-running after any changes to the static files in the project, including to [React](https://react.dev/) code.<br>
 *DELETE* existing folder and rebuild. <br>
 This Command will delete old folder and replace with new folder, run CLI:<br>
 
 **npm run build && rm -rf ../staticfiles/build && mv build ../staticfiles/.**
 
 13. Create file in root directory called **runtime.txt** <br>
-    Add correct version of Python for Heroku.<br>
+    Add correct version of [Python](https://www.python.org) for [Heroku](https://dashboard.heroku.com/login).<br>
     **python-3.9.16**
 <br>
 <hr>
@@ -839,9 +837,28 @@ This Command will delete old folder and replace with new folder, run CLI:<br>
 
 COMMIT ANY CHANGES BEFORE DEPLOYMENT!
 
+Within [Heroku](https://dashboard.heroku.com/login) for deployment.
+- Log in and access API application. This project **api-5** <br>
+- In settings, open Config Vars.<br>
+- Set ALLOWED_HOSTS key to combined project url value and *remove trailing slash from the end and http:// from the start*. <br>
+- Set a new CLIENT_ORIGIN key to the url value of the combined project *keep the http:// but remove the trailing slash still.*<br>
+Config vars before. <br>
+<img src="frontend/src/assets/images/readme-images-frontend" width=40% height=30%><br>
+Config vars after.<br>
+<img src="frontend/src/assets/images/readme-images-frontend" width=40% height=30%><br>
 <br>
+- Ensure All deployment criteria from the Django REST Framework module were complete too.<br>
+This project was connected to 
 
+[Github](https://github.com/) repository. Manually deployed on main branch.<br>
+- Test Deployment from **Deploy** tab. 
 <hr>
+
+## Heroku Logs
+
+Install to view logs in CLI. <br>
+**npm install -g heroku**<br>
+
 
 
 ### SERVER GUNICORN

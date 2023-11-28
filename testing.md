@@ -140,7 +140,7 @@ Correctly signals, POST and GET, are also seen in the terminal for confimation t
 <img src="frontend/src/assets/images/testing-images-frontend/POSTGET.png" width=30% height=30%><br>
 <br>
 
-- Error faced when combining the API and React projects. CORS error. CLIENT_ORIGIN_DEV had not been removed from Heroku Config Vars.<br>
+- Error faced when combining the API and React projects. CORS error. CLIENT_ORIGIN_DEV had not been removed from [Heroku](https://dashboard.heroku.com/login) Config Vars.<br>
 <img src="frontend/src/assets/images/testing-images-frontend/webcature1.png" width=30% height=30%>
 <br>
 - Errors faced. Proxy error.<br>
