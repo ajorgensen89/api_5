@@ -32,7 +32,7 @@ function CommentEditForm(props) {
         // Handle submission of form content data.
         console.log("cserror111formContent", formContent)
         console.log("cserror111content", content)
-        // Pu in axios request to edit new comments content.
+        // Put in axios request to edit new comments content.
         await axiosRes.put(`/comments/${id}/`, {
           // Trim whitespace from new content.
           content: formContent.trim(),
@@ -61,7 +61,7 @@ function CommentEditForm(props) {
         setShowEditForm(false);
       } catch (err) {
         // If error, show error.
-        console.log("err", err);
+        console.log(err.response);
       }
     };
   

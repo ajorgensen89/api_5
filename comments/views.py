@@ -4,6 +4,7 @@ from api_5.permissions import OwnerOrReadOnly
 from django_filters.rest_framework import DjangoFilterBackend
 
 from .models import Comments
+from .serializers import CommentInformationSerializer
 from .serializers import CommentSerializer
 
 # Using Rest Frameworks Generics for Refactoring code content.
@@ -45,7 +46,8 @@ class CommentsView(generics.ListCreateAPIView):
 class CommentsInfo(generics.RetrieveUpdateDestroyAPIView):
 
     # Nice form rendered.
-    serializer_class = CommentSerializer
+    # serializer_class = CommentSerializer
+    serializer_class = CommentInformationSerializer
 
     # Import permissions from Rest Framework.
     # NO creating comment, if not logged in.
