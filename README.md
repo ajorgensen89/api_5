@@ -757,6 +757,12 @@ In preparation for use with React Frontend, a view extra steps took place includ
 # Deployment for both applications for Advanced Front End Project.
 
 Guide for deploying both React frontend and Django API backend using [Whitenoise]() will store static files for the Django Admin panel.<br>
+
+COMMIT ANY CHANGES BEFORE DEPLOYMENT! <br>
+**git add .** <br>
+**git commit -m "commit message here"** <br>
+**git push** <br>
+
 <br>
 
 1. From root directory (main) CLI: **pip3 install whitenoise==6.4.0** (Add to requirements.txt file **pip3 freeze > requirements.txt**)<br>
@@ -830,6 +836,8 @@ This Command will delete old folder and replace with new folder, run CLI:<br>
 - Run Django server **python3 manage.py runserver** <br>
 - Check Django is serving the React static files by previewing the running application on **port 8000** <br>
 <img src="frontend/src/assets/images/readme-images-frontend/8000port.png" width=40% height=30%><br>
+
+COMMIT ANY CHANGES BEFORE DEPLOYMENT!
 
 <br>
 
