@@ -121,36 +121,48 @@ const Blurb = (props) => {
                 {/* Terinary codition depending on whether user is logged in. 
                 User can vote, if not logged in user will a React Tooltip message*/}
                 {is_owner ? (
+                    // When mouse hovers over item, the TOOLTIP message will display for user guidance.
+                    // Triggers if you own the blurb your trying to vote for.
                     <OverlayTrigger
                         placement="top"
                         overlay={<Tooltip>No voting for your own stuff!</Tooltip>}>
                         <i className="fa-solid fa-thumbs-up"></i>
                     </OverlayTrigger>
                 ) : votes_id ? (
+                    // When mouse hovers over item, the TOOLTIP message will display for user guidance.
+                    // Triggers for the blurb your trying to remove the vote for.
                     <OverlayTrigger
                         placement="top"
                         overlay={<Tooltip>Remove your vote!</Tooltip>}>
+                            {/* Handle to remove the vote and reduce votes count by 1. */}
                         <span onClick={handleRemoveVote}>
                             <i className={`fa-solid fa-thumbs-up ${styles.ThumbsUpVote}`}></i>
                         </span>
                     </OverlayTrigger>
                 ) : currentUser ? (
+                    // When mouse hovers over item, the TOOLTIP message will display for user guidance.
+                    // Triggers when your trying to vote for a blurb.
                     <OverlayTrigger
                         placement="top"
                         overlay={<Tooltip>Up Vote!</Tooltip>}>
+                            {/* On click handle to place vote for blurb. */}
                         <span onClick={handleVote}>
                             <i className="fa-solid fa-thumbs-up"></i>
                         </span>
                     </OverlayTrigger>
                 ) : (
+                    // When mouse hovers over item, the TOOLTIP message will display for user guidance.
+                    // Triggers message when user is not logged in first.
                     <OverlayTrigger placement="top" overlay={<Tooltip>Log in!</Tooltip>}>
                         <i className="fa-solid fa-thumbs-up"></i>
                     </OverlayTrigger>
                 )}
+                {/* Tracks and displays total votes count. */}
                 {votes_count}
                 <Link to={`/blurbs/${id}`}>
                     <i className="fa fa-commenting-o" />
                 </Link>
+                {/* Tracks the amount of comments on each particular blurb. */}
                 {comments_count}
             </div>
         </Card.Body>
