@@ -70,6 +70,21 @@ const NavBar = () => {
         <i className="fa-solid fa-thumbs-up"></i>My Votes!
       </NavLink>
       <NavLink
+        className={({ isActive }) => {
+          const linkClass = [appStyles.i];
+          if (isActive) linkClass.push(appStyles.active);
+
+          // returns "NavLink" or "Navlink.active"
+          return linkClass.join(" ");
+        }}
+        // activeClassName={styles.Active}
+
+        // Link to blurbs or users they have voted for.
+        to="/contacts"
+      >
+        <i className="fa-regular fa-message"></i>Contact Us
+      </NavLink>
+      <NavLink
 
         // Link to home when logging out.
         to="/"

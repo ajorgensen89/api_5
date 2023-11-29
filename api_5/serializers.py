@@ -4,7 +4,7 @@ from rest_framework import serializers
 # dj-rest-auth documentation provides a how-to on extending
 # UserDetailSerializer
 # Enables the correct link to the correct profile and image on log in.
-# Credited from Code Institute Coursework run though.
+# This will be used alot against checking the state.
 
 
 class CurrentUserSerializer(UserDetailsSerializer):

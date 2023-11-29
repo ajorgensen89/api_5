@@ -439,8 +439,9 @@ The application example in this API, can be repeated to create 'profiles', 'vote
  - [Django Signal](https://code.djangoproject.com/wiki/Signals) is used to listen for events occuring in the models, that trigger a piece of code, method or function to run.<br>
 Imported into **profiles** app into **models.py**. <br>
 - **from django.db.models.signals import post_save.**
+(This would be adapated at a later date to use Django generics.)
 
-- Import model created into **profiles** **admin.py**.
+- Import model created into **profiles** **admin.py**. Creates link to Django admin panel for Admin manipulation.
     - **from .models import Profile**
 <br>
 
