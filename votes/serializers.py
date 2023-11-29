@@ -10,7 +10,7 @@ class VotesSerializer(serializers.ModelSerializer):
     """
     # For viewing only. From Rest Framework.
     # Used to check if user has made a vote already.
-    owner = serializers.ReadOnlyField(source='owner.username')
+    owner = serializers.ReadOnlyField(source='owner.id')
 
     class Meta:
         model = Votes
@@ -19,7 +19,7 @@ class VotesSerializer(serializers.ModelSerializer):
         # Additional fields from Votes model.
         fields = ['id', 'created_at', 'owner', 'blurb']
 
-    # Handles duplicates. 
+    # Handles duplicates.
     def create(self, validated_data):
         try:
             # On ModelSerializer, called super() on create method.

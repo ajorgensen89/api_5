@@ -52,7 +52,7 @@ const NavBar = () => {
         // Link to all blurbs created on website. NEWSFEED
         to="/newsfeed"
       >
-        <i className="fa-regular fa-newspaper"></i>News Feed
+        <i className="fa-regular fa-newspaper"></i>Followed Feed
       </NavLink>
       <NavLink
         className={({ isActive }) => {
