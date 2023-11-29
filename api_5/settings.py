@@ -123,6 +123,7 @@ INSTALLED_APPS = [
     'votes',
     'followers',
     'contacts',
+    'reviews',
 ]
 
 # Instructed by dj-rest-auth to add this.

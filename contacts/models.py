@@ -6,7 +6,8 @@ from django.contrib.auth.models import User
 
 class Contact(models.Model):
     """
-    Contact form connects to User by owner Foreign Key.
+    Contact form connects to User by owner Foreign Key
+    Sent a topic title and content.
     """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     topic = models.CharField(max_length=100)
@@ -14,6 +15,7 @@ class Contact(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    # Order contact by date and time decending.
     class Meta:
         ordering = ["-created_at"]
 
