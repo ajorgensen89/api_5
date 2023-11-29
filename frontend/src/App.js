@@ -23,6 +23,7 @@ import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import PageNotFound from "./components/PageNotFound";
 import CreateContactForm from "./pages/Contacts/CreateContactForm";
+import CreateReviewForm from "./pages/Reviews/CreateReviewForm";
 
 /** Switch holds route. Exact path is rendered when matching. */
 /** Link to NavBar.js */
@@ -59,6 +60,7 @@ function App() {
             <Route exact path="/blurbs/:id/edit" render={() => <EditBlurbForm />} />
             <Route exact path="/profiles/:id" render={() => <ProfileHome />} />
             <Route exact path="/contacts/" render={() => <CreateContactForm />} />
+            <Route exact path="/reviews/create" render={() => <CreateReviewForm />} />
             <Route
               exact
               path="/profiles/:id/edit/username"

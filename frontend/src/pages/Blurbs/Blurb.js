@@ -134,7 +134,7 @@ const Blurb = (props) => {
                     <OverlayTrigger
                         placement="top"
                         overlay={<Tooltip>Remove your vote!</Tooltip>}>
-                            {/* Handle to remove the vote and reduce votes count by 1. */}
+                        {/* Handle to remove the vote and reduce votes count by 1. */}
                         <span onClick={handleRemoveVote}>
                             <i className={`fa-solid fa-thumbs-up ${styles.ThumbsUpVote}`}></i>
                         </span>

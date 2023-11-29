@@ -11,7 +11,7 @@ import { axiosRes } from "../../api/axiosDefaults";
 /** Credit to creating within project, from Code Institute coursework */
 
 function CreateCommentForm(props) {
-    /** Set props from receiving data. */
+    /** Set props for receiving data. */
     const { blurb, setBlurb, setComments, profileImage, profile_id } = props;
 
     /**Hook to manage data from API. */
