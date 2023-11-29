@@ -127,13 +127,17 @@ const Blurb = (props) => {
                         <i className="fa-solid fa-thumbs-up"></i>
                     </OverlayTrigger>
                 ) : votes_id ? (
-                    <span onClick={handleRemoveVote}>
-                        <i className={`fa-solid fa-thumbs-up ${styles.ThumbsUpVote}`}></i>
-                    </span>
+                    <OverlayTrigger placement="top" overlay={<Tooltip>Remove your vote!</Tooltip>}>
+                        <span onClick={handleRemoveVote}>
+                            <i className={`fa-solid fa-thumbs-up ${styles.ThumbsUpVote}`}></i>
+                        </span>
+                    </OverlayTrigger>
                 ) : currentUser ? (
-                    <span onClick={handleVote}>
-                        <i className="fa-solid fa-thumbs-up"></i>
-                    </span>
+                    <OverlayTrigger placement="top" overlay={<Tooltip>Up Vote!</Tooltip>}>
+                        <span onClick={handleVote}>
+                            <i className="fa-solid fa-thumbs-up"></i>
+                        </span>
+                    </OverlayTrigger>
                 ) : (
                     <OverlayTrigger placement="top" overlay={<Tooltip>Log in!</Tooltip>}>
                         <i className="fa-solid fa-thumbs-up"></i>

@@ -101,6 +101,8 @@ Users can vote for their favourite pictures. The most popular images and content
 Voting can occur when a user is logged in and they will not be able to vote for their own blurbs. This helps to keep the voting, fair.<br>
 Votes are collected within a counting field and can be created, viewed and deleted.<br>
 
+Fix towards the end of the project if time contraints allow to be able to vote either on the main home and followed feed pages, also when visiting each individual post.<br>
+
 <img src="frontend/src/assets/images/readme-images-frontend/VoteCommentCount.png" width=20% height=20%><br>
 <br>
 
@@ -118,6 +120,10 @@ When visiting their own profile, the user will be able to see how many other use
 Users can 'follow' and 'unfollow' simply by clicking the toggle button.<br>
 
 <br>
+
+## Administration in Django Rest Framwork API
+
+All the content for blurbs, votes, comments, followers and profile are accessable within the admin panel for manipulation whether that is to create and post from the admin panel itself or delete, view or edit some of the information.<br>
 
 ## No results.
 

@@ -19,13 +19,16 @@ class CommentSerializer(serializers.ModelSerializer):
     created_at = serializers.SerializerMethodField()
     updated_at = serializers.SerializerMethodField()
 
+    # Set the is_owner to match the request user with the object of the user.
     def get_is_owner(self, obj):
         request = self.context['request']
         return request.user == obj.owner
 
+    # Sets better format for viewing date stamps on browser view for user.
     def get_created_at(self, obj):
         return naturaltime(obj.created_at)
 
+    # Sets better format for viewing date stamps on browser view for user.
     def get_updated_at(self, obj):
         return naturaltime(obj.updated_at)
 
@@ -44,4 +47,5 @@ class CommentInformationSerializer(CommentSerializer):
     Serializer for the Comment model used in Information view
     Blurb is read only field. No need to set for each update.
     """
+    # Set blurb to id of the User to access.
     blurb = serializers.ReadOnlyField(source='blurb.id')
