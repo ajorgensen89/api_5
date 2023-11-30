@@ -21,7 +21,8 @@ import Popular from "../profiles/Popular";
 function ShowBlurbPage() {
     /** Set id to get each blurb */
     const { id } = useParams();
-
+    /**useState to store errors used. Imported.*/
+    // const [errors, setErrors] = useState({});
     // const currentUser = useCurrentUser();
 
     // const profile_image = currentUser?.profile_image;

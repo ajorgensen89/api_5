@@ -86,7 +86,7 @@ function CreateBlurbForm() {
         // Checks to see if user has selected an image, 
         // if so, then add image file to formData otherwise set to null.
         formData.append("image", imageInput.current.files[0]);
-        
+
         // due to multidata.
         try {
             /** axios updated to request interceptor and post on url link.*/

@@ -1,112 +1,90 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
+
+import btnStyles from "../../styles/Button.module.css";
+import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
-import btnStyles from "../../styles/Button.module.css"
-import Button from "react-bootstrap/esm/Button";
 
-// import styles from "../../styles/CommentContent.module.css";
+/** Credit to creating within project, from Code Institute coursework */
 
-/** Credit to creating within project, 
- * building this from Code Institute coursework and redeveloped. */
+function CreateCommentForm(props) {
+    /** Set props from receiving data. */
+    const { blurb, setBlurb, setComments, profileImage, profile_id } = props;
 
-/** Edit comments */
+    /**Hook to manage data from API. */
+    const [content, setContent] = useState("");
 
-function CommentEditForm(props) {
-    const { id, content, setShowEditForm, setComments } = props;
-    
-    // Set form with content of comment to be edited.
-    const [formContent, setFormContent] = useState(content);
-  
+    /** Set change handler for content */
     const handleChange = (event) => {
-      // Change form data with onChange event within React Form.
-      // Set in Form Control.
-      setFormContent(event.target.value);
+        setContent(event.target.value);
     };
-  
-    // Creat handle submit for React Form.
+
+    /** Handle submitting new comment connected to the individual blurb. */
     const handleSubmit = async (event) => {
-      // Prevtn page refresh.
-      event.preventDefault();
-      try {
-        // Handle submission of form content data.
-        console.log("cserror111formContent", formContent)
-        console.log("cserror111content", content)
-        // Put in axios request to edit new comments content.
-        await axiosRes.put(`/comments/${id}/`, {
-          // Trim whitespace from new content.
-          content: formContent.trim(),
-        });
-        // Set comments, spread previous comments to display the new results of comments.
-        setComments((prevComments) => ({
-          ...prevComments,
-          // Map over each spread comment and set it to a parameter of comments.
-          results: prevComments.results.map((comments) => {
-            // Return to comment with the matching id with the new content if changed,
-            // Otherwise, return original comment with previous content.
-            return comments.id === id
-              ? {
-                // Spread comments and set new content to edited formContent.
-                // Trim whitespace.
-                  ...comments,
-                  content: formContent.trim(),
-                  updated_at: "now",
-                }
-              : comments;
-          }),
-        }));
-        // Show edit comment form only when user is logged in so set to false here.
-        console.log("new", content)
-        console.log("new2", formContent)
-        setShowEditForm(false);
-      } catch (err) {
-        // If error, show error.
-        console.log(err.response);
-      }
+        event.preventDefault();
+        try {
+            /** Send post response to url with properties of the blurb and comment content. */
+            const { data } = await axiosRes.post("/comments/", {
+                content,
+                blurb,
+            });
+            setComments((prevComments) => ({
+                ...prevComments,
+                /** Spread all comments relating to given blurb. */
+                results: [data, ...prevComments.results],
+            }));
+            setBlurb((prevBlurb) => ({
+                results: [
+                    {
+                        ...prevBlurb.results[0],
+                        /** Get previous blurb and track count of comments. */
+                        comments_count: prevBlurb.results[0].comments_count + 1,
+                    },
+                ],
+            }));
+            setContent("");
+        } catch (err) {
+            /**Catch any errors created my the response on user input. */
+            console.log(err);
+        }
     };
-  
+
     return (
-      // React Form used for comment submission.
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="pr-1">
-          <Form.Control
-          
-          // Set prop for type of input field.
-            as="textarea"
-            // Set comment form value to the form content provided by user.
-            value={formContent}
-            // Set comment state with onChange handler.
-            onChange={handleChange}
-            rows={2}
-          />
-        </Form.Group>
-        <div className="text-right">
-          <button
-            className={btnStyles.Button}
-            // Return with no changes.
-            onClick={() => setShowEditForm(false)}
-            // Set type to button for user interaction.
-            type="button"
-          >
-            cancel
-          </button>
-          
-          
-          <Button
-            className={btnStyles.Button}
-            // Save new formContent.
-            value={formContent}
-            // Set button to submit for user interaction.
-            type="submit"
-          >
-            save
-            </Button>
-        </div>
-      </Form>
+        <Form className="mt-2" onSubmit={handleSubmit}>
+            <Form.Group>
+                <InputGroup>
+                    {/* Personal profiles image will display with comment content. Either default two swimming fishes.
+                Can set link to their profile to get their own profile Avatar. */}
+                    <Link to={`/profiles/${profile_id}`}>
+                        <Avatar src={profileImage} />
+                    </Link>
+                    <Form.Control
+                        /** Comment box textarea to handle comment content, to be changed and submitted by Submit Button. 
+                         * using onChange handler. */
+                        placeholder="my comment..."
+                        as="textarea"
+                        value={content}
+                        onChange={handleChange}
+                        rows={2}
+                    />
+                </InputGroup>
+            </Form.Group>
+            <button
+                /** Submits user comment. */
+                className={btnStyles.Button}
+                disabled={!content.trim()}
+                type="submit"
+            >
+                Post
+            </button>
+        </Form>
     );
-  }
-  
-  export default CommentEditForm;
+}
+
+export default CreateCommentForm;
 
 // function EditCommentForm(props) {
 //     const { id, content, setVisibleEditForm, setComments } = props;

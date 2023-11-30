@@ -39,7 +39,7 @@ urlpatterns = [
     path('api/', include('votes.urls')),
     path('api/', include('followers.urls')),
     path('api/', include('contacts.urls')),
-    path('api/', include('reviews.urls')),
+    # path('api/', include('reviews.urls')),
 ]
 
 # Allow React to handle 404 errors.

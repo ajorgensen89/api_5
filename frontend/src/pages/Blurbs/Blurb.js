@@ -145,7 +145,7 @@ const Blurb = (props) => {
                     <OverlayTrigger
                         placement="top"
                         overlay={<Tooltip>Up Vote!</Tooltip>}>
-                            {/* On click handle to place vote for blurb. */}
+                        {/* On click handle to place vote for blurb. */}
                         <span onClick={handleVote}>
                             <i className="fa-solid fa-thumbs-up"></i>
                         </span>
