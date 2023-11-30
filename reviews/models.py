@@ -11,10 +11,9 @@ class ReviewOtherUserProfiles(models.Model):
     # Remove deleted items, removing the space they occupied.
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     profile = models.ForeignKey(
-        Profile, on_delete=models.CASCADE, related_name='reviews', null=True
-    )
+        Profile, on_delete=models.CASCADE, related_name='reviews', null=True)
     content = models.CharField(max_length=300)
-    rating = models.IntegerField()
+    rating = models.IntegerField(default=1)
     updated_at = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add=True)
 

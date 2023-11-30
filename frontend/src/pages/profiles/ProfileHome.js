@@ -74,7 +74,7 @@ function ProfileHome({ imageSize = 200 }) {
         }
 
         fetchedData();
-    }, [id, setProfileData]);
+    }, [id, setProfileData, setReview]);
 
     const mainProfile = (
         <>
@@ -175,7 +175,7 @@ function ProfileHome({ imageSize = 200 }) {
             </Col>
             <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
                 <Popular />
-                <Container>
+                <Container className={styles.ContainerContent}>
                     {currentUser ? (
                         <CreateReviewForm
                             profile_id={currentUser.profile_id}
@@ -188,7 +188,7 @@ function ProfileHome({ imageSize = 200 }) {
                     ) : null}
                     {review.results.length ? (
                         review.results.map(reviews => (
-                            <p key={reviews.id}>
+                            <p key={review.id}>
                                 {reviews.owner}: {reviews.content}
                             </p>
                         ))

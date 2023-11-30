@@ -45,7 +45,7 @@ class CommentSerializer(serializers.ModelSerializer):
 class CommentInformationSerializer(CommentSerializer):
     """
     Serializer for the Comment model used in Information view
-    Blurb is read only field. No need to set for each update.
+    Comment is read only field. No need to set for each update.
     """
-    # Set blurb to id of the User to access.
+    # Set comment to id of the User to access.
     blurb = serializers.ReadOnlyField(source='blurb.id')

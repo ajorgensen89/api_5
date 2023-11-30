@@ -10,6 +10,7 @@ import { useRedirect } from "../../hooks/useRedirect";
 // import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import Avatar from "../../components/Avatar";
+// import { Rating } from "react-simple-star-rating" 
 
 // User can send a form to the admin as feedback or with questions.
 const CreateReviewForm = (props) => {
@@ -20,9 +21,13 @@ const CreateReviewForm = (props) => {
     // Set initial rating value to 0.
     // const [rating, setRating] = useState(0)
 
-    // const handleRating = (event) => {
+    // const handleRating = (rate) => {
     //     setRating(rate / 5);
     // };
+    
+    // const handleReset = () => {
+    //     setRating(0)
+    // }
 
     // Handle change for contact data.
     const handleChange = (event) => {
@@ -35,11 +40,14 @@ const CreateReviewForm = (props) => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            // POst response make to API /reviews/
+            // Pst response make to API /reviews/
+            console.log("errorPro:", review)
+            console.log("errorCont:", content)
             const { data } = await axiosRes.post("/reviews/", {
                 review,
                 content,
             });
+            console.log("error:", data)
             setReviews((prevReview) => ({
                 ...prevReview,
                 results: [data, ...prevReview.results],
@@ -69,9 +77,12 @@ const CreateReviewForm = (props) => {
                             />
                         </InputGroup>
                     </Form.Group>
+                    {/* <Form.Group>
+                        <Rating  onClick={handleRating}/>
+                    </Form.Group> */}
                     <Button
                         className={btnStyles.Button}
-                        disabled={!content.trim()}
+                        // disabled={!content.trim()}
                         type="submit"
                     >
                         Save review
