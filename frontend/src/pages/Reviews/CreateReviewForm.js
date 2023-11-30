@@ -25,7 +25,7 @@ const CreateReviewForm = (props) => {
     // const handleRating = (rate) => {
     //     setRating(rate / 5);
     // };
-    
+
     // const handleReset = () => {
     //     setRating(0)
     // }
@@ -50,12 +50,17 @@ const CreateReviewForm = (props) => {
             });
             console.log("errorData:", data)
             setReviews((prevReviews) => ({
-                ...prevReviews,
-                results: [data, ...prevReviews.results],
+                results: [
+                    {
+                        ...prevReviews.results[0],
+                        data: prevReviews.results[0],
+                    }
+                ]
             }));
             setContent("");
         } catch (err) {
             console.log(err, "reviewHS");
+            console.log(err.response)
         }
     }
 
