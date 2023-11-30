@@ -14,10 +14,11 @@ import Avatar from "../../components/Avatar";
 
 // User can send a form to the admin as feedback or with questions.
 const CreateReviewForm = (props) => {
-    const { review, profile_id, profileImage, setReviews } = props
+    // const { review, profile_id, profileImage, setReviews } = props
+    const { profile_id, profileImage } = props
     useRedirect("loggedOut");
     const [content, setContent] = useState("");
-
+    const [review, setReviews] = useState([]);
     // Set initial rating value to 0.
     // const [rating, setRating] = useState(0)
 
@@ -47,10 +48,10 @@ const CreateReviewForm = (props) => {
                 review,
                 content,
             });
-            console.log("error:", data)
-            setReviews((prevReview) => ({
-                ...prevReview,
-                results: [data, ...prevReview.results],
+            console.log("errorData:", data)
+            setReviews((prevReviews) => ({
+                ...prevReviews,
+                results: [data, ...prevReviews.results],
             }));
             setContent("");
         } catch (err) {
