@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from "react";
-
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-
-// import appStyles from "../../styles/App.module.css";
 import styles from "../../styles/BlurbsForm.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
-// import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { useParams } from "react-router";
 import Blurb from "./Blurb";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
@@ -23,15 +19,13 @@ function ShowBlurbPage() {
     const { id } = useParams();
     /**useState to store errors used. Imported.*/
     // const [errors, setErrors] = useState({});
-    // const currentUser = useCurrentUser();
 
-    // const profile_image = currentUser?.profile_image;
-
-    /** Set to get a single object or an array of comments.*/
-    // const [comments, setComments] = useState({ results: [] });
+    
 
     const currentUser = useCurrentUser();
     const profile_image = currentUser?.profile_image;
+    
+    /** Set to get a single object or an array of comments.*/
     const [comments, setComments] = useState({ results: [] });
 
     /** Set to get a single object or an array of blurbs.*/

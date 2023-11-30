@@ -142,6 +142,22 @@ function CreateBlurbForm() {
                 </Alert>
             ))}
 
+            {/* <Form.Group>
+                <Form.Label>Category</Form.Label>
+                <Form.Control
+                    as="textarea"
+                    rows={6}
+                    name="category"
+                    value={category}
+                    onChange={handleChange}
+                />
+            </Form.Group>
+            {errors?.content?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                    {message}
+                </Alert>
+            ))} */}
+
             {/* Button will redirect back page with no changes if cancelled. */}
             <Button
                 className={btnStyles.Button}

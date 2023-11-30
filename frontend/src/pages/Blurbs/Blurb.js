@@ -36,6 +36,7 @@ const Blurb = (props) => {
     /** Handle Up voting for each blurb. */
     const handleVote = async () => {
         try {
+            // Add vote to the correct blurb id.
             const { data } = await axiosRes.post('/votes/', { blurb: id });
             setBlurb((prevBlurb) => ({
                 ...prevBlurb,

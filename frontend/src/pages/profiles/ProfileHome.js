@@ -16,6 +16,7 @@ import Blurb from "../Blurbs/Blurb";
 import { fetchedMoreData } from "../../utils/utils";
 import NoResults from "../../assets/images/Nothing.jpg";
 import { ProfileEditDropdown } from "../../components/DropDownMenu";
+import CreateReviewForm from "../Reviews/CreateReviewForm";
 
 /** Profile content created during Coursework content with Code Institute. */
 
@@ -42,15 +43,20 @@ function ProfileHome({ imageSize = 200 }) {
     // useState hook with empty array object for getting profiles.
     const [profilePosts, setProfilePosts] = useState({ results: [] });
 
+    const profile_image = currentUser?.profile_image;
+    const [review, setReview] = useState({ results: [] });
+
     // API request
     useEffect(() => {
         const fetchedData = async () => {
             try {
-                const [{ data: pageProfile }, { data: profilePosts }] =
+                const [{ data: pageProfile }, { data: profilePosts }, { data: review }] =
                     await Promise.all([
                         // Get the profile of the user by id, alongside their blurbs. 
                         axiosReq.get(`/profiles/${id}/`),
                         axiosReq.get(`/blurbs/?owner__profile=${id}`),
+                        // fetch reviews from API for a profile.
+                        axiosReq.get(`/reviews/?owner__profile=${id}`),
                     ]);
                 setProfileData(prevState => ({
                     ...prevState,
@@ -58,6 +64,7 @@ function ProfileHome({ imageSize = 200 }) {
                 }))
                 // call function in useEffect hook.
                 setProfilePosts(profilePosts);
+                setReview(review);
                 // Stop spinner showing as blurbs are rendered.
                 setHasLoaded(true);
             } catch (err) {
@@ -164,9 +171,33 @@ function ProfileHome({ imageSize = 200 }) {
                         <Display spinner />
                     )}
                 </Container>
+
             </Col>
             <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
                 <Popular />
+                <Container>
+                    {currentUser ? (
+                        <CreateReviewForm
+                            profile_id={currentUser.profile_id}
+                            profileImage={profile_image}
+                            setReview={setReview}
+                            review={id}
+                        />
+                    ) : review.results.length ? (
+                        "Reviews!"
+                    ) : null}
+                    {review.results.length ? (
+                        review.results.map(reviews => (
+                            <p key={reviews.id}>
+                                {reviews.owner}: {reviews.content}
+                            </p>
+                        ))
+                    ) : currentUser ? (
+                        <span>No reviews yet</span>
+                    ) : (
+                        <span>Log in!</span>
+                    )}
+                </Container>
             </Col>
         </Row>
     );

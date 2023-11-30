@@ -48,4 +48,4 @@ class ReviewInfoSerializer(ReviewOtherUserProfilesSerializer):
     """
     Serializer for Review post.
     """
-    post = serializers.ReadOnlyField(source="post.id")
+    review = serializers.ReadOnlyField(source="review.id")

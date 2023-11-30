@@ -7,7 +7,8 @@ import Button from "react-bootstrap/Button";
 import appStyles from "../../styles/Profiles.module.css"
 import { useSetProfileData } from "../../contexts/ProfileContext";
 
-// Pasing props. Image size will set Avatar size.
+// Pasing props. Image size will set Avatar size. 
+// Renders profile and image by component.
 const UserProfile = ({ profile, imageSize = 35 }) => {
     // Get fields for profile prop to use.
     const { id, following_id, image, owner } = profile;
@@ -50,6 +51,7 @@ const UserProfile = ({ profile, imageSize = 35 }) => {
                         >Follow</Button>
                     )
                 )}
+
             </div>
         </div>
     )

@@ -39,8 +39,7 @@ function App() {
         <Container className={styles.Main}>
           <Switch>
             {/* View all blurbs */}
-            <Route exact path="/" render={() => <AllBlurbs
-              message="No results... Try another search?" />} />
+            <Route exact path="/" render={() => <AllBlurbs message="No results... Try another search?" />} />
             {/* View blurbs of user that the current user is following. */}
             <Route exact path="/newsfeed" render={() => (
               <AllBlurbs

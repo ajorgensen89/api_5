@@ -1,13 +1,10 @@
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Col";
-// import Container from "react-bootstrap/Container";
 import NoResult from "../../assets/images/Nothing.jpg"
 import styles from "../../styles/AllBlurbs.module.css"
-// import appStyles from "../../styles/App.module.css";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router";
-
 import { axiosReq } from "../../api/axiosDefaults";
 import Blurb from "./Blurb";
 import Display from "../../components/Display";
@@ -53,7 +50,7 @@ function AllBlurbs(props) {
 
             }
         };
-        /**reset loading sppin to show to user each time. */
+        /**reset loading spin to show to user each time. */
         setHasloaded(false);
         /**Run useEffect each time the filter, search query or path changes. */
         const timeOut = setTimeout(() => {

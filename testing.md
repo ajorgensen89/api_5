@@ -174,6 +174,14 @@ This maybe due to the local timestamp being set still in local storage.<br>
 When the page is refreshed, a 400 error is sent due to no username input on sign in.<br>
 <img src="frontend/src/assets/images/testing-images-frontend/NoUsername.png" width=20% height=20% >
 
+
+## React Dev Tools
+
+The website can be inspected by right clicking on the mouse to bring up Developer Tools to help assist with errors.
+<br>
+
+[React Developer Tools](https://chromewebstore.google.com/detail/fmkadmapgofadopljbjfkapdkoienihi) can be found on particular website and used as a developmental tool. Components and profiler options are given to look through to help find issues within code and what maybe causing an error.<br>
+<img src="frontend/src/assets/images/testing-images-frontend/ReactDeveloperTools.png" width=20% height=20% >
 <hr>
 
 [Back to the top](#testing)

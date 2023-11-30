@@ -118,10 +118,22 @@ Users can follow and unfollow other users. The users they follow will appear wit
 Popular profiles are shown and easily accessed for the user.<br>
 When visiting their own profile, the user will be able to see how many other user follow them. Also, they will be able to see the users that they like and are following.<br>
 Users can 'follow' and 'unfollow' simply by clicking the toggle button.<br>
+<img src="frontend/src/assets/images/readme-images-frontend/follow.png" width=30%>
+<br>
+
+### Contact Us.
+
+A form is avaliable for users to sent feedback which is sent to the backend for administraion use. This can offer the user a way or sharing worries when using the website, content thaat is not suitable or even trolling problems from other users. The feedback will get sent back with their Username included.<br>
+<img src="frontend/src/assets/images/readme-images-frontend/contactform.png" width=30%>
+<br>
+
+### Reviews.
+
+Users will be able to leave reviews on other Users profile pages as feedback. This increases user experience by being able to review a particular User they following or have voted for a blurb they like. Users can share comments about the blurbs users post and can review profiles themselves.<br>
 
 <br>
 
-## Administration in Django Rest Framwork API
+## Administration in Django Rest Framework API
 
 All the content for blurbs, votes, comments, followers and profile are accessable within the admin panel for manipulation whether that is to create and post from the admin panel itself or delete, view or edit some of the information.<br>
 

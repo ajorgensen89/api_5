@@ -24,7 +24,7 @@ const Popular = ({ mobile }) => {
                     {/* Check if there are any popular users. Look through them and display the name. */}
                     {mobile ? (
                         <div className={`${styles.ContainerContent} 'd-flex justify-content-around'`}>
-                            Slice the followers profiles and only show the top 3 profiles.
+                            {/* Slice the followers profiles and only show the top 3 popular profiles. */}
                             {popularFollowers.results.slice(0, 3).map((profile) => (
                                 // Access profile prop with a key to make sure the current user
                                 // accesses the correct user profile.
