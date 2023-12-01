@@ -12,6 +12,8 @@ import { useRedirect } from "../../hooks/useRedirect";
 const CreateContactForm = () => {
     useRedirect("loggedOut");
 
+    //const [message, setMessage] = useState('')
+
     // Use state state on contact data to manipulate data.
     const [contactData, setContactData] = useState({
         topic: "",
@@ -49,9 +51,11 @@ const CreateContactForm = () => {
 
         try {
             await axiosReq.post("/contacts/", formData);
+            //setMessage("Thanks for sharing feedback!");
+            // reset();
             // On submit go back to previous page.
             history.goBack();
-            // <Alert></Alert>
+            
         } catch (err) {
             console.log("newbie1 contacts POST")
             setErrors(err.response?.data);

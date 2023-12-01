@@ -10,6 +10,7 @@ import { useRedirect } from "../../hooks/useRedirect";
 // import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import Avatar from "../../components/Avatar";
+import { useHistory } from "react-router";
 // import { Rating } from "react-simple-star-rating" 
 
 // User can send a form to the admin as feedback or with questions.
@@ -19,6 +20,10 @@ const CreateReviewForm = (props) => {
     useRedirect("loggedOut");
     const [content, setContent] = useState("");
     const [review, setReviews] = useState([]);
+
+    // Use history hook to go back to profile page to see user review chat.
+    const history = useHistory();
+
     // Set initial rating value to 0.
     // const [rating, setRating] = useState(0)
 
@@ -39,7 +44,7 @@ const CreateReviewForm = (props) => {
     // with the new data from the form.
     // Submitting form from within return statement.
     const handleSubmit = async (event) => {
-        event.preventDefault();
+        // Added handlesubmit logic to default behaviour.
         try {
             // Pst response make to API /reviews/
             console.log("logged", props.reviews)
@@ -49,7 +54,8 @@ const CreateReviewForm = (props) => {
                 review,
                 content,
             });
-            setReviews({...props.reviews, results: [...props.reviews.results, data]});
+            history.goBack();
+            setReviews({ ...props.reviews, results: [...props.reviews.results, data] });
             setContent("");
 
             setTimeout(() => {
@@ -71,13 +77,17 @@ const CreateReviewForm = (props) => {
                             <Link to={`/profiles/${profile_id}`}>
                                 <Avatar src={profileImage} />
                             </Link>
-                            <Form.Control
-                                placeholder="Leave a review of this user!"
-                                as="textarea"
-                                value={content}
-                                onChange={handleChange}
-                                row={2}
-                            />
+                            <p>
+                                <Form.Control
+                                    placeholder="Tap here to chat..."
+                                    as="textarea"
+                                    value={content}
+                                    onChange={handleChange}
+                                    row={2}
+                                ><Link to={`/profiles/${profile_id}`}>
+                                        <Avatar src={profileImage} />
+                                    </Link></Form.Control>
+                            </p>
                         </InputGroup>
                     </Form.Group>
                     {/* <Form.Group>

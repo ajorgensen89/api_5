@@ -32,7 +32,7 @@ const UserProfile = ({ profile, imageSize = 35 }) => {
             <div className="mx-2">
                 {owner}
             </div>
-            <div className="text-right ml-auto text-wrap">
+            <div className="text-wrap">
                 {/* Check if current user is logged in 
                 and not the owner of the profile being followed. */}
                 {currentUser && !is_owner && (

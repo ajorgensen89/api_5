@@ -78,7 +78,7 @@ const Blurb = (props) => {
         history.push(`/blurbs/${id}/edit`);
     }
 
-    /** Direct to URL page for editing a blurb. */
+    /** Direct to URL page for deleting a blurb. */
     const handleDeleting = async () => {
         try {
             await axiosRes.delete(`/blurbs/${id}/`);

@@ -19,11 +19,13 @@ import { ProfileEditDropdown } from "../../components/DropDownMenu";
 import CreateReviewForm from "../Reviews/CreateReviewForm";
 
 /** Profile content created during Coursework content with Code Institute. */
-
+// Get profile name and image for Avatar links in each review from each user.
+// Image size is set for main profile picture.
 function ProfileHome({ imageSize = 200 }) {
     // Show spinner depending on if a page has loaded or not yet.
     const [hasLoaded, setHasLoaded] = useState(false);
     const currentUser = useCurrentUser();
+
 
     // Extract id from url using hook.
     const { id } = useParams();
@@ -159,8 +161,44 @@ function ProfileHome({ imageSize = 200 }) {
 
     return (
         <Row>
-            <Col className="py-2 p-0 p-lg-2" lg={8}>
-                <Popular />
+            <Col className="py-2 p-0 p-lg-2">
+                <Col lg={8} className="py-2 p-0 p-lg-2">
+                    {/* Popular people will be at the top. On mobile screen, only 2 will be viewed. */}
+                    <Popular mobile />
+                    <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
+                        <Popular />
+                    </Col>
+                    <Container className={appStyles.ContainerContentThreadReviews}>
+                        {/* Input for thread from CreateReviewForm for all
+                        users to post here. */}
+                        {currentUser ? (
+                            <CreateReviewForm mobile
+                                profile_id={currentUser.profile_id}
+                                profileImage={profile_image}
+                                reviews={review}
+                                setReview={setReview}
+                                review={id}
+                            />
+                        ) : review.results.length ? (
+                            "Reviews!"
+                        ) : null}
+                        {/* Input thread is set to a pagination of 10 and 
+                        will remove the oldest and replace with the newest thread feed. */}
+                        {review.results.length ? (
+                            review.results.map((review) => (
+                                <div key={review.id} review={review} className={`${appStyles.Lined} my-2`}>
+                                    <p>{review.owner}:</p>
+                                    <p> {review.content} - {review.updated_at}</p>
+                                </div>
+                            ))
+                        ) : currentUser ? (
+                            <span>No user chat yet!</span>
+                        ) : (
+                            <span>Log in to post in this feed!</span>
+                        )}
+                    </Container>
+                </Col>
+
                 <Container className={styles.ContainerContent}>
                     {/* Fetch the blurbs and post them or display a spinner when loading. */}
                     {hasLoaded ? (
@@ -173,33 +211,6 @@ function ProfileHome({ imageSize = 200 }) {
                     )}
                 </Container>
 
-            </Col>
-            <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-                {/* <Popular /> */}
-                <Container className={styles.ContainerContent}>
-                    {currentUser ? (
-                        <CreateReviewForm
-                            profile_id={currentUser.profile_id}
-                            profileImage={profile_image}
-                            reviews={review}
-                            setReview={setReview}
-                            review={id}
-                        />
-                    ) : review.results.length ? (
-                        "Reviews!"
-                    ) : null}
-                    {review.results.length ? (
-                        review.results.map((review) => (
-                            <p key={review.id} review={review}>
-                                {review.owner}: {review.content}
-                            </p>
-                        ))
-                    ) : currentUser ? (
-                        <span>No reviews yet</span>
-                    ) : (
-                        <span>Log in!</span>
-                    )}
-                </Container>
             </Col>
         </Row>
     );

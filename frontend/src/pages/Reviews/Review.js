@@ -11,15 +11,9 @@ const Review = (props) => {
         content,
         updated_at,
         profile_image,
+        profileImage
         // rating,
     } = props;
-
-    // Get fields for profile prop to use.
-
-    // const [showReviewForm, setReviewForm] = useState(false);
-    // const currentUser = useCurrentUser();
-    // const setCurrentUser = useCurrentUser();
-    // const is_owner = currentUser?.username === owner;
 
     return (
         <>
@@ -34,7 +28,6 @@ const Review = (props) => {
                     <span className={styles.UpdatedDate}>{updated_at}</span>
                     
                     <Container>Review:{content}</Container>
-                    <Container>Rating:</Container>
                 </Media.Body>
                 
             </Media>
