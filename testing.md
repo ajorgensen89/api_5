@@ -184,6 +184,18 @@ The website can be inspected by right clicking on the mouse to bring up Develope
 <img src="frontend/src/assets/images/testing-images-frontend/ReactDeveloperTools.png" width=20% height=20% >
 <hr>
 
+## Tests
+
+<img src="frontend/src/assets/images/testing-images-frontend/TestBlurb.png" width=80%><br>
+<br>
+<img src="frontend/src/assets/images/testing-images-frontend/TestComments.png" width=80%><br>
+<br>
+<img src="frontend/src/assets/images/testing-images-frontend/TestProfile.png" width=80%><br>
+<br>
+<img src="frontend/src/assets/images/testing-images-frontend/TestCRA.png" width=80%><br>
+<br>
+
+
 [Back to the top](#testing)
 
 
