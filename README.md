@@ -969,8 +969,8 @@ See [Testing](testing.md) file for full use of technologies used to test this we
 
 # Awknowledgements.
 To the **Tutor Support** team for [Code Institute](https://codeinstitute.net/) for continued support and assitance.<br>
-To mentor **Precious Ijege** for continued support and patience while taking part in the course provided by [Code Institute](https://codeinstitute.net/) for a Diploma in Full Stack Software Development.<br>
-To the Walkthrough projects of both <em>'Moments'</em> and <em>'DRF-API'</em>, mini projects supplied by [Code Institute](https://codeinstitute.net/) Coursework.<br>
+To mentor **Gareth Mc Girr** for continued support and patience while taking part in the course provided by [Code Institute](https://codeinstitute.net/) for a Diploma in Full Stack Software Development.<br>
+To the Walkthrough projects of both <em>'Moments'</em> and <em>'DRF-API'</em>, mini projects supplied by [Code Institute](https://codeinstitute.net/) Coursework to produce a React frontend and Django backend project.<br>
 
 <hr>
 
