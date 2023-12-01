@@ -3,7 +3,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Display from "../../components/Display";
-import styles from "../../styles/App.module.css";
+import styles from "../../styles/ProfileHome.module.css";
 import appStyles from "../../styles/Profiles.module.css"
 import Popular from "./Popular";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
@@ -168,7 +168,7 @@ function ProfileHome({ imageSize = 200 }) {
                     <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
                         <Popular />
                     </Col>
-                    <Container className={appStyles.ContainerContentThreadReviews}>
+                    <Container className={styles.ContainerContentThreadReviews}>
                         {/* Input for thread from CreateReviewForm for all
                         users to post here. */}
                         {currentUser ? (
@@ -186,8 +186,8 @@ function ProfileHome({ imageSize = 200 }) {
                         will remove the oldest and replace with the newest thread feed. */}
                         {review.results.length ? (
                             review.results.map((review) => (
-                                <div key={review.id} review={review} className={`${appStyles.Lined} my-2`}>
-                                    <p>{review.owner}:</p>
+                                <div key={review.id} review={review} className={`${styles.Lined} my-2`}>
+                                    <p className={styles.BigGreen}>{review.owner}:</p>
                                     <p> {review.content} - {review.updated_at}</p>
                                 </div>
                             ))

@@ -1,9 +1,12 @@
 # Walking Seasons.
 This project is the result of combining two repositories, a React frontend and a Django Rest Framework Application Programming Interface (API).<br>
-This product will be using data saved and sent from the API to the React frontend to produce a user friendly website for interaction.<br>
-The idea of this wesbsite is to offer a platform for users to share and comment on other users blurbs. The blurbs can be voted for, to show and highlight the best content.<br>
+This product will be using data saved and sent from the API to the React frontend to produce a user friendly website for interaction between everyone visiting.<br>
+The idea of this wesbsite is to offer a platform for users to share thoughts, ideas, experiences and comment on other users blurbs. while also being able to 'chat' amongst the all users from their profile pages.<br>
+All the blurbs can be voted for, to show and highlight the best content.<br>
 Users with the best blurbs on the website can be followed.<br>
 All users will be able to view, create, edit and delete their own content and own a profile page that they can customise.<br>
+This website offers a range of ways the users can interact. They can comment about the blurbs indiviually, or join the thread posting on the profile page to share reviews and comments about the users, for all the users to see.<br>
+Users can also interact solely by using the contact form to send website feedback to the client.<br>
 
 <br>
 
@@ -18,6 +21,12 @@ Labels and status bars can be added to the user stories so they can be tracked f
 <img src="frontend/src/assets/images/readme-images-frontend/GitHubUSAgile.png" width=20% height=20%><br>
 <br>
 
+### User Stories.
+
+The issues for this project can be found within a project on the Github Repository.Issues can ba tracked and followed to say whether they are done, in progress or not completed for this project.<br>
+<img src="frontend/src/assets/images/readme-images-frontend/UserStory.png" width=40%>
+
+The issues created before the repositories were combined are within the repository Project contected to the api_5 workspace. This is the workspace with both frontend and backend.
 <hr>
 
 <br>
@@ -55,8 +64,10 @@ Delicious Handrawn - The name of the font sounded appealing to use to help empha
 ## Coding Diagrams.
 
 Diagrams can help to find routes within the code to link models and access different parts of one model while making connections to and from different objects.<br>
-<img src="frontend/src/assets/images/readme-images-frontend/diagrams.jpg" width=20% height=20%><br>
+<img src="frontend/src/assets/images/readme-images-frontend/diagram2.jpg" width=20% height=20%><br>
 <br>
+
+[DBeaver](https://dbeaver.io/) was a Databae tool suggested for crafting better diagrams using model data from the ElephantSQL Database, however due to skill level I could not implement this without in causing 'connection' errors within my coding work environment and therefore it was not included.<br>
 
 <hr>
 
@@ -116,12 +127,6 @@ Fix towards the end of the project if time contraints allow to be able to vote e
 <img src="frontend/src/assets/images/readme-images-frontend/VoteCommentCount.png" width=20% height=20%><br>
 <br>
 
-### Voting Error.
-
-It was noted that the votes count increases by one on the created blurbs page. If a user was to vote on the individual blurb page itself, after clicking image or comment bubble, the vote would not count correctly.<br>
-It does change to 0 and 'not count' as a vote when on the main Home page or newsfeed page. (main '/' page or '/newsfeed' page.) <br>
-This would need correcting at a later data due to time constraints.<br>
-
 ### Followers.
 
 Users can follow and unfollow other users. The users they follow will appear within the 'newsfeed' navigation page.<br>
@@ -133,18 +138,20 @@ Users can 'follow' and 'unfollow' simply by clicking the toggle button.<br>
 
 ### Contact Us.
 
-A form is avaliable for users to sent feedback which is sent to the backend for administraion use. This can offer the user a way or sharing worries when using the website, content thaat is not suitable or even trolling problems from other users. The feedback will get sent back with their Username included.<br>
+A form is avaliable for users to sent feedback which is sent to the backend for administraion use. This can offer the user a way of sharing positive thoughts sharing worries when using the website, content thaa is not suitable or even trolling problems from other users. The feedback will get sent back with their Username included.<br> 
 <img src="frontend/src/assets/images/readme-images-frontend/contactform.png" width=30%>
 <br>
 
 ### Review Thread.
 
-People will be able to leave a running chat thread between all Users who are logged in. This increases user experience by being able to send reviews or just 'chat' about their profiles or the Users themselves. 
-This engages all the Users to see each others threads so noone is left out and it does not have to be related to any blurbs. Threads are related to all people using the website.<br>
+People will be able to leave a running thread between all Users who are logged in. This increases user experience by being able to send reviews or just 'chat' about their profiles or the Users themselves. 
+This engages all the Users to see each others reviews so noone is left out and it does not have to be related to any blurbs. Threads are related to all people using the website.<br>
 This can only be viewed and used on the profile pages Users have.<br>
 
 The user will be able to see when the last thread took place so they can join in the chat or see that the thread is, for example, 1 hour, 2hour or 1 day old as the date and time fields are set in the review users model to show more accurate times.
 A chat might have occured, if the users in the ongoing thread are in another country, it would state the last thread review was 12 hours ago or 2 days ago.<br>
+
+If a User has written a comment in this thread, there is a contact page to send feedback to the backend admin. Here anything said in this thread about other users can be deleted by the administration, protecting users from abusive reviews being left.<br>
 
 <br>
 
@@ -230,11 +237,13 @@ Users being able to share content is a good platform, but they would have had a 
 A drop down menu for the user to select a category when submitting a blurb should of been implemented. This category would of offered a separate selection of fields to choose from for the user to filter out the posts. They would have been Spring, Summer, Autumn and Winter. This would of given the user at extra individual touch to the blurbs they could post and filter out by. For example, they could filter out and look at all the blurbs relating to 'Winter' category. Or they could have posted blurbs and selected a category for that blurb to be a 'Spring' time blurb. This would have given the user another filtering option then most votes and most followers.<br>
 
 A rating system could be added to the thread on each profile.<br>
+It was attempted with [React Simple Star Rating](https://www.npmjs.com/package/react-simple-star-rating/v/2.1.0), however it was not suited to the version control this project was under and could not be implemented.<br>
 
 ## Implementing ideas into a business scenerio.
 
 Ideas and concepted used on this website can be upgraded and implemented in different scenarios.<br>
 
+This offers a slight social platform as users can interact with other people in a reviews thread on their profiles, rather than having to go through their blurb comments.<br>
 
 The down vote, up vote or love vote could help a business to identify what 'hot topics' users are enjoying, helping them filter out content for a website. This also gives the user, an appreciation of that particular website if they think it has an individual feel.<br>
 

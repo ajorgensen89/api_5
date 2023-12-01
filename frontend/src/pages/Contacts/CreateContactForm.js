@@ -20,15 +20,14 @@ const CreateContactForm = () => {
         content: "",
     });
 
-    const history = useHistory();
-
-    // Set error catching
-    const [errors, setErrors] = useState({});
+    const history = useHistory();    
 
     // Set variables for contact data.
     const { topic, content } = contactData;
 
-    
+    // Set error catching
+    const [errors, setErrors] = useState({});
+
     // Handle change for contact data.
     const handleChange = (event) => {
         setContactData({
@@ -44,6 +43,24 @@ const CreateContactForm = () => {
     const handleSubmit = async (event) => {
         // Prevent page refresh when user interacts.
         event.preventDefault();
+
+        // Check if Data is empty
+        if (!contactData) {
+            setErrors({ ...errors, content: ["Data cannot be empty"] });
+            return;
+        }
+
+        // Check if topic is empty
+        if (!topic) {
+            setErrors({ ...errors, topic: ["Topic cannot be empty"] });
+            return;
+        }
+        // Check if content is empty
+        if (!content) {
+            setErrors({ ...errors, content: ["Content cannot be empty"] });
+            return;
+        }
+
         const formData = new FormData();
 
         formData.append("topic", topic);
@@ -51,19 +68,17 @@ const CreateContactForm = () => {
 
         try {
             await axiosReq.post("/contacts/", formData);
-            //setMessage("Thanks for sharing feedback!");
-            // reset();
             // On submit go back to previous page.
             history.goBack();
-            
+
         } catch (err) {
             console.log("newbie1 contacts POST")
             setErrors(err.response?.data);
         }
     }
 
-     /** Set Fields for user input */
-     const textInputFields = (
+    /** Set Fields for user input */
+    const textInputFields = (
         <div className="text-center">
 
             {/* Fields for Contact form. */}
@@ -80,7 +95,7 @@ const CreateContactForm = () => {
             </Form.Group>
 
             {/* If empty, error for title field and error key changed.*/}
-            {errors?.topic?.map((message, idx) => (
+            {errors.topic?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                     {message}
                 </Alert>
@@ -98,7 +113,7 @@ const CreateContactForm = () => {
             </Form.Group>
 
             {/* If empty, error for content field and error key changed.*/}
-            {errors?.content?.map((message, idx) => (
+            {errors.content?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                     {message}
                 </Alert>
@@ -115,6 +130,11 @@ const CreateContactForm = () => {
             <Button className={btnStyles.Button} type="submit">
                 Send Message.
             </Button>
+            {errors.non_field_errors?.map((message, idx) => (
+                <Alert key={idx} variant="warning">
+                    {message}
+                </Alert>
+            ))}
         </div>
     );
 

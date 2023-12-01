@@ -98,7 +98,7 @@ const CreateReviewForm = (props) => {
                         // disabled={!content.trim()}
                         type="submit"
                     >
-                        Save review
+                        Chat!
                     </Button>
 
                 </Form>
