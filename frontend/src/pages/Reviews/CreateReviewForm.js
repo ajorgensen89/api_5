@@ -42,22 +42,19 @@ const CreateReviewForm = (props) => {
         event.preventDefault();
         try {
             // Pst response make to API /reviews/
-            console.log("errorPro:", review)
-            console.log("errorCont:", content)
+            console.log("logged", props.reviews)
+            // console.log("errorProfile:", review)
+            // console.log("errorContent:", content)
             const { data } = await axiosRes.post("/reviews/", {
                 review,
                 content,
             });
-            console.log("errorData:", data)
-            setReviews((prevReviews) => ({
-                results: [
-                    {
-                        ...prevReviews.results[0],
-                        data: prevReviews.results[0],
-                    }
-                ]
-            }));
+            setReviews({...props.reviews, results: [...props.reviews.results, data]});
             setContent("");
+
+            setTimeout(() => {
+                console.log(props.reviews)
+            }, 2000)
         } catch (err) {
             console.log(err, "reviewHS");
             console.log(err.response)

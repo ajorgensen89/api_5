@@ -64,6 +64,7 @@ function ProfileHome({ imageSize = 200 }) {
                 }))
                 // call function in useEffect hook.
                 setProfilePosts(profilePosts);
+                console.log("fetchReview", review)
                 setReview(review);
                 // Stop spinner showing as blurbs are rendered.
                 setHasLoaded(true);
@@ -174,12 +175,13 @@ function ProfileHome({ imageSize = 200 }) {
 
             </Col>
             <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-                <Popular />
+                {/* <Popular /> */}
                 <Container className={styles.ContainerContent}>
                     {currentUser ? (
                         <CreateReviewForm
                             profile_id={currentUser.profile_id}
                             profileImage={profile_image}
+                            reviews={review}
                             setReview={setReview}
                             review={id}
                         />
@@ -187,9 +189,9 @@ function ProfileHome({ imageSize = 200 }) {
                         "Reviews!"
                     ) : null}
                     {review.results.length ? (
-                        review.results.map(reviews => (
-                            <p key={review.id}>
-                                {reviews.owner}: {reviews.content}
+                        review.results.map((review) => (
+                            <p key={review.id} review={review}>
+                                {review.owner}: {review.content}
                             </p>
                         ))
                     ) : currentUser ? (

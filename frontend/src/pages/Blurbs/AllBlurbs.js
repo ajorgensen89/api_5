@@ -74,7 +74,7 @@ function AllBlurbs(props) {
                 <Col md={5}>
                     <Popular />
                 </Col>
-                {/* <i class="fa-brands fa-searchengin"></i> */}
+                {/* <i classnAME="fa-brands fa-searchengin"></i> */}
                 {/* Search Bar searches by title or user. */}
                 <Form
                     // Stop page refreshing if 'Enter' hit.

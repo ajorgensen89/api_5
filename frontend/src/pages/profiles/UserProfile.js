@@ -29,7 +29,7 @@ const UserProfile = ({ profile, imageSize = 35 }) => {
                     <Avatar src={image} height={imageSize} />
                 </Link>
             </div>
-            <div classname="mx-2">
+            <div className="mx-2">
                 {owner}
             </div>
             <div className="text-right ml-auto text-wrap">
