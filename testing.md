@@ -195,9 +195,16 @@ The website can be inspected by right clicking on the mouse to bring up Develope
 <img src="frontend/src/assets/images/testing-images-frontend/TestCRA.png" width=80%><br>
 <br>
 
+## CSS Validator
+
+Use Validating CSS site to check content. Errors that were seen them to only be from static files that are created for combined deployment.<br>
+
+<br>
+<img src="frontend/src/assets/images/testing-images-frontend/css.png" width=80%><br>
+<br>
+<img src="frontend/src/assets/images/testing-images-frontend/staticfilecss.png" width=80%><br>
 
 [Back to the top](#testing)
-
 
 <hr>
 

@@ -213,8 +213,12 @@ This image shows the expanded navigation menu view.<br>
 
 <br>
 
-<hr>
+## Favicon
 
+A favicon and title is added to a tab so users can see they are on and interecting with this website, walking through different topics, chats and interaction.<br>
+<img src="frontend/src/assets/images/readme-images-frontend/favicon.png" height=20% width=20%>
+
+<hr>
 <br>
 
 ## Future Features.
@@ -253,6 +257,8 @@ The idea for a user thread came from being part of a 'Task Force' on games. All 
 <br>
 
 User reviews could toggle open, and then be closed again from a button to take up less 'full time' space on the profile page.<br>
+
+Contact Forms are for sending feedback to the client side for users can have interaction with the site owner. This can be for issues with the website, positive or negative feedback and to report trolling on review thread or blurb comments.<br>
 
 <hr>
 
